@@ -1,4 +1,74 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="14F1509" minimumToolsVersion="Automatic">
+    <entity name="AutoLock" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="useAutoLock" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Email" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="defaultEmail" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Measurement" syncable="YES">
+        <attribute name="chest" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="hips" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="leftArm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="leftThigh" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="month" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rightArm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rightThigh" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="session" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="waist" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Photo" syncable="YES">
+        <attribute name="angle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="month" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="session" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Routine" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="defaultRoutine" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Session" syncable="YES">
+        <attribute name="currentSession" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
+    <entity name="Workout" representedClassName="Workout" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="exercise" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="exerciseCompleted" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="month" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reps" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="round" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="routine" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="session" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="week" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weekCompleted" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="weight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workout" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="WorkoutCompleteDate" representedClassName="WorkoutCompleteDate" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="index" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="routine" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="session" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workout" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workoutCompleted" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="WorkoutCompleteDate" positionX="-63" positionY="-18" width="128" height="135"/>
+        <element name="Workout" positionX="-54" positionY="27" width="128" height="270"/>
+        <element name="Session" positionX="-36" positionY="126" width="128" height="75"/>
+        <element name="Photo" positionX="-18" positionY="135" width="128" height="120"/>
+        <element name="Measurement" positionX="0" positionY="144" width="128" height="210"/>
+        <element name="Email" positionX="18" positionY="180" width="128" height="75"/>
+        <element name="AutoLock" positionX="36" positionY="189" width="128" height="75"/>
+        <element name="Routine" positionX="-9" positionY="135" width="128" height="75"/>
+    </elements>
 </model>

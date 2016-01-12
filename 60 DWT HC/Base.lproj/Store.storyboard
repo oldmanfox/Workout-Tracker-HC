@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ezy-r9-INY">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Store ListTVC-->
+        <scene sceneID="195-PI-06E">
+            <objects>
+                <tableViewController id="d8u-xl-Byz" customClass="StoreListTVC" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" id="I4Y-tv-t7a">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="120" id="t2h-mT-Vcl" customClass="StoreListTVCCell">
+                                <rect key="frame" x="0.0" y="86" width="600" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t2h-mT-Vcl" id="uUX-KX-Qlq">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="0.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="Hmq-b2-Wb1">
+                                            <rect key="frame" x="447" y="7" width="62" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="62" id="q6k-ss-NF2"/>
+                                                <constraint firstAttribute="height" constant="22" id="zGo-SS-jdP"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Product description that is going to be vey long and neet and will be very long if needed. " lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="GK3-Nm-JLi">
+                                            <rect key="frame" x="20" y="29" width="570" height="90"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="9"/>
+                                            <color key="textColor" red="0.42283163270000002" green="0.42283163270000002" blue="0.42283163270000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" text="Product Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaT-3y-lAa">
+                                            <rect key="frame" x="20" y="7" width="154" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="A4O-9x-u3c"/>
+                                                <constraint firstAttribute="width" constant="154" id="ffk-Vz-g4e"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jd6-9F-CPh">
+                                            <rect key="frame" x="517" y="7" width="73" height="22"/>
+                                            <color key="backgroundColor" red="0.1843137255" green="0.47058823529999999" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="4RZ-0O-2Vs"/>
+                                                <constraint firstAttribute="width" constant="73" id="Wus-j6-jJP"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <state key="normal" title="Buy">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="Jd6-9F-CPh" secondAttribute="trailing" constant="10" id="GYe-yR-Z7I"/>
+                                        <constraint firstItem="Hmq-b2-Wb1" firstAttribute="top" secondItem="uUX-KX-Qlq" secondAttribute="top" constant="7" id="H5m-FY-k0P"/>
+                                        <constraint firstItem="eaT-3y-lAa" firstAttribute="leading" secondItem="uUX-KX-Qlq" secondAttribute="leading" constant="20" id="KPh-Rp-sO1"/>
+                                        <constraint firstItem="Jd6-9F-CPh" firstAttribute="leading" secondItem="Hmq-b2-Wb1" secondAttribute="trailing" constant="8" id="MZq-xT-7Mg"/>
+                                        <constraint firstAttribute="bottom" secondItem="GK3-Nm-JLi" secondAttribute="bottom" id="P6s-oV-hil"/>
+                                        <constraint firstItem="GK3-Nm-JLi" firstAttribute="leading" secondItem="uUX-KX-Qlq" secondAttribute="leading" constant="20" id="QoP-g2-i0c"/>
+                                        <constraint firstItem="eaT-3y-lAa" firstAttribute="top" secondItem="uUX-KX-Qlq" secondAttribute="top" constant="7" id="SXP-eb-9Ky"/>
+                                        <constraint firstAttribute="trailing" secondItem="GK3-Nm-JLi" secondAttribute="trailing" constant="10" id="Vrz-Pb-bB4"/>
+                                        <constraint firstItem="Jd6-9F-CPh" firstAttribute="top" secondItem="uUX-KX-Qlq" secondAttribute="top" constant="7" id="lXS-ci-0AQ"/>
+                                        <constraint firstItem="GK3-Nm-JLi" firstAttribute="top" secondItem="uUX-KX-Qlq" secondAttribute="top" constant="29" id="oLs-ti-nWo"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="buyButton" destination="Jd6-9F-CPh" id="uJG-N1-M09"/>
+                                    <outlet property="descriptionLabel" destination="GK3-Nm-JLi" id="6zU-BK-WOt"/>
+                                    <outlet property="priceLabel" destination="Hmq-b2-Wb1" id="vWR-ZF-Agn"/>
+                                    <outlet property="titleLabel" destination="eaT-3y-lAa" id="590-xg-QAX"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="d8u-xl-Byz" id="vSB-cN-V1Z"/>
+                            <outlet property="delegate" destination="d8u-xl-Byz" id="4cY-UW-lv5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="nbc-pA-if6"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yXh-5p-HD6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1953" y="56"/>
+        </scene>
+        <!--Store-->
+        <scene sceneID="6fb-XH-Uoj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ezy-r9-INY" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Store" image="shop_cart" selectedImage="shop_cart_selected" id="3j6-F5-a1V"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics">
+                        <color key="tintColor" red="0.99607849120000003" green="0.50588238240000005" blue="0.18823531269999999" alpha="1" colorSpace="deviceRGB"/>
+                    </simulatedTabBarMetrics>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AWb-3N-o71">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="d8u-xl-Byz" kind="relationship" relationship="rootViewController" id="TH1-IT-Ewj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AgP-ar-1nX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252" y="56"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="shop_cart" width="32" height="32"/>
+        <image name="shop_cart_selected" width="32" height="32"/>
+    </resources>
+</document>
