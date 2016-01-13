@@ -177,12 +177,10 @@
                              self.cell12Label,
                              self.cell13Label];
     
-    self.tableDetailArray = @[self.cell4Detail,
-                              self.cell5Detail,
-                              self.cell7Detail,
-                              self.cell8Detail,
-                              self.cell11Detail,
-                              self.cell12Detail];
+    self.tableDetailArray = @[self.cell3Detail,
+                              self.cell4Detail,
+                              self.cell10Detail,
+                              self.cell11Detail];
 }
 
 - (void)didReceiveMemoryWarning
@@ -312,7 +310,7 @@
     
     else if (section == 1) {
         
-        rows = 1;
+        rows = 2;
     }
     
     else if (section == 2) {
@@ -337,7 +335,7 @@
     
     else if (section == 6) {
         
-        rows = 3;
+        rows = 2;
     }
     
     return rows;

@@ -62,12 +62,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *cell12Label;
 @property (weak, nonatomic) IBOutlet UILabel *cell13Label;
 
+@property (weak, nonatomic) IBOutlet UILabel *cell3Detail;
 @property (weak, nonatomic) IBOutlet UILabel *cell4Detail;
-@property (weak, nonatomic) IBOutlet UILabel *cell5Detail;
-@property (weak, nonatomic) IBOutlet UILabel *cell7Detail;
-@property (weak, nonatomic) IBOutlet UILabel *cell8Detail;
+@property (weak, nonatomic) IBOutlet UILabel *cell10Detail;
 @property (weak, nonatomic) IBOutlet UILabel *cell11Detail;
-@property (weak, nonatomic) IBOutlet UILabel *cell12Detail;
 
 @property (strong, nonatomic) NSArray *cellBoxArray;
 @property (strong, nonatomic) NSArray *tableCellArray;

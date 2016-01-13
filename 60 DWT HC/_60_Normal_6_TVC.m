@@ -142,7 +142,13 @@
                           self.cell5Box,
                           self.cell6Box,
                           self.cell7Box,
-                          self.cell8Box];
+                          self.cell8Box,
+                          self.cell9Box,
+                          self.cell10Box,
+                          self.cell11Box,
+                          self.cell12Box,
+                          self.cell13Box,
+                          self.cell14Box];
     
     self.tableCellArray = @[self.cell1,
                             self.cell2,
@@ -151,7 +157,13 @@
                             self.cell5,
                             self.cell6,
                             self.cell7,
-                            self.cell8];
+                            self.cell8,
+                            self.cell9,
+                            self.cell10,
+                            self.cell11,
+                            self.cell12,
+                            self.cell13,
+                            self.cell14];
     
     self.tableLabelArray = @[self.cell1Label,
                              self.cell2Label,
@@ -160,9 +172,20 @@
                              self.cell5Label,
                              self.cell6Label,
                              self.cell7Label,
-                             self.cell8Label];
+                             self.cell8Label,
+                             self.cell9Label,
+                             self.cell10Label,
+                             self.cell11Label,
+                             self.cell12Label,
+                             self.cell13Label,
+                             self.cell14Label];
     
-    self.tableDetailArray = @[];
+    self.tableDetailArray = @[self.cell1Detail,
+                              self.cell2Detail,
+                              self.cell6Detail,
+                              self.cell7Detail,
+                              self.cell12Detail,
+                              self.cell13Detail];
 }
 
 - (void)didReceiveMemoryWarning
@@ -176,7 +199,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 3;
+    return 6;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -258,7 +281,7 @@
     NSInteger rows = 0;
     
     if (section == 0) {
-        rows = 1;
+        rows = 3;
     }
     
     else if (section == 1) {
@@ -268,7 +291,22 @@
     
     else if (section == 2) {
         
-        rows = 5;
+        rows = 2;
+    }
+    
+    else if (section == 3) {
+        
+        rows = 2;
+    }
+    
+    else if (section == 4) {
+        
+        rows = 2;
+    }
+
+    else if (section == 5) {
+        
+        rows = 3;
     }
     
     return rows;
