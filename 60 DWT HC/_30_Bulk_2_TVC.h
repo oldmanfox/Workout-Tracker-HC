@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UITableViewCell *cell9;
 @property (weak, nonatomic) IBOutlet UITableViewCell *cell10;
 @property (weak, nonatomic) IBOutlet UITableViewCell *cell11;
+@property (weak, nonatomic) IBOutlet UITableViewCell *cell12;
 
 @property (weak, nonatomic) IBOutlet UITextField *cell1Box;
 @property (weak, nonatomic) IBOutlet UITextField *cell2Box;
@@ -43,6 +44,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *cell9Box;
 @property (weak, nonatomic) IBOutlet UITextField *cell10Box;
 @property (weak, nonatomic) IBOutlet UITextField *cell11Box;
+@property (weak, nonatomic) IBOutlet UITextField *cell12Box;
 
 @property (weak, nonatomic) IBOutlet UILabel *cell1Label;
 @property (weak, nonatomic) IBOutlet UILabel *cell2Label;
@@ -55,11 +57,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *cell9Label;
 @property (weak, nonatomic) IBOutlet UILabel *cell10Label;
 @property (weak, nonatomic) IBOutlet UILabel *cell11Label;
+@property (weak, nonatomic) IBOutlet UILabel *cell12Label;
 
-@property (weak, nonatomic) IBOutlet UILabel *cell2Detail;
 @property (weak, nonatomic) IBOutlet UILabel *cell3Detail;
-@property (weak, nonatomic) IBOutlet UILabel *cell7Detail;
-@property (weak, nonatomic) IBOutlet UILabel *cell8Detail;
+@property (weak, nonatomic) IBOutlet UILabel *cell4Detail;
 @property (weak, nonatomic) IBOutlet UILabel *cell10Detail;
 @property (weak, nonatomic) IBOutlet UILabel *cell11Detail;
 

@@ -168,10 +168,10 @@
                              self.cell9Label,
                              self.cell10Label];
     
-    self.tableDetailArray = @[self.cell5Detail,
-                              self.cell6Detail,
-                              self.cell9Detail,
-                              self.cell10Detail];
+    self.tableDetailArray = @[self.cell6Detail,
+                              self.cell7Detail,
+                              self.cell8Detail,
+                              self.cell9Detail];
 }
 
 - (void)didReceiveMemoryWarning
@@ -185,7 +185,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 4;
+    return 6;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -280,17 +280,17 @@
     NSInteger rows = 0;
     
     if (section == 0) {
-        rows = 4;
+        rows = 1;
     }
     
     else if (section == 1) {
        
-        rows = 3;
+        rows = 2;
     }
     
     else if (section == 2) {
         
-        rows = 1;
+        rows = 2;
     }
     
     else if (section == 3) {
@@ -298,6 +298,16 @@
         rows = 2;
     }
     
+    else if (section == 4) {
+        
+        rows = 2;
+    }
+    
+    else if (section == 5) {
+        
+        rows = 1;
+    }
+
     return rows;
 }
 

@@ -143,8 +143,7 @@
                           self.cell6Box,
                           self.cell7Box,
                           self.cell8Box,
-                          self.cell9Box,
-                          self.cell10Box];
+                          self.cell9Box];
     
     self.tableCellArray = @[self.cell1,
                             self.cell2,
@@ -154,8 +153,7 @@
                             self.cell6,
                             self.cell7,
                             self.cell8,
-                            self.cell9,
-                            self.cell10];
+                            self.cell9];
     
     self.tableLabelArray = @[self.cell1Label,
                              self.cell2Label,
@@ -165,13 +163,10 @@
                              self.cell6Label,
                              self.cell7Label,
                              self.cell8Label,
-                             self.cell9Label,
-                             self.cell10Label];
+                             self.cell9Label];
     
-    self.tableDetailArray = @[self.cell5Detail,
-                              self.cell6Detail,
-                              self.cell8Detail,
-                              self.cell9Detail];
+    self.tableDetailArray = @[self.cell3Detail,
+                              self.cell4Detail];
 }
 
 - (void)didReceiveMemoryWarning
@@ -185,7 +180,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 4;
+    return 5;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -279,12 +274,12 @@
      
      if (section == 0) {
          
-         rows = 3;
+         rows = 2;
      }
      
      else if (section == 1) {
          
-         rows = 3;
+         rows = 2;
      }
      
      else if (section == 2) {
@@ -295,6 +290,11 @@
      else if (section == 3) {
          
          rows = 2;
+     }
+     
+     else if (section == 4) {
+         
+         rows = 1;
      }
      
      return rows;
