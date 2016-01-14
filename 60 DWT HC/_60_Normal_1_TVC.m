@@ -198,68 +198,62 @@
     //NSLog(@"Workout = %@", ((DataNavController *)self.parentViewController).workout);
     
     // Normal routine
-    if ([selectedRoutine isEqualToString:@"Bulk"]) {
+    if ([selectedRoutine isEqualToString:@"60 - Normal"]) {
         
         // Week 1
         if ([week isEqualToString:@"Week 1"]) {
             
             if (selectedCell.tag == 1) {
                 
-                // B1: Chest+Tri 1
+                // Tone Balance 1
                 ((DataNavController *)self.parentViewController).index = @1;
             }
             
             else if (selectedCell.tag == 2) {
                 
-                // B1: Legs 1
+                // Bulk Plyometrics 1
                 ((DataNavController *)self.parentViewController).index = @1;
             }
             
             else if (selectedCell.tag == 3) {
                 
-                // B1: Back+Bi 1
+                // Total Cardio 1
                 ((DataNavController *)self.parentViewController).index = @1;
             }
             
             else if (selectedCell.tag == 4) {
                 
-                // B1: Shoulders 1
+                // Iso Strength Tone 1
                 ((DataNavController *)self.parentViewController).index = @1;
             }
             
             else if (selectedCell.tag == 5) {
                 
-                // B3: Cardio 1
+                // Rest 1
                 ((DataNavController *)self.parentViewController).index = @1;
             }
             
             else if (selectedCell.tag == 6) {
                 
-                // B3: Complete Body 1
+                // Iso Speed Bulk 1
                 ((DataNavController *)self.parentViewController).index = @1;
             }
             
             else if (selectedCell.tag == 7) {
                 
-                // B3: Ab Workout 1
+                // Tone Endurance 1
                 ((DataNavController *)self.parentViewController).index = @1;
             }
             
             else if (selectedCell.tag == 8) {
                 
-                // Rest 1
+                // Total Body Bulk 1
                 ((DataNavController *)self.parentViewController).index = @1;
             }
 
             else if (selectedCell.tag == 9) {
                 
-                // B1: Chest+Tri 2
-                ((DataNavController *)self.parentViewController).index = @2;
-            }
-            
-            else if (selectedCell.tag == 10) {
-                
-                // T1: Chest+Tri 1
+                // Ab Bulk 1
                 ((DataNavController *)self.parentViewController).index = @1;
             }
         }

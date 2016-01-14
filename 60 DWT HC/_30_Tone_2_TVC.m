@@ -207,75 +207,81 @@
     ((DataNavController *)self.parentViewController).workout = workoutArray[selectedCell.tag - 1];
     
     // Normal routine
-    if ([selectedRoutine isEqualToString:@"Tone"]) {
+    if ([selectedRoutine isEqualToString:@"30 - Tone"]) {
         
         // Week 2
         if ([week isEqualToString:@"Week 2"]) {
             
             if (selectedCell.tag == 1) {
                 
-                // B1: Legs
+                // Total Body Tone 2
                 ((DataNavController *)self.parentViewController).index = @2;
             }
             
             else if (selectedCell.tag == 2) {
                 
-                // B1: Back+Bi
-                ((DataNavController *)self.parentViewController).index = @2;
+                // Ab Tone 1
+                ((DataNavController *)self.parentViewController).index = @1;
             }
             
             else if (selectedCell.tag == 3) {
                 
-                // T1: Back+Bi
-                ((DataNavController *)self.parentViewController).index = @1;
+                // Tone Agility 2
+                ((DataNavController *)self.parentViewController).index = @2;
             }
             
             else if (selectedCell.tag == 4) {
                 
-                // B3: Cardio
-                ((DataNavController *)self.parentViewController).index = @2;
+                // Total Cardio 1
+                ((DataNavController *)self.parentViewController).index = @1;
             }
             
             else if (selectedCell.tag == 5) {
                 
-                // B3: Complete Body
+                // Iso Strength Tone 2
                 ((DataNavController *)self.parentViewController).index = @2;
             }
             
             else if (selectedCell.tag == 6) {
                 
-                // B3: Ab Workout
+                // Ab Tone 2
                 ((DataNavController *)self.parentViewController).index = @2;
             }
             
             else if (selectedCell.tag == 7) {
                 
-                // B1: Shoulders
+                // Rest 2
                 ((DataNavController *)self.parentViewController).index = @2;
             }
             
             else if (selectedCell.tag == 8) {
                 
-                // Rest
+                // Tone Balance 2
                 ((DataNavController *)self.parentViewController).index = @2;
             }
             
             else if (selectedCell.tag == 9) {
                 
-                // B1: Chest+Tri
-                ((DataNavController *)self.parentViewController).index = @3;
+                // Glute Tone 2
+                ((DataNavController *)self.parentViewController).index = @2;
             }
             
             else if (selectedCell.tag == 10) {
                 
-                // T1: Chest+Tri
+                // Tone Endurance 2
                 ((DataNavController *)self.parentViewController).index = @2;
             }
             
             else if (selectedCell.tag == 11) {
                 
-                // B1: Legs
-                ((DataNavController *)self.parentViewController).index = @3;
+                // Power Tone 2
+                ((DataNavController *)self.parentViewController).index = @2;
+            }
+            
+            else if (selectedCell.tag == 12) {
+                
+                // Tone Cardio 2
+                ((DataNavController *)self.parentViewController).index = @2;
             }
         }
     }
