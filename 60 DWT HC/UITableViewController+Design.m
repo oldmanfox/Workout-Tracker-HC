@@ -198,8 +198,13 @@
     UITextField *tempCurrentTF;
     
     //UIColor *green = [UIColor colorWithRed:133/255.0f green:187/255.0f blue:60/255.0f alpha:1.0f];
-    UIColor *lightGreen = [UIColor colorWithRed:133/255.0f green:187/255.0f blue:60/255.0f alpha:.75f];
-    UIColor *orange = [UIColor colorWithRed:251/255.0f green:105/255.0f blue:55/255.0f alpha:1.0f];
+    //UIColor *lightGreen = [UIColor colorWithRed:133/255.0f green:187/255.0f blue:60/255.0f alpha:.75f];
+    //UIColor *orange = [UIColor colorWithRed:251/255.0f green:105/255.0f blue:55/255.0f alpha:1.0f];
+    
+    //UIColor *gold = [UIColor colorWithRed:199/255.0f green:151/255.0f blue:6/255.0f alpha:1.0f];
+    UIColor *lightGold = [UIColor colorWithRed:199/255.0f green:151/255.0f blue:6/255.0f alpha:0.75f];
+    UIColor* redColor = [UIColor colorWithRed:204/255.0f green:76/255.0f blue:45/255.0f alpha:1.0f];
+    UIColor* testBlueColor = [UIColor colorWithRed:47/255.0f green:120/255.0f blue:145/255.0f alpha:1.0f];
     
     //  Configure the Exercise Label, Graph Button, Previous Notes, and Current Notes
     for (int i = 0; i < tableCell.count; i++) {
@@ -207,19 +212,21 @@
         // Exercise Label
         tempExerciseLabel = exerciseLabelsArray[i];
         tempExerciseLabel.text = exerciseNamesArray[i];
-        tempExerciseLabel.textColor = orange;
-        UIFont *exerciseLabelFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
+        tempExerciseLabel.textColor = redColor;
+        //UIFont *exerciseLabelFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
+        UIFont *exerciseLabelFont = [UIFont systemFontOfSize:17];
         [tempExerciseLabel setFont:exerciseLabelFont];
         
         // Graph Button
         tempGraphButton = graphBtnArray[i];
-        UIFont *graphButtonFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
+        //UIFont *graphButtonFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:17];
+        UIFont *graphButtonFont = [UIFont systemFontOfSize:17];
         tempGraphButton.titleLabel.font = graphButtonFont;
         //[tempGraphButton.titleLabel sizeToFit];
         tempGraphButton.titleLabel.adjustsFontSizeToFitWidth = YES;
         
         tempGraphButton.layer.borderWidth = 1.0f;
-        tempGraphButton.layer.borderColor = [orange CGColor];
+        tempGraphButton.layer.borderColor = [testBlueColor CGColor];
         tempGraphButton.layer.cornerRadius = 5;
         tempGraphButton.clipsToBounds = YES;
         
@@ -254,20 +261,20 @@
         [tempPreviousNotes setFont:previousNotesFont];
         
         tempPreviousNotes.layer.borderWidth = 1.0f;
-        tempPreviousNotes.layer.borderColor = [lightGreen CGColor];
+        tempPreviousNotes.layer.borderColor = [lightGold CGColor];
         tempPreviousNotes.layer.cornerRadius = 5;
         
         // Current Notes
         tempCurrentNotes = curNotesArray[i];
         tempCurrentNotes.textColor = [UIColor whiteColor];
-        tempCurrentNotes.backgroundColor = lightGreen;
+        tempCurrentNotes.backgroundColor = lightGold;
         tempCurrentNotes.clearButtonMode = UITextFieldViewModeWhileEditing;
         tempCurrentNotes.keyboardAppearance = UIKeyboardAppearanceDark;
         UIFont *currentNotesFont = [UIFont fontWithName:@"HelveticaNeue-Light" size:15];
         [tempCurrentNotes setFont:currentNotesFont];
         
         tempCurrentNotes.layer.borderWidth = 1.0f;
-        tempCurrentNotes.layer.borderColor = [lightGreen CGColor];
+        tempCurrentNotes.layer.borderColor = [lightGold CGColor];
         tempCurrentNotes.layer.cornerRadius = 5;
         
         tempCurrentNotes.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"New Notes" attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]} ];
@@ -314,17 +321,17 @@
         //  Current textfields
         tempCurrentTF.textColor = [UIColor whiteColor];
         tempCurrentTF.layer.borderWidth = 1.0f;
-        tempCurrentTF.layer.borderColor = [lightGreen CGColor];
+        tempCurrentTF.layer.borderColor = [lightGold CGColor];
         tempCurrentTF.layer.cornerRadius = 5;
         tempCurrentTF.clipsToBounds = YES;
-        tempCurrentTF.backgroundColor = lightGreen;
+        tempCurrentTF.backgroundColor = lightGold;
         tempCurrentTF.clearsOnBeginEditing = YES;
         tempCurrentTF.textAlignment = NSTextAlignmentCenter;
         tempCurrentTF.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
         
         //  Previous textfields
         tempPreviousTF.layer.borderWidth = 1.0f;
-        tempPreviousTF.layer.borderColor = [lightGreen CGColor];
+        tempPreviousTF.layer.borderColor = [lightGold CGColor];
         tempPreviousTF.layer.cornerRadius = 5;
         tempPreviousTF.clipsToBounds = YES;
         tempPreviousTF.backgroundColor = [UIColor groupTableViewBackgroundColor];

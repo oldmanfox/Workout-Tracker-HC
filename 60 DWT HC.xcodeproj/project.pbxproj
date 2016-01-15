@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		587D28161C4823FF005D2750 /* Tone_Balance_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D28151C4823FF005D2750 /* Tone_Balance_1_TVC.m */; };
+		587D281B1C48638F005D2750 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 587D28191C48638F005D2750 /* libc++.1.tbd */; };
+		587D281C1C48638F005D2750 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 587D281A1C48638F005D2750 /* libc++.tbd */; };
+		587D282B1C486779005D2750 /* ExerciseChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D28281C486779005D2750 /* ExerciseChartViewController.m */; };
+		587D282C1C486779005D2750 /* ShinobiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D282A1C486779005D2750 /* ShinobiViewController.m */; };
+		587D28301C4868EE005D2750 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587D282F1C4868EE005D2750 /* ShinobiCharts.framework */; };
+		587D28361C486F6D005D2750 /* Bulk_Plyometrics_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D28351C486F6D005D2750 /* Bulk_Plyometrics_1_TVC.m */; };
+		587D28391C487B4E005D2750 /* Iso_Strength_Tone_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D28381C487B4E005D2750 /* Iso_Strength_Tone_1_TVC.m */; };
 		A51A77BB1C3DB94500E89911 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51A77B91C3DB94500E89911 /* Settings.storyboard */; };
 		A51A77BE1C3DB98800E89911 /* Measurements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51A77BC1C3DB98800E89911 /* Measurements.storyboard */; };
 		A51A77C11C3DB9A900E89911 /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51A77BF1C3DB9A900E89911 /* Photos.storyboard */; };
@@ -312,6 +320,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		587D28141C4823FF005D2750 /* Tone_Balance_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tone_Balance_1_TVC.h; sourceTree = "<group>"; };
+		587D28151C4823FF005D2750 /* Tone_Balance_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tone_Balance_1_TVC.m; sourceTree = "<group>"; };
+		587D28191C48638F005D2750 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
+		587D281A1C48638F005D2750 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		587D28271C486779005D2750 /* ExerciseChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExerciseChartViewController.h; sourceTree = "<group>"; };
+		587D28281C486779005D2750 /* ExerciseChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExerciseChartViewController.m; sourceTree = "<group>"; };
+		587D28291C486779005D2750 /* ShinobiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShinobiViewController.h; sourceTree = "<group>"; };
+		587D282A1C486779005D2750 /* ShinobiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShinobiViewController.m; sourceTree = "<group>"; };
+		587D282F1C4868EE005D2750 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShinobiCharts.framework; sourceTree = "<group>"; };
+		587D28341C486F6D005D2750 /* Bulk_Plyometrics_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bulk_Plyometrics_1_TVC.h; sourceTree = "<group>"; };
+		587D28351C486F6D005D2750 /* Bulk_Plyometrics_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bulk_Plyometrics_1_TVC.m; sourceTree = "<group>"; };
+		587D28371C487B4E005D2750 /* Iso_Strength_Tone_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Iso_Strength_Tone_1_TVC.h; sourceTree = "<group>"; };
+		587D28381C487B4E005D2750 /* Iso_Strength_Tone_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Iso_Strength_Tone_1_TVC.m; sourceTree = "<group>"; };
 		A51A77BA1C3DB94500E89911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		A51A77BD1C3DB98800E89911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Measurements.storyboard; sourceTree = "<group>"; };
 		A51A77C01C3DB9A900E89911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Photos.storyboard; sourceTree = "<group>"; };
@@ -854,6 +875,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A51A7BFB1C3DC86500E89911 /* GoogleMobileAds.framework in Frameworks */,
+				A51A7C011C3DC86500E89911 /* MMAdSDK.framework in Frameworks */,
+				587D281B1C48638F005D2750 /* libc++.1.tbd in Frameworks */,
+				587D281C1C48638F005D2750 /* libc++.tbd in Frameworks */,
+				587D28301C4868EE005D2750 /* ShinobiCharts.framework in Frameworks */,
 				A51A7CEB1C3DCF8A00E89911 /* CoreText.framework in Frameworks */,
 				A51A7CE91C3DCF7800E89911 /* OpenGLES.framework in Frameworks */,
 				A51A7CE61C3DCCDC00E89911 /* CoreData.framework in Frameworks */,
@@ -881,8 +907,6 @@
 				A51A7CBA1C3DC9B700E89911 /* AVFoundation.framework in Frameworks */,
 				A51A7CB81C3DC9AB00E89911 /* AudioToolbox.framework in Frameworks */,
 				A51A7CB61C3DC9A400E89911 /* AdSupport.framework in Frameworks */,
-				A51A7C011C3DC86500E89911 /* MMAdSDK.framework in Frameworks */,
-				A51A7BFB1C3DC86500E89911 /* GoogleMobileAds.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -903,6 +927,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		587D28131C4811D4005D2750 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				587D28181C48242E005D2750 /* Bulk */,
+				587D28171C482421005D2750 /* Tone */,
+				587D28141C4823FF005D2750 /* Tone_Balance_1_TVC.h */,
+				587D28151C4823FF005D2750 /* Tone_Balance_1_TVC.m */,
+			);
+			name = Exercise;
+			sourceTree = "<group>";
+		};
+		587D28171C482421005D2750 /* Tone */ = {
+			isa = PBXGroup;
+			children = (
+				587D28371C487B4E005D2750 /* Iso_Strength_Tone_1_TVC.h */,
+				587D28381C487B4E005D2750 /* Iso_Strength_Tone_1_TVC.m */,
+			);
+			name = Tone;
+			sourceTree = "<group>";
+		};
+		587D28181C48242E005D2750 /* Bulk */ = {
+			isa = PBXGroup;
+			children = (
+				587D28341C486F6D005D2750 /* Bulk_Plyometrics_1_TVC.h */,
+				587D28351C486F6D005D2750 /* Bulk_Plyometrics_1_TVC.m */,
+			);
+			name = Bulk;
+			sourceTree = "<group>";
+		};
+		587D28261C486779005D2750 /* ShinobiControls */ = {
+			isa = PBXGroup;
+			children = (
+				587D28271C486779005D2750 /* ExerciseChartViewController.h */,
+				587D28281C486779005D2750 /* ExerciseChartViewController.m */,
+				587D28291C486779005D2750 /* ShinobiViewController.h */,
+				587D282A1C486779005D2750 /* ShinobiViewController.m */,
+			);
+			path = ShinobiControls;
+			sourceTree = "<group>";
+		};
 		A51A77AD1C3DA89D00E89911 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -927,6 +991,7 @@
 		A51A77C51C3DBB2B00E89911 /* TVC's */ = {
 			isa = PBXGroup;
 			children = (
+				587D28131C4811D4005D2750 /* Exercise */,
 				A5A1EA961C4579180036CB7D /* Workout Lists */,
 				A51A7D861C3ECBFB00E89911 /* MeasurementsTVC.h */,
 				A51A7D871C3ECBFB00E89911 /* MeasurementsTVC.m */,
@@ -1635,6 +1700,9 @@
 		A51A7CE71C3DCDA000E89911 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				587D282F1C4868EE005D2750 /* ShinobiCharts.framework */,
+				587D28191C48638F005D2750 /* libc++.1.tbd */,
+				587D281A1C48638F005D2750 /* libc++.tbd */,
 				A51A7CEA1C3DCF8A00E89911 /* CoreText.framework */,
 				A51A7CE81C3DCF7800E89911 /* OpenGLES.framework */,
 				A51A7CE51C3DCCDC00E89911 /* CoreData.framework */,
@@ -1805,6 +1873,7 @@
 		A5D1FB881C3C6DDF005B3EF2 /* 60 DWT HC */ = {
 			isa = PBXGroup;
 			children = (
+				587D28261C486779005D2750 /* ShinobiControls */,
 				A51A7A651C3DC5AE00E89911 /* Layout */,
 				A51A7D3F1C3EC97500E89911 /* In-App Purchases */,
 				A51A77D81C3DC0FD00E89911 /* Categories */,
@@ -2079,6 +2148,7 @@
 				A51A7C041C3DC86500E89911 /* MPBannerCustomEventAdapter.m in Sources */,
 				A51A7C971C3DC86500E89911 /* MOPUBPlayerView.m in Sources */,
 				A51A7C541C3DC86500E89911 /* MPVASTCompanionAd.m in Sources */,
+				587D282C1C486779005D2750 /* ShinobiViewController.m in Sources */,
 				A51A7C441C3DC86500E89911 /* UIView+MPAdditions.m in Sources */,
 				A51A7C031C3DC86500E89911 /* MPBannerAdManager.m in Sources */,
 				A51A7C2F1C3DC86500E89911 /* MPMRAIDBannerCustomEvent.m in Sources */,
@@ -2141,6 +2211,7 @@
 				A51A7C701C3DC86500E89911 /* MPNativeAd+Internal.m in Sources */,
 				A51A7C121C3DC86500E89911 /* MPEnhancedDeeplinkRequest.m in Sources */,
 				A51A7CB11C3DC86500E89911 /* MPRewardedVideo.m in Sources */,
+				587D28361C486F6D005D2750 /* Bulk_Plyometrics_1_TVC.m in Sources */,
 				A51A7C151C3DC86500E89911 /* MPLastResortDelegate.m in Sources */,
 				A5A1EAC61C457CEC0036CB7D /* _30_Tone_1_TVC.m in Sources */,
 				A51A7C961C3DC86500E89911 /* MOPUBPlayerManager.m in Sources */,
@@ -2150,6 +2221,7 @@
 				A51A7C741C3DC86500E89911 /* MPNativeCache.m in Sources */,
 				A51A7C931C3DC86500E89911 /* MOPUBNativeVideoAdConfigValues.m in Sources */,
 				A51A7C8C1C3DC86500E89911 /* MPStreamAdPlacer.m in Sources */,
+				587D28161C4823FF005D2750 /* Tone_Balance_1_TVC.m in Sources */,
 				A51A7C0D1C3DC86500E89911 /* MPAdDestinationDisplayAgent.m in Sources */,
 				A51A7C8B1C3DC86500E89911 /* MPStreamAdPlacementData.m in Sources */,
 				A51A7D731C3ECB2600E89911 /* MeasurementsViewController.m in Sources */,
@@ -2157,6 +2229,7 @@
 				A51A7C6D1C3DC86500E89911 /* MPImageDownloadQueue.m in Sources */,
 				A51A7C431C3DC86500E89911 /* UIColor+MPAdditions.m in Sources */,
 				A5A1EAC91C457CEC0036CB7D /* _30_Tone_4_TVC.m in Sources */,
+				587D28391C487B4E005D2750 /* Iso_Strength_Tone_1_TVC.m in Sources */,
 				A51A7D5F1C3ECA2C00E89911 /* UITableViewController+Email.m in Sources */,
 				A51A7C941C3DC86500E89911 /* MOPUBNativeVideoCustomEvent.m in Sources */,
 				A5A1EAAF1C4579860036CB7D /* _60_Normal_6_TVC.m in Sources */,
@@ -2217,6 +2290,7 @@
 				A51A7C0A1C3DC86500E89911 /* MPAdBrowserController.m in Sources */,
 				A51A7C7E1C3DC86500E89911 /* MPNativeAd.m in Sources */,
 				A51A7C3A1C3DC86500E89911 /* MRImageDownloader.m in Sources */,
+				587D282B1C486779005D2750 /* ExerciseChartViewController.m in Sources */,
 				A51A7C5F1C3DC86500E89911 /* MPVASTResponse.m in Sources */,
 				A51A7D271C3EC8A000E89911 /* CoreDataImporter.m in Sources */,
 				A51A7D821C3ECBA300E89911 /* DataNavController.m in Sources */,
@@ -2415,9 +2489,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK",
 					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/Millennial/SDK",
+					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "60 DWT HC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2435,9 +2509,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK",
 					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/Millennial/SDK",
+					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "60 DWT HC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
