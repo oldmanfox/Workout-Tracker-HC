@@ -238,7 +238,7 @@
                        self.cell_8,
                        self.cell_9,
                        self.cell_10,
-                       self.cell_10];
+                       self.cell_11];
     
     self.exerciseLabelArray = @[self.exerciseLabel_1,
                                 self.exerciseLabel_2,

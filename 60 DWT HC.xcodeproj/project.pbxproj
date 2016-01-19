@@ -15,6 +15,12 @@
 		587D28301C4868EE005D2750 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 587D282F1C4868EE005D2750 /* ShinobiCharts.framework */; };
 		587D28361C486F6D005D2750 /* Bulk_Plyometrics_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D28351C486F6D005D2750 /* Bulk_Plyometrics_1_TVC.m */; };
 		587D28391C487B4E005D2750 /* Iso_Strength_Tone_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D28381C487B4E005D2750 /* Iso_Strength_Tone_1_TVC.m */; };
+		587D283C1C4954E5005D2750 /* Iso_Speed_Bulk_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D283B1C4954E5005D2750 /* Iso_Speed_Bulk_1_TVC.m */; };
+		587D283F1C496834005D2750 /* Tone_Endurance_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D283E1C496834005D2750 /* Tone_Endurance_1_TVC.m */; };
+		587D28421C4975CC005D2750 /* Total_Body_Bulk_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D28411C4975CC005D2750 /* Total_Body_Bulk_1_TVC.m */; };
+		587D28451C498AA9005D2750 /* Tone_Cardio_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D28441C498AA9005D2750 /* Tone_Cardio_1_TVC.m */; };
+		587D28481C49956C005D2750 /* Max_Bulk_Strength_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D28471C49956C005D2750 /* Max_Bulk_Strength_1_TVC.m */; };
+		587D284B1C49C1C4005D2750 /* Bulk_Build_Up_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D284A1C49C1C4005D2750 /* Bulk_Build_Up_1_TVC.m */; };
 		A51A77BB1C3DB94500E89911 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51A77B91C3DB94500E89911 /* Settings.storyboard */; };
 		A51A77BE1C3DB98800E89911 /* Measurements.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51A77BC1C3DB98800E89911 /* Measurements.storyboard */; };
 		A51A77C11C3DB9A900E89911 /* Photos.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A51A77BF1C3DB9A900E89911 /* Photos.storyboard */; };
@@ -333,6 +339,18 @@
 		587D28351C486F6D005D2750 /* Bulk_Plyometrics_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bulk_Plyometrics_1_TVC.m; sourceTree = "<group>"; };
 		587D28371C487B4E005D2750 /* Iso_Strength_Tone_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Iso_Strength_Tone_1_TVC.h; sourceTree = "<group>"; };
 		587D28381C487B4E005D2750 /* Iso_Strength_Tone_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Iso_Strength_Tone_1_TVC.m; sourceTree = "<group>"; };
+		587D283A1C4954E5005D2750 /* Iso_Speed_Bulk_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Iso_Speed_Bulk_1_TVC.h; sourceTree = "<group>"; };
+		587D283B1C4954E5005D2750 /* Iso_Speed_Bulk_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Iso_Speed_Bulk_1_TVC.m; sourceTree = "<group>"; };
+		587D283D1C496834005D2750 /* Tone_Endurance_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tone_Endurance_1_TVC.h; sourceTree = "<group>"; };
+		587D283E1C496834005D2750 /* Tone_Endurance_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tone_Endurance_1_TVC.m; sourceTree = "<group>"; };
+		587D28401C4975CC005D2750 /* Total_Body_Bulk_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Total_Body_Bulk_1_TVC.h; sourceTree = "<group>"; };
+		587D28411C4975CC005D2750 /* Total_Body_Bulk_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Total_Body_Bulk_1_TVC.m; sourceTree = "<group>"; };
+		587D28431C498AA9005D2750 /* Tone_Cardio_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tone_Cardio_1_TVC.h; sourceTree = "<group>"; };
+		587D28441C498AA9005D2750 /* Tone_Cardio_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tone_Cardio_1_TVC.m; sourceTree = "<group>"; };
+		587D28461C49956C005D2750 /* Max_Bulk_Strength_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Max_Bulk_Strength_1_TVC.h; sourceTree = "<group>"; };
+		587D28471C49956C005D2750 /* Max_Bulk_Strength_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Max_Bulk_Strength_1_TVC.m; sourceTree = "<group>"; };
+		587D28491C49C1C4005D2750 /* Bulk_Build_Up_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bulk_Build_Up_1_TVC.h; sourceTree = "<group>"; };
+		587D284A1C49C1C4005D2750 /* Bulk_Build_Up_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bulk_Build_Up_1_TVC.m; sourceTree = "<group>"; };
 		A51A77BA1C3DB94500E89911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		A51A77BD1C3DB98800E89911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Measurements.storyboard; sourceTree = "<group>"; };
 		A51A77C01C3DB9A900E89911 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Photos.storyboard; sourceTree = "<group>"; };
@@ -932,8 +950,6 @@
 			children = (
 				587D28181C48242E005D2750 /* Bulk */,
 				587D28171C482421005D2750 /* Tone */,
-				587D28141C4823FF005D2750 /* Tone_Balance_1_TVC.h */,
-				587D28151C4823FF005D2750 /* Tone_Balance_1_TVC.m */,
 			);
 			name = Exercise;
 			sourceTree = "<group>";
@@ -941,6 +957,12 @@
 		587D28171C482421005D2750 /* Tone */ = {
 			isa = PBXGroup;
 			children = (
+				587D28431C498AA9005D2750 /* Tone_Cardio_1_TVC.h */,
+				587D28441C498AA9005D2750 /* Tone_Cardio_1_TVC.m */,
+				587D283D1C496834005D2750 /* Tone_Endurance_1_TVC.h */,
+				587D283E1C496834005D2750 /* Tone_Endurance_1_TVC.m */,
+				587D28141C4823FF005D2750 /* Tone_Balance_1_TVC.h */,
+				587D28151C4823FF005D2750 /* Tone_Balance_1_TVC.m */,
 				587D28371C487B4E005D2750 /* Iso_Strength_Tone_1_TVC.h */,
 				587D28381C487B4E005D2750 /* Iso_Strength_Tone_1_TVC.m */,
 			);
@@ -950,6 +972,14 @@
 		587D28181C48242E005D2750 /* Bulk */ = {
 			isa = PBXGroup;
 			children = (
+				587D28491C49C1C4005D2750 /* Bulk_Build_Up_1_TVC.h */,
+				587D284A1C49C1C4005D2750 /* Bulk_Build_Up_1_TVC.m */,
+				587D28461C49956C005D2750 /* Max_Bulk_Strength_1_TVC.h */,
+				587D28471C49956C005D2750 /* Max_Bulk_Strength_1_TVC.m */,
+				587D28401C4975CC005D2750 /* Total_Body_Bulk_1_TVC.h */,
+				587D28411C4975CC005D2750 /* Total_Body_Bulk_1_TVC.m */,
+				587D283A1C4954E5005D2750 /* Iso_Speed_Bulk_1_TVC.h */,
+				587D283B1C4954E5005D2750 /* Iso_Speed_Bulk_1_TVC.m */,
 				587D28341C486F6D005D2750 /* Bulk_Plyometrics_1_TVC.h */,
 				587D28351C486F6D005D2750 /* Bulk_Plyometrics_1_TVC.m */,
 			);
@@ -2134,6 +2164,7 @@
 				A51A7D5C1C3ECA2C00E89911 /* UITableViewController+CheckMarkStatus.m in Sources */,
 				A51A7C7D1C3DC86500E89911 /* MPCollectionViewAdPlacer.m in Sources */,
 				A51A7BFE1C3DC86500E89911 /* MPiAdInterstitialCustomEvent.m in Sources */,
+				587D28421C4975CC005D2750 /* Total_Body_Bulk_1_TVC.m in Sources */,
 				A51A7C131C3DC86500E89911 /* MPFacebookKeywordProvider.m in Sources */,
 				A51A7C291C3DC86500E89911 /* MPInterstitialCustomEventAdapter.m in Sources */,
 				A51A7C631C3DC86500E89911 /* MoPub.m in Sources */,
@@ -2165,6 +2196,7 @@
 				A51A7C761C3DC86500E89911 /* MPNativePositionSource.m in Sources */,
 				A51A7D721C3ECB2600E89911 /* MeasurementsReportViewController.m in Sources */,
 				A51A7C721C3DC86500E89911 /* MPNativeAdSourceQueue.m in Sources */,
+				587D283F1C496834005D2750 /* Tone_Endurance_1_TVC.m in Sources */,
 				A51A7C911C3DC86500E89911 /* MOPUBFullscreenPlayerViewController.m in Sources */,
 				A51A7CB31C3DC86500E89911 /* MPRewardedVideoError.m in Sources */,
 				A51A7D901C3ECBFB00E89911 /* MeasurementsTVC.m in Sources */,
@@ -2235,6 +2267,7 @@
 				A5A1EAAF1C4579860036CB7D /* _60_Normal_6_TVC.m in Sources */,
 				A51A7C271C3DC86500E89911 /* MPBaseInterstitialAdapter.m in Sources */,
 				A51A7C1C1C3DC86500E89911 /* MPLogEvent.m in Sources */,
+				587D284B1C49C1C4005D2750 /* Bulk_Build_Up_1_TVC.m in Sources */,
 				A51A7C8F1C3DC86500E89911 /* MOPUBAVPlayer.m in Sources */,
 				A51A7C1E1C3DC86500E89911 /* MPLogEventRecorder.m in Sources */,
 				A5A1EABA1C457CD10036CB7D /* _30_Bulk_1_TVC.m in Sources */,
@@ -2261,12 +2294,14 @@
 				A51A7BFA1C3DC86500E89911 /* MPGoogleAdMobInterstitialCustomEvent.m in Sources */,
 				A51A7C591C3DC86500E89911 /* MPVASTLinearAd.m in Sources */,
 				A51A7C731C3DC86500E89911 /* MPNativeAdUtils.m in Sources */,
+				587D28451C498AA9005D2750 /* Tone_Cardio_1_TVC.m in Sources */,
 				A51A7C0F1C3DC86500E89911 /* MPAdServerURLBuilder.m in Sources */,
 				A51A7C8D1C3DC86500E89911 /* MPTableViewAdPlacer.m in Sources */,
 				A51A7C891C3DC86500E89911 /* MPStaticNativeAdRenderer.m in Sources */,
 				A51A7C221C3DC86500E89911 /* MPAdWebView.m in Sources */,
 				A51A7D611C3ECA2C00E89911 /* UIViewController+Social.m in Sources */,
 				A51A7C1F1C3DC86500E89911 /* MPNetworkManager.m in Sources */,
+				587D28481C49956C005D2750 /* Max_Bulk_Strength_1_TVC.m in Sources */,
 				A51A7C2A1C3DC86500E89911 /* MPInterstitialViewController.m in Sources */,
 				A51A7C101C3DC86500E89911 /* MPAPIEndpoints.m in Sources */,
 				A51A7C391C3DC86500E89911 /* MRExpandModalViewController.m in Sources */,
@@ -2305,6 +2340,7 @@
 				A51A7BF91C3DC86500E89911 /* MPGoogleAdMobBannerCustomEvent.m in Sources */,
 				A51A7C6B1C3DC86500E89911 /* MPCollectionViewAdPlacerCell.m in Sources */,
 				A51A7D4C1C3EC97500E89911 /* IAPProduct.m in Sources */,
+				587D283C1C4954E5005D2750 /* Iso_Speed_Bulk_1_TVC.m in Sources */,
 				A51A7C6F1C3DC86500E89911 /* MPMoPubNativeCustomEvent.m in Sources */,
 				A51A7C171C3DC86500E89911 /* MPURLActionInfo.m in Sources */,
 				A51A7C551C3DC86500E89911 /* MPVASTCreative.m in Sources */,
