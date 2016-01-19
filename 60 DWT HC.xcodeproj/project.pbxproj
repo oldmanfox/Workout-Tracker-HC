@@ -282,6 +282,7 @@
 		A51A7D971C3ECD5C00E89911 /* MainTBC.m in Sources */ = {isa = PBXBuildFile; fileRef = A51A7D961C3ECD5C00E89911 /* MainTBC.m */; };
 		A51A7D991C3ED33100E89911 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A51A7D981C3ED33100E89911 /* Settings.bundle */; };
 		A52458181C4ED9F900C3A6ED /* Bulk_Power_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A52458171C4ED9F900C3A6ED /* Bulk_Power_1_TVC.m */; };
+		A5245C4B1C4EF53800C3A6ED /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5245C4A1C4EF53800C3A6ED /* ShinobiCharts.framework */; };
 		A5A1EAAA1C4579860036CB7D /* _60_Normal_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1EA9B1C4579860036CB7D /* _60_Normal_1_TVC.m */; };
 		A5A1EAAB1C4579860036CB7D /* _60_Normal_2_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1EA9D1C4579860036CB7D /* _60_Normal_2_TVC.m */; };
 		A5A1EAAC1C4579860036CB7D /* _60_Normal_3_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1EA9F1C4579860036CB7D /* _60_Normal_3_TVC.m */; };
@@ -839,6 +840,7 @@
 		A51A7D981C3ED33100E89911 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		A52458161C4ED9F900C3A6ED /* Bulk_Power_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bulk_Power_1_TVC.h; sourceTree = "<group>"; };
 		A52458171C4ED9F900C3A6ED /* Bulk_Power_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bulk_Power_1_TVC.m; sourceTree = "<group>"; };
+		A5245C4A1C4EF53800C3A6ED /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShinobiCharts.framework; sourceTree = "<group>"; };
 		A5A1EA9A1C4579860036CB7D /* _60_Normal_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _60_Normal_1_TVC.h; sourceTree = "<group>"; };
 		A5A1EA9B1C4579860036CB7D /* _60_Normal_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _60_Normal_1_TVC.m; sourceTree = "<group>"; };
 		A5A1EA9C1C4579860036CB7D /* _60_Normal_2_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _60_Normal_2_TVC.h; sourceTree = "<group>"; };
@@ -898,6 +900,7 @@
 				A51A7BFB1C3DC86500E89911 /* GoogleMobileAds.framework in Frameworks */,
 				587D281B1C48638F005D2750 /* libc++.1.tbd in Frameworks */,
 				587D281C1C48638F005D2750 /* libc++.tbd in Frameworks */,
+				A5245C4B1C4EF53800C3A6ED /* ShinobiCharts.framework in Frameworks */,
 				A51A7CEB1C3DCF8A00E89911 /* CoreText.framework in Frameworks */,
 				A51A7CE91C3DCF7800E89911 /* OpenGLES.framework in Frameworks */,
 				A51A7CE61C3DCCDC00E89911 /* CoreData.framework in Frameworks */,
@@ -1732,6 +1735,7 @@
 		A51A7CE71C3DCDA000E89911 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5245C4A1C4EF53800C3A6ED /* ShinobiCharts.framework */,
 				587D28191C48638F005D2750 /* libc++.1.tbd */,
 				587D281A1C48638F005D2750 /* libc++.tbd */,
 				A51A7CEA1C3DCF8A00E89911 /* CoreText.framework */,
@@ -2530,6 +2534,7 @@
 					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK",
 					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/Millennial/SDK",
 					"$(PROJECT_DIR)/shinobicontrols-ios-charts-premium-objc-2.8.5-3",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "60 DWT HC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2550,6 +2555,7 @@
 					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK",
 					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/Millennial/SDK",
 					"$(PROJECT_DIR)/shinobicontrols-ios-charts-premium-objc-2.8.5-3",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "60 DWT HC/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
