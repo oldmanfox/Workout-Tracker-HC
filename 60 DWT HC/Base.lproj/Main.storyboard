@@ -805,6 +805,9 @@
                                                 <constraint firstItem="euf-1k-KZK" firstAttribute="centerY" secondItem="Puw-Mj-XJ6" secondAttribute="centerY" id="yzd-AC-mfR"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AIG-uY-R7F" kind="show" id="Iex-Jx-37f"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell tag="11" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="wFf-Eg-i5d">
                                         <rect key="frame" x="0.0" y="634" width="600" height="44"/>
@@ -1472,6 +1475,9 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="gcZ-2v-Oba" secondAttribute="trailing" constant="-8" id="8kd-Tj-Lbm"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AIG-uY-R7F" kind="show" id="b5S-aY-MTg"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell tag="3" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell1" id="aBf-y8-uyf">
                                         <rect key="frame" x="0.0" y="202" width="600" height="44"/>
@@ -2209,6 +2215,9 @@
                                                 <constraint firstItem="LOv-hP-v7B" firstAttribute="centerY" secondItem="ql3-Pe-LKh" secondAttribute="centerY" id="t8P-CX-9OE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AIG-uY-R7F" kind="show" id="7lI-B2-jV4"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -2572,6 +2581,9 @@
                                                 <constraint firstItem="W5y-ZN-zBW" firstAttribute="centerY" secondItem="XsD-9Y-IrB" secondAttribute="centerY" id="CLi-1w-W3s"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AIG-uY-R7F" kind="show" id="Ts0-NT-lxb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -3594,6 +3606,9 @@
                                                 <constraint firstItem="sqF-gz-3cL" firstAttribute="centerY" secondItem="nbZ-30-Pxx" secondAttribute="centerY" id="iEq-ht-WRK"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AIG-uY-R7F" kind="show" id="SdA-94-ttG"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell tag="14" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="rel-rl-eVK">
                                         <rect key="frame" x="0.0" y="786" width="600" height="44"/>
@@ -3859,6 +3874,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1rJ-xu-Xv0" kind="show" id="R2Q-jf-d41"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell tag="5" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="ian-9L-845">
                                         <rect key="frame" x="0.0" y="266" width="600" height="44"/>
@@ -4155,6 +4173,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1rJ-xu-Xv0" kind="show" id="FAg-S3-E8j"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell tag="2" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="TK0-JK-akf">
                                         <rect key="frame" x="0.0" y="94" width="600" height="44"/>
@@ -4759,6 +4780,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1rJ-xu-Xv0" kind="show" id="52x-zj-Wf6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -5057,6 +5081,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="1rJ-xu-Xv0" kind="show" id="IKW-6T-8gx"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell tag="6" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell1" id="6ma-as-yIZ">
                                         <rect key="frame" x="0.0" y="310" width="600" height="44"/>
@@ -5455,6 +5482,9 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="tcX-Ak-Yrc" secondAttribute="trailing" constant="-8" id="EPe-AI-ElN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AIG-uY-R7F" kind="show" id="k2l-cj-nLk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -5970,6 +6000,9 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="AZf-6a-NFA" secondAttribute="trailing" constant="-8" id="fiR-qa-mDh"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AIG-uY-R7F" kind="show" id="4Q2-AU-Idl"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -6274,6 +6307,9 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="Htg-Ok-lG7" secondAttribute="trailing" constant="-8" id="arb-Fj-Gvj"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AIG-uY-R7F" kind="show" id="pKS-sN-THb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -6655,6 +6691,9 @@
                                                 <constraint firstItem="7e0-tV-fi0" firstAttribute="centerY" secondItem="njg-Vp-mPE" secondAttribute="centerY" id="wQU-Ng-tjP"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="AIG-uY-R7F" kind="show" id="5oV-5M-yZN"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell tag="8" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell1" id="O4w-fX-GXn">
                                         <rect key="frame" x="0.0" y="398" width="600" height="44"/>
@@ -17227,7 +17266,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PX6-qD-XIf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3018" y="-4023"/>
+            <point key="canvasLocation" x="8293" y="-4015"/>
         </scene>
         <!--Tone Balance-->
         <scene sceneID="2tk-mS-Oks">
@@ -17301,21 +17340,30 @@
             </objects>
             <point key="canvasLocation" x="5431" y="3579"/>
         </scene>
+        <!--Power Tone-->
+        <scene sceneID="gG3-zv-39o">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Power Tone" id="AIG-uY-R7F" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdw-bc-BAT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5439" y="4657"/>
+        </scene>
     </scenes>
     <resources>
         <image name="weight_lifting" width="32" height="32"/>
         <image name="weight_lifting_selected" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="uDX-fY-gFo"/>
-        <segue reference="dyE-au-rey"/>
-        <segue reference="63Y-ew-TfA"/>
+        <segue reference="nQA-7N-wSr"/>
+        <segue reference="G1L-Fa-Vvt"/>
+        <segue reference="ke4-nU-JQC"/>
+        <segue reference="AhT-Jo-VH2"/>
+        <segue reference="5oV-5M-yZN"/>
+        <segue reference="VhQ-il-YQv"/>
+        <segue reference="U7y-wp-rhP"/>
+        <segue reference="SwJ-fx-Yr3"/>
         <segue reference="uwx-dr-wDc"/>
-        <segue reference="OZ8-gq-on4"/>
-        <segue reference="Gow-A8-XTA"/>
-        <segue reference="MGg-md-g15"/>
-        <segue reference="jaL-YL-QEa"/>
-        <segue reference="vOm-GN-gIC"/>
-        <segue reference="0FT-UO-y5a"/>
+        <segue reference="pog-d5-kcc"/>
+        <segue reference="t6v-Ht-Id5"/>
     </inferredMetricsTieBreakers>
 </document>

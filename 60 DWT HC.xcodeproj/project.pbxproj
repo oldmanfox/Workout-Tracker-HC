@@ -292,6 +292,8 @@
 		A5245C5C1C500FD900C3A6ED /* Total Body Bulk.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5245C5B1C500FD900C3A6ED /* Total Body Bulk.storyboard */; };
 		A5245C5E1C50111700C3A6ED /* Max Bulk Strength.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5245C5D1C50111700C3A6ED /* Max Bulk Strength.storyboard */; };
 		A5245C601C50124800C3A6ED /* Bulk Build Up.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5245C5F1C50124800C3A6ED /* Bulk Build Up.storyboard */; };
+		A5245C631C502F7600C3A6ED /* Power_Tone_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5245C621C502F7600C3A6ED /* Power_Tone_1_TVC.m */; };
+		A5245C651C50466900C3A6ED /* Power Tone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5245C641C50466900C3A6ED /* Power Tone.storyboard */; };
 		A5A1EAAA1C4579860036CB7D /* _60_Normal_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1EA9B1C4579860036CB7D /* _60_Normal_1_TVC.m */; };
 		A5A1EAAB1C4579860036CB7D /* _60_Normal_2_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1EA9D1C4579860036CB7D /* _60_Normal_2_TVC.m */; };
 		A5A1EAAC1C4579860036CB7D /* _60_Normal_3_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1EA9F1C4579860036CB7D /* _60_Normal_3_TVC.m */; };
@@ -859,6 +861,9 @@
 		A5245C5B1C500FD900C3A6ED /* Total Body Bulk.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Total Body Bulk.storyboard"; sourceTree = "<group>"; };
 		A5245C5D1C50111700C3A6ED /* Max Bulk Strength.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Max Bulk Strength.storyboard"; sourceTree = "<group>"; };
 		A5245C5F1C50124800C3A6ED /* Bulk Build Up.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Bulk Build Up.storyboard"; sourceTree = "<group>"; };
+		A5245C611C502F7600C3A6ED /* Power_Tone_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Power_Tone_1_TVC.h; sourceTree = "<group>"; };
+		A5245C621C502F7600C3A6ED /* Power_Tone_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Power_Tone_1_TVC.m; sourceTree = "<group>"; };
+		A5245C641C50466900C3A6ED /* Power Tone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Power Tone.storyboard"; sourceTree = "<group>"; };
 		A5A1EA9A1C4579860036CB7D /* _60_Normal_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _60_Normal_1_TVC.h; sourceTree = "<group>"; };
 		A5A1EA9B1C4579860036CB7D /* _60_Normal_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _60_Normal_1_TVC.m; sourceTree = "<group>"; };
 		A5A1EA9C1C4579860036CB7D /* _60_Normal_2_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _60_Normal_2_TVC.h; sourceTree = "<group>"; };
@@ -978,6 +983,8 @@
 		587D28171C482421005D2750 /* Tone */ = {
 			isa = PBXGroup;
 			children = (
+				A5245C611C502F7600C3A6ED /* Power_Tone_1_TVC.h */,
+				A5245C621C502F7600C3A6ED /* Power_Tone_1_TVC.m */,
 				587D28431C498AA9005D2750 /* Tone_Cardio_1_TVC.h */,
 				587D28441C498AA9005D2750 /* Tone_Cardio_1_TVC.m */,
 				587D283D1C496834005D2750 /* Tone_Endurance_1_TVC.h */,
@@ -1854,6 +1861,7 @@
 		A5245C561C500BFB00C3A6ED /* Tone */ = {
 			isa = PBXGroup;
 			children = (
+				A5245C641C50466900C3A6ED /* Power Tone.storyboard */,
 				A5245C531C500B6C00C3A6ED /* Tone Cardio.storyboard */,
 				A5245C511C500A0100C3A6ED /* Tone Endurance.storyboard */,
 				A5245C4F1C50087C00C3A6ED /* Iso Strength Tone.storyboard */,
@@ -2153,6 +2161,7 @@
 				A5245C541C500B6C00C3A6ED /* Tone Cardio.storyboard in Resources */,
 				A51A77BE1C3DB98800E89911 /* Measurements.storyboard in Resources */,
 				A51A7C9D1C3DC86500E89911 /* MPCloseBtn@2x.png in Resources */,
+				A5245C651C50466900C3A6ED /* Power Tone.storyboard in Resources */,
 				A5245C501C50087C00C3A6ED /* Iso Strength Tone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2212,6 +2221,7 @@
 				A51A7C711C3DC86500E89911 /* MPNativeAdRendererImageHandler.m in Sources */,
 				A51A7C071C3DC86500E89911 /* MPAdAlertManager.m in Sources */,
 				A51A7C2B1C3DC86500E89911 /* MPCoreInstanceProvider.m in Sources */,
+				A5245C631C502F7600C3A6ED /* Power_Tone_1_TVC.m in Sources */,
 				A51A7C501C3DC86500E89911 /* MPStoreKitProvider.m in Sources */,
 				A51A7D4B1C3EC97500E89911 /* IAPHelper.m in Sources */,
 				A5A1EABD1C457CD10036CB7D /* _30_Bulk_4_TVC.m in Sources */,
