@@ -283,6 +283,15 @@
 		A51A7D991C3ED33100E89911 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A51A7D981C3ED33100E89911 /* Settings.bundle */; };
 		A52458181C4ED9F900C3A6ED /* Bulk_Power_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A52458171C4ED9F900C3A6ED /* Bulk_Power_1_TVC.m */; };
 		A5245C4B1C4EF53800C3A6ED /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5245C4A1C4EF53800C3A6ED /* ShinobiCharts.framework */; };
+		A5245C4E1C5006C000C3A6ED /* Tone Balance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5245C4D1C5006C000C3A6ED /* Tone Balance.storyboard */; };
+		A5245C501C50087C00C3A6ED /* Iso Strength Tone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5245C4F1C50087C00C3A6ED /* Iso Strength Tone.storyboard */; };
+		A5245C521C500A0100C3A6ED /* Tone Endurance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5245C511C500A0100C3A6ED /* Tone Endurance.storyboard */; };
+		A5245C541C500B6C00C3A6ED /* Tone Cardio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5245C531C500B6C00C3A6ED /* Tone Cardio.storyboard */; };
+		A5245C581C500D2F00C3A6ED /* Bulk Plyometrics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5245C571C500D2F00C3A6ED /* Bulk Plyometrics.storyboard */; };
+		A5245C5A1C500E7500C3A6ED /* Iso Speed Bulk.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5245C591C500E7500C3A6ED /* Iso Speed Bulk.storyboard */; };
+		A5245C5C1C500FD900C3A6ED /* Total Body Bulk.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5245C5B1C500FD900C3A6ED /* Total Body Bulk.storyboard */; };
+		A5245C5E1C50111700C3A6ED /* Max Bulk Strength.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5245C5D1C50111700C3A6ED /* Max Bulk Strength.storyboard */; };
+		A5245C601C50124800C3A6ED /* Bulk Build Up.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5245C5F1C50124800C3A6ED /* Bulk Build Up.storyboard */; };
 		A5A1EAAA1C4579860036CB7D /* _60_Normal_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1EA9B1C4579860036CB7D /* _60_Normal_1_TVC.m */; };
 		A5A1EAAB1C4579860036CB7D /* _60_Normal_2_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1EA9D1C4579860036CB7D /* _60_Normal_2_TVC.m */; };
 		A5A1EAAC1C4579860036CB7D /* _60_Normal_3_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A1EA9F1C4579860036CB7D /* _60_Normal_3_TVC.m */; };
@@ -841,6 +850,15 @@
 		A52458161C4ED9F900C3A6ED /* Bulk_Power_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bulk_Power_1_TVC.h; sourceTree = "<group>"; };
 		A52458171C4ED9F900C3A6ED /* Bulk_Power_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bulk_Power_1_TVC.m; sourceTree = "<group>"; };
 		A5245C4A1C4EF53800C3A6ED /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShinobiCharts.framework; sourceTree = "<group>"; };
+		A5245C4D1C5006C000C3A6ED /* Tone Balance.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Tone Balance.storyboard"; sourceTree = "<group>"; };
+		A5245C4F1C50087C00C3A6ED /* Iso Strength Tone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Iso Strength Tone.storyboard"; sourceTree = "<group>"; };
+		A5245C511C500A0100C3A6ED /* Tone Endurance.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Tone Endurance.storyboard"; sourceTree = "<group>"; };
+		A5245C531C500B6C00C3A6ED /* Tone Cardio.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Tone Cardio.storyboard"; sourceTree = "<group>"; };
+		A5245C571C500D2F00C3A6ED /* Bulk Plyometrics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Bulk Plyometrics.storyboard"; sourceTree = "<group>"; };
+		A5245C591C500E7500C3A6ED /* Iso Speed Bulk.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Iso Speed Bulk.storyboard"; sourceTree = "<group>"; };
+		A5245C5B1C500FD900C3A6ED /* Total Body Bulk.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Total Body Bulk.storyboard"; sourceTree = "<group>"; };
+		A5245C5D1C50111700C3A6ED /* Max Bulk Strength.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Max Bulk Strength.storyboard"; sourceTree = "<group>"; };
+		A5245C5F1C50124800C3A6ED /* Bulk Build Up.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Bulk Build Up.storyboard"; sourceTree = "<group>"; };
 		A5A1EA9A1C4579860036CB7D /* _60_Normal_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _60_Normal_1_TVC.h; sourceTree = "<group>"; };
 		A5A1EA9B1C4579860036CB7D /* _60_Normal_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _60_Normal_1_TVC.m; sourceTree = "<group>"; };
 		A5A1EA9C1C4579860036CB7D /* _60_Normal_2_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _60_Normal_2_TVC.h; sourceTree = "<group>"; };
@@ -1005,6 +1023,7 @@
 		A51A77AD1C3DA89D00E89911 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				A5245C4C1C50068400C3A6ED /* Workouts */,
 				A51A77AE1C3DA8B200E89911 /* LaunchScreen */,
 				A5D1FB921C3C6DDF005B3EF2 /* Main.storyboard */,
 				A51A77C21C3DB9C200E89911 /* Store.storyboard */,
@@ -1811,6 +1830,38 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		A5245C4C1C50068400C3A6ED /* Workouts */ = {
+			isa = PBXGroup;
+			children = (
+				A5245C551C500BEB00C3A6ED /* Bulk */,
+				A5245C561C500BFB00C3A6ED /* Tone */,
+			);
+			name = Workouts;
+			sourceTree = "<group>";
+		};
+		A5245C551C500BEB00C3A6ED /* Bulk */ = {
+			isa = PBXGroup;
+			children = (
+				A5245C5F1C50124800C3A6ED /* Bulk Build Up.storyboard */,
+				A5245C5D1C50111700C3A6ED /* Max Bulk Strength.storyboard */,
+				A5245C5B1C500FD900C3A6ED /* Total Body Bulk.storyboard */,
+				A5245C591C500E7500C3A6ED /* Iso Speed Bulk.storyboard */,
+				A5245C571C500D2F00C3A6ED /* Bulk Plyometrics.storyboard */,
+			);
+			name = Bulk;
+			sourceTree = "<group>";
+		};
+		A5245C561C500BFB00C3A6ED /* Tone */ = {
+			isa = PBXGroup;
+			children = (
+				A5245C531C500B6C00C3A6ED /* Tone Cardio.storyboard */,
+				A5245C511C500A0100C3A6ED /* Tone Endurance.storyboard */,
+				A5245C4F1C50087C00C3A6ED /* Iso Strength Tone.storyboard */,
+				A5245C4D1C5006C000C3A6ED /* Tone Balance.storyboard */,
+			);
+			name = Tone;
+			sourceTree = "<group>";
+		};
 		A5A1EA961C4579180036CB7D /* Workout Lists */ = {
 			isa = PBXGroup;
 			children = (
@@ -2068,19 +2119,24 @@
 				A5D1FB9C1C3C6DDF005B3EF2 /* LaunchScreen.storyboard in Resources */,
 				A51A7CAD1C3DC86500E89911 /* MPUnmutedBtn@3x.png in Resources */,
 				A51A7CA11C3DC86500E89911 /* MPCloseButtonX@3x.png in Resources */,
+				A5245C5E1C50111700C3A6ED /* Max Bulk Strength.storyboard in Resources */,
 				A5D1FB991C3C6DDF005B3EF2 /* Assets.xcassets in Resources */,
 				A5D1FB941C3C6DDF005B3EF2 /* Main.storyboard in Resources */,
 				A51A7CAE1C3DC86500E89911 /* MRAID.bundle in Resources */,
+				A5245C5A1C500E7500C3A6ED /* Iso Speed Bulk.storyboard in Resources */,
 				A51A7CA41C3DC86500E89911 /* MPDAAIcon@3x.png in Resources */,
 				A51A7CAC1C3DC86500E89911 /* MPUnmutedBtn@2x.png in Resources */,
 				A51A77C11C3DB9A900E89911 /* Photos.storyboard in Resources */,
 				A51A7C9C1C3DC86500E89911 /* MPCloseBtn.png in Resources */,
+				A5245C4E1C5006C000C3A6ED /* Tone Balance.storyboard in Resources */,
 				A51A7CA91C3DC86500E89911 /* MPPlayBtn@2x.png in Resources */,
 				A51A7D991C3ED33100E89911 /* Settings.bundle in Resources */,
 				A51A7CA81C3DC86500E89911 /* MPPlayBtn.png in Resources */,
 				A51A7C0B1C3DC86500E89911 /* MPAdBrowserController.xib in Resources */,
 				A51A7C9F1C3DC86500E89911 /* MPCloseButtonX.png in Resources */,
+				A5245C5C1C500FD900C3A6ED /* Total Body Bulk.storyboard in Resources */,
 				A51A7C9E1C3DC86500E89911 /* MPCloseBtn@3x.png in Resources */,
+				A5245C581C500D2F00C3A6ED /* Bulk Plyometrics.storyboard in Resources */,
 				A51A7CA61C3DC86500E89911 /* MPMutedBtn@2x.png in Resources */,
 				A51A7CA51C3DC86500E89911 /* MPMutedBtn@1x.png in Resources */,
 				A51A7CAB1C3DC86500E89911 /* MPUnmutedBtn@1x.png in Resources */,
@@ -2088,12 +2144,16 @@
 				A51A7CA01C3DC86500E89911 /* MPCloseButtonX@2x.png in Resources */,
 				A51A7CA31C3DC86500E89911 /* MPDAAIcon@2x.png in Resources */,
 				A51A7CA71C3DC86500E89911 /* MPMutedBtn@3x.png in Resources */,
+				A5245C601C50124800C3A6ED /* Bulk Build Up.storyboard in Resources */,
 				A51A7C2E1C3DC86500E89911 /* LICENSE in Resources */,
 				A51A7CA21C3DC86500E89911 /* MPDAAIcon.png in Resources */,
 				A51A77C41C3DB9C200E89911 /* Store.storyboard in Resources */,
+				A5245C521C500A0100C3A6ED /* Tone Endurance.storyboard in Resources */,
 				A51A7CAA1C3DC86500E89911 /* MPPlayBtn@3x.png in Resources */,
+				A5245C541C500B6C00C3A6ED /* Tone Cardio.storyboard in Resources */,
 				A51A77BE1C3DB98800E89911 /* Measurements.storyboard in Resources */,
 				A51A7C9D1C3DC86500E89911 /* MPCloseBtn@2x.png in Resources */,
+				A5245C501C50087C00C3A6ED /* Iso Strength Tone.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
