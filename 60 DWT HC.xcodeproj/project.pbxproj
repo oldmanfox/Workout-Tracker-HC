@@ -22,7 +22,6 @@
 		587D284B1C49C1C4005D2750 /* Bulk_Build_Up_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D284A1C49C1C4005D2750 /* Bulk_Build_Up_1_TVC.m */; };
 		58D8CFB11C505ADE00ABD53B /* Bulk_Conditioning_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D8CFB01C505ADE00ABD53B /* Bulk_Conditioning_1_TVC.m */; };
 		58D8CFB31C505FA700ABD53B /* Bulk Conditioning.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58D8CFB21C505FA700ABD53B /* Bulk Conditioning.storyboard */; };
-		58D8CFB71C50617B00ABD53B /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D8CFB61C50617B00ABD53B /* ShinobiCharts.framework */; };
 		58D8CFBA1C5062BA00ABD53B /* Total_Body_Tone_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D8CFB91C5062BA00ABD53B /* Total_Body_Tone_1_TVC.m */; };
 		58D8CFBC1C50666C00ABD53B /* Total Body Tone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58D8CFBB1C50666C00ABD53B /* Total Body Tone.storyboard */; };
 		58D8CFBE1C50673300ABD53B /* Bulk Power.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58D8CFBD1C50673300ABD53B /* Bulk Power.storyboard */; };
@@ -323,6 +322,7 @@
 		A5D1FB9C1C3C6DDF005B3EF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D1FB9A1C3C6DDF005B3EF2 /* LaunchScreen.storyboard */; };
 		A5D1FBA71C3C6DDF005B3EF2 /* _0_DWT_HCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D1FBA61C3C6DDF005B3EF2 /* _0_DWT_HCTests.m */; };
 		A5D1FBB21C3C6DDF005B3EF2 /* _0_DWT_HCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D1FBB11C3C6DDF005B3EF2 /* _0_DWT_HCUITests.m */; };
+		A5F840D71C51442100DAFEA4 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F840D61C51442100DAFEA4 /* ShinobiCharts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -370,7 +370,6 @@
 		58D8CFAF1C505ADE00ABD53B /* Bulk_Conditioning_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bulk_Conditioning_1_TVC.h; sourceTree = "<group>"; };
 		58D8CFB01C505ADE00ABD53B /* Bulk_Conditioning_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Bulk_Conditioning_1_TVC.m; sourceTree = "<group>"; };
 		58D8CFB21C505FA700ABD53B /* Bulk Conditioning.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Bulk Conditioning.storyboard"; sourceTree = "<group>"; };
-		58D8CFB61C50617B00ABD53B /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShinobiCharts.framework; sourceTree = "<group>"; };
 		58D8CFB81C5062BA00ABD53B /* Total_Body_Tone_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Total_Body_Tone_1_TVC.h; sourceTree = "<group>"; };
 		58D8CFB91C5062BA00ABD53B /* Total_Body_Tone_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Total_Body_Tone_1_TVC.m; sourceTree = "<group>"; };
 		58D8CFBB1C50666C00ABD53B /* Total Body Tone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Total Body Tone.storyboard"; sourceTree = "<group>"; };
@@ -924,6 +923,7 @@
 		A5D1FBB11C3C6DDF005B3EF2 /* _0_DWT_HCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _0_DWT_HCUITests.m; sourceTree = "<group>"; };
 		A5D1FBB31C3C6DDF005B3EF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5D1FBBF1C3C6DEE005B3EF2 /* 60 DWT HC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "60 DWT HC.entitlements"; sourceTree = "<group>"; };
+		A5F840D61C51442100DAFEA4 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShinobiCharts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -935,7 +935,7 @@
 				A51A7BFB1C3DC86500E89911 /* GoogleMobileAds.framework in Frameworks */,
 				587D281B1C48638F005D2750 /* libc++.1.tbd in Frameworks */,
 				587D281C1C48638F005D2750 /* libc++.tbd in Frameworks */,
-				58D8CFB71C50617B00ABD53B /* ShinobiCharts.framework in Frameworks */,
+				A5F840D71C51442100DAFEA4 /* ShinobiCharts.framework in Frameworks */,
 				A51A7CEB1C3DCF8A00E89911 /* CoreText.framework in Frameworks */,
 				A51A7CE91C3DCF7800E89911 /* OpenGLES.framework in Frameworks */,
 				A51A7CE61C3DCCDC00E89911 /* CoreData.framework in Frameworks */,
@@ -1777,7 +1777,7 @@
 		A51A7CE71C3DCDA000E89911 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				58D8CFB61C50617B00ABD53B /* ShinobiCharts.framework */,
+				A5F840D61C51442100DAFEA4 /* ShinobiCharts.framework */,
 				587D28191C48638F005D2750 /* libc++.1.tbd */,
 				587D281A1C48638F005D2750 /* libc++.tbd */,
 				A51A7CEA1C3DCF8A00E89911 /* CoreText.framework */,

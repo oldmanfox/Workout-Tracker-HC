@@ -358,9 +358,10 @@
     UIColor *darkGrey = [UIColor colorWithRed:102/255.0f green:102/255.0f blue:102/255.0f alpha:1.0f];
     //UIColor* blueColor = [UIColor colorWithRed:0/255.0f green:122/255.0f blue:255/255.0f alpha:1.0f];
     UIColor *lightGreyBlueColor = [UIColor colorWithRed:219/255.0f green:224/255.0f blue:234/255.0f alpha:1.0f];
+    UIColor* redColor = [UIColor colorWithRed:204/255.0f green:76/255.0f blue:45/255.0f alpha:1.0f];
     
     // Apply Text Colors
-    self.currentNotesLabel.textColor = [UIColor orangeColor];
+    self.currentNotesLabel.textColor = redColor;
     
     self.previousNotesLabel.textColor = darkGrey;
     
