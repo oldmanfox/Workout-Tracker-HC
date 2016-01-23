@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58433F7D1C53FDA900120F6A /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58433F7C1C53FDA900120F6A /* ShinobiCharts.framework */; };
 		587D28161C4823FF005D2750 /* Tone_Balance_1_TVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 587D28151C4823FF005D2750 /* Tone_Balance_1_TVC.m */; };
 		587D281B1C48638F005D2750 /* libc++.1.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 587D28191C48638F005D2750 /* libc++.1.tbd */; };
 		587D281C1C48638F005D2750 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 587D281A1C48638F005D2750 /* libc++.tbd */; };
@@ -322,7 +323,6 @@
 		A5D1FB9C1C3C6DDF005B3EF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5D1FB9A1C3C6DDF005B3EF2 /* LaunchScreen.storyboard */; };
 		A5D1FBA71C3C6DDF005B3EF2 /* _0_DWT_HCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D1FBA61C3C6DDF005B3EF2 /* _0_DWT_HCTests.m */; };
 		A5D1FBB21C3C6DDF005B3EF2 /* _0_DWT_HCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D1FBB11C3C6DDF005B3EF2 /* _0_DWT_HCUITests.m */; };
-		A5F840D71C51442100DAFEA4 /* ShinobiCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F840D61C51442100DAFEA4 /* ShinobiCharts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -343,6 +343,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		58433F7C1C53FDA900120F6A /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShinobiCharts.framework; sourceTree = "<group>"; };
 		587D28141C4823FF005D2750 /* Tone_Balance_1_TVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tone_Balance_1_TVC.h; sourceTree = "<group>"; };
 		587D28151C4823FF005D2750 /* Tone_Balance_1_TVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tone_Balance_1_TVC.m; sourceTree = "<group>"; };
 		587D28191C48638F005D2750 /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "usr/lib/libc++.1.tbd"; sourceTree = SDKROOT; };
@@ -923,7 +924,6 @@
 		A5D1FBB11C3C6DDF005B3EF2 /* _0_DWT_HCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _0_DWT_HCUITests.m; sourceTree = "<group>"; };
 		A5D1FBB31C3C6DDF005B3EF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5D1FBBF1C3C6DEE005B3EF2 /* 60 DWT HC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "60 DWT HC.entitlements"; sourceTree = "<group>"; };
-		A5F840D61C51442100DAFEA4 /* ShinobiCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShinobiCharts.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -935,7 +935,7 @@
 				A51A7BFB1C3DC86500E89911 /* GoogleMobileAds.framework in Frameworks */,
 				587D281B1C48638F005D2750 /* libc++.1.tbd in Frameworks */,
 				587D281C1C48638F005D2750 /* libc++.tbd in Frameworks */,
-				A5F840D71C51442100DAFEA4 /* ShinobiCharts.framework in Frameworks */,
+				58433F7D1C53FDA900120F6A /* ShinobiCharts.framework in Frameworks */,
 				A51A7CEB1C3DCF8A00E89911 /* CoreText.framework in Frameworks */,
 				A51A7CE91C3DCF7800E89911 /* OpenGLES.framework in Frameworks */,
 				A51A7CE61C3DCCDC00E89911 /* CoreData.framework in Frameworks */,
@@ -1777,7 +1777,7 @@
 		A51A7CE71C3DCDA000E89911 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A5F840D61C51442100DAFEA4 /* ShinobiCharts.framework */,
+				58433F7C1C53FDA900120F6A /* ShinobiCharts.framework */,
 				587D28191C48638F005D2750 /* libc++.1.tbd */,
 				587D281A1C48638F005D2750 /* libc++.tbd */,
 				A51A7CEA1C3DCF8A00E89911 /* CoreText.framework */,

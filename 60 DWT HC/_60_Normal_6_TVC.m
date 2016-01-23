@@ -8,7 +8,7 @@
 
 #import "_60_Normal_6_TVC.h"
 #import "60DWTHCIAPHelper.h"
-//#import <iAd/iAd.h>
+#import <iAd/iAd.h>
 
 @interface _60_Normal_6_TVC ()
 
@@ -41,39 +41,39 @@
     if ([[_0DWTHCIAPHelper sharedInstance] productPurchased:@"com.grantdevelopers.60DWTHC.removeads"]) {
         
         // User purchased the Remove Ads in-app purchase so don't show any ads.
-        //self.canDisplayBannerAds = NO;
+        self.canDisplayBannerAds = NO;
         
     } else {
         
         // Show the Banner Ad
-        //self.canDisplayBannerAds = YES;
+        self.canDisplayBannerAds = YES;
         
-        self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 0)];
-        
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-            
-            // iPhone
-            self.adView = [[MPAdView alloc] initWithAdUnitId:@"4046208fc4a74de38212426cf30fc747"
-                                                        size:MOPUB_BANNER_SIZE];
-            self.bannerSize = MOPUB_BANNER_SIZE;
-            
-        } else {
-            
-            // iPad
-            self.adView = [[MPAdView alloc] initWithAdUnitId:@"302f462a787f4f7fb4b9f1610af40697"
-                                                        size:MOPUB_LEADERBOARD_SIZE];
-            self.bannerSize = MOPUB_LEADERBOARD_SIZE;
-            
-        }
-        
-        self.adView.delegate = self;
-        self.adView.frame = CGRectMake((self.view.bounds.size.width - self.bannerSize.width) / 2,
-                                       self.bannerSize.height - self.bannerSize.height,
-                                       self.bannerSize.width, self.bannerSize.height);
-        
-        [self.headerView addSubview:self.adView];
-        
-        [self.adView loadAd];
+//        self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 0)];
+//        
+//        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+//            
+//            // iPhone
+//            self.adView = [[MPAdView alloc] initWithAdUnitId:@"4046208fc4a74de38212426cf30fc747"
+//                                                        size:MOPUB_BANNER_SIZE];
+//            self.bannerSize = MOPUB_BANNER_SIZE;
+//            
+//        } else {
+//            
+//            // iPad
+//            self.adView = [[MPAdView alloc] initWithAdUnitId:@"302f462a787f4f7fb4b9f1610af40697"
+//                                                        size:MOPUB_LEADERBOARD_SIZE];
+//            self.bannerSize = MOPUB_LEADERBOARD_SIZE;
+//            
+//        }
+//        
+//        self.adView.delegate = self;
+//        self.adView.frame = CGRectMake((self.view.bounds.size.width - self.bannerSize.width) / 2,
+//                                       self.bannerSize.height - self.bannerSize.height,
+//                                       self.bannerSize.width, self.bannerSize.height);
+//        
+//        [self.headerView addSubview:self.adView];
+//        
+//        [self.adView loadAd];
     }
     
     // Add rightBarButtonItem
@@ -96,19 +96,19 @@
     
     [super viewWillAppear:YES];
     
-    // Show or Hide Ads
-    if ([[_0DWTHCIAPHelper sharedInstance] productPurchased:@"com.grantdevelopers.60DWTHC.removeads"]) {
-        
-        // Don't show ads.
-        self.tableView.tableHeaderView = nil;
-        self.adView.delegate = nil;
-        self.adView = nil;
-        
-    } else {
-        
-        // Show ads
-        self.adView.hidden = YES;
-    }
+//    // Show or Hide Ads
+//    if ([[_0DWTHCIAPHelper sharedInstance] productPurchased:@"com.grantdevelopers.60DWTHC.removeads"]) {
+//        
+//        // Don't show ads.
+//        self.tableView.tableHeaderView = nil;
+//        self.adView.delegate = nil;
+//        self.adView = nil;
+//        
+//    } else {
+//        
+//        // Show ads
+//        self.adView.hidden = YES;
+//    }
 
     [self configureAccessoryIconWorkoutList:self.tableCellArray];
 }
@@ -118,18 +118,26 @@
     // Show or Hide Ads
     if ([[_0DWTHCIAPHelper sharedInstance] productPurchased:@"com.grantdevelopers.60DWTHC.removeads"]) {
         
-        // Don't show ads.
-        self.tableView.tableHeaderView = nil;
-        self.adView.delegate = nil;
-        self.adView = nil;
+        // User purchased the Remove Ads in-app purchase so don't show any ads.
+        self.canDisplayBannerAds = NO;
         
     } else {
         
-        // Show ads
-        self.adView.frame = CGRectMake((self.view.bounds.size.width - self.bannerSize.width) / 2,
-                                       self.bannerSize.height - self.bannerSize.height,
-                                       self.bannerSize.width, self.bannerSize.height);
-        self.adView.hidden = NO;
+        // Show the Banner Ad
+        self.canDisplayBannerAds = YES;
+        
+//        // Don't show ads.
+//        self.tableView.tableHeaderView = nil;
+//        self.adView.delegate = nil;
+//        self.adView = nil;
+//        
+//    } else {
+//        
+//        // Show ads
+//        self.adView.frame = CGRectMake((self.view.bounds.size.width - self.bannerSize.width) / 2,
+//                                       self.bannerSize.height - self.bannerSize.height,
+//                                       self.bannerSize.width, self.bannerSize.height);
+//        self.adView.hidden = NO;
     }
 }
 

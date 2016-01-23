@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-//#import "60DWTHCIAPHelper.h"
+#import "60DWTHCIAPHelper.h"
 #import "CoreDataHelper.h"
 @interface AppDelegate ()
 
@@ -37,10 +37,10 @@
     
     //[UIViewController prepareInterstitialAds];
     
-//    if ([[_0DWTHCIAPHelper sharedInstance] productPurchased:@"com.grantsoftware.60DWTHC.removeads"]) {
-//        
-//        self.purchasedAdRemoveBeforeAppLaunch = YES;
-//    }
+    if ([[_0DWTHCIAPHelper sharedInstance] productPurchased:@"com.grantsoftware.60DWTHC.removeads"]) {
+        
+        self.purchasedAdRemoveBeforeAppLaunch = YES;
+    }
     
     [[ CoreDataHelper sharedHelper] iCloudAccountIsSignedIn];
     
