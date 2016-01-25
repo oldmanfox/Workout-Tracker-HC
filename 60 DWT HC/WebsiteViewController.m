@@ -28,7 +28,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    NSString *websiteURLString = @"http://www.g-rantsoftware.com";
+    NSString *websiteURLString = @"http://www.grantdevelopers.com";
     
     NSURL *websiteURL = [[NSURL alloc] initWithString:websiteURLString];
     
