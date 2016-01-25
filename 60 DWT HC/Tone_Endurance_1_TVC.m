@@ -611,8 +611,8 @@
     
     [self saveData];
 
-    int minRange;
-    int maxRange;
+    int minRange = 0;
+    int maxRange = 0;
     NSMutableArray *tempArray;
     tempArray = [[NSMutableArray alloc] init];
     AppDelegate *mainAppDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];

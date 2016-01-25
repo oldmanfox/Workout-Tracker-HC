@@ -931,11 +931,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A51A7C011C3DC86500E89911 /* MMAdSDK.framework in Frameworks */,
+				58433F7D1C53FDA900120F6A /* ShinobiCharts.framework in Frameworks */,
 				A51A7BFB1C3DC86500E89911 /* GoogleMobileAds.framework in Frameworks */,
+				A51A7C011C3DC86500E89911 /* MMAdSDK.framework in Frameworks */,
 				587D281B1C48638F005D2750 /* libc++.1.tbd in Frameworks */,
 				587D281C1C48638F005D2750 /* libc++.tbd in Frameworks */,
-				58433F7D1C53FDA900120F6A /* ShinobiCharts.framework in Frameworks */,
 				A51A7CEB1C3DCF8A00E89911 /* CoreText.framework in Frameworks */,
 				A51A7CE91C3DCF7800E89911 /* OpenGLES.framework in Frameworks */,
 				A51A7CE61C3DCCDC00E89911 /* CoreData.framework in Frameworks */,
@@ -2625,9 +2625,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK",
+					"$(inherited)",
 					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/Millennial/SDK",
-					"$(PROJECT_DIR)/shinobicontrols-ios-charts-premium-objc-2.8.5-3",
+					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "60 DWT HC/Info.plist";
@@ -2646,9 +2646,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK",
+					"$(inherited)",
 					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/Millennial/SDK",
-					"$(PROJECT_DIR)/shinobicontrols-ios-charts-premium-objc-2.8.5-3",
+					"$(PROJECT_DIR)/MoPubSDK/AdNetworkSupport/GoogleAdMob/SDK",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "60 DWT HC/Info.plist";

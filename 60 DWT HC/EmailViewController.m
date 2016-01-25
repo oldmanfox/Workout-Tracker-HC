@@ -89,13 +89,13 @@
     
     // Colors
     UIColor *lightGrey = [UIColor colorWithRed:234/255.0f green:234/255.0f blue:234/255.0f alpha:1.0f];
-    UIColor* blueColor = [UIColor colorWithRed:0/255.0f green:122/255.0f blue:255/255.0f alpha:1.0f];
+    //UIColor* blueColor = [UIColor colorWithRed:0/255.0f green:122/255.0f blue:255/255.0f alpha:1.0f];
     //UIColor *green = [UIColor colorWithRed:133/255.0f green:187/255.0f blue:60/255.0f alpha:1.0f];
     
     UIColor* redColor = [UIColor colorWithRed:204/255.0f green:76/255.0f blue:45/255.0f alpha:1.0f];
-    UIColor* lightRedColor = [UIColor colorWithRed:204/255.0f green:76/255.0f blue:45/255.0f alpha:0.75f];
-    UIColor* testBlueColor = [UIColor colorWithRed:47/255.0f green:120/255.0f blue:145/255.0f alpha:1.0f];
-    UIColor* lighttestBlueColor = [UIColor colorWithRed:47/255.0f green:120/255.0f blue:145/255.0f alpha:0.75f];
+    //UIColor* lightRedColor = [UIColor colorWithRed:204/255.0f green:76/255.0f blue:45/255.0f alpha:0.75f];
+    //UIColor* testBlueColor = [UIColor colorWithRed:47/255.0f green:120/255.0f blue:145/255.0f alpha:1.0f];
+    //UIColor* lighttestBlueColor = [UIColor colorWithRed:47/255.0f green:120/255.0f blue:145/255.0f alpha:0.75f];
     
     // Apply Text Colors
     self.emailLabel.textColor = [UIColor blackColor];

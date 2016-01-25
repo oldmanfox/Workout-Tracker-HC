@@ -87,7 +87,7 @@
     }
     NSString *uniqueAttribute = [self uniqueAttributeForEntity:entity];
     
-    NSString *dateStringValue = uniqueAttributeValue;
+    //NSString *dateStringValue = uniqueAttributeValue;
 //    NSLog(@"uniqueAttribute = %@", uniqueAttribute);
 //    NSLog(@"uniqueAttributeValue = %@", uniqueAttributeValue);
 //    NSLog(@"dateStringValue = %@", dateStringValue);

@@ -236,7 +236,6 @@
         
         
         
-        
         // Show or Hide Graph Button
         if ([[_0DWTHCIAPHelper sharedInstance] productPurchased:@"com.grantdevelopers.60DWTHC.graphview"]) {
             

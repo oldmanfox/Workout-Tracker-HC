@@ -815,11 +815,11 @@
 
 - (void)configureButtonBorder {
     
-    UIColor *orange = [UIColor colorWithRed:254/255.0f green:129/255.0f blue:48/255.0f alpha:1.0f];
-    UIColor *lightOrange = [UIColor colorWithRed:254/255.0f green:129/255.0f blue:48/255.0f alpha:0.75f];
+    //UIColor *orange = [UIColor colorWithRed:254/255.0f green:129/255.0f blue:48/255.0f alpha:1.0f];
+    //UIColor *lightOrange = [UIColor colorWithRed:254/255.0f green:129/255.0f blue:48/255.0f alpha:0.75f];
     
-    UIColor* redColor = [UIColor colorWithRed:204/255.0f green:76/255.0f blue:45/255.0f alpha:1.0f];
-    UIColor* lightRedColor = [UIColor colorWithRed:204/255.0f green:76/255.0f blue:45/255.0f alpha:0.75f];
+    //UIColor* redColor = [UIColor colorWithRed:204/255.0f green:76/255.0f blue:45/255.0f alpha:1.0f];
+    //UIColor* lightRedColor = [UIColor colorWithRed:204/255.0f green:76/255.0f blue:45/255.0f alpha:0.75f];
     UIColor* testBlueColor = [UIColor colorWithRed:47/255.0f green:120/255.0f blue:145/255.0f alpha:1.0f];
     UIColor* lighttestBlueColor = [UIColor colorWithRed:47/255.0f green:120/255.0f blue:145/255.0f alpha:0.75f];
     

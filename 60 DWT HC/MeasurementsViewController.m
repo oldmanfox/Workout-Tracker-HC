@@ -304,12 +304,12 @@
 - (void)configureViewForIOSVersion {
     
     // Colors
-    UIColor* blueColor = [UIColor colorWithRed:0/255.0f green:122/255.0f blue:255/255.0f alpha:1.0f];
+    //UIColor* blueColor = [UIColor colorWithRed:0/255.0f green:122/255.0f blue:255/255.0f alpha:1.0f];
     UIColor *lightGrey = [UIColor colorWithRed:234/255.0f green:234/255.0f blue:234/255.0f alpha:1.0f];
     //UIColor *midGrey = [UIColor colorWithRed:219/255.0f green:218/255.0f blue:218/255.0f alpha:1.0f];
     //UIColor *darkGrey = [UIColor colorWithRed:102/255.0f green:102/255.0f blue:102/255.0f alpha:1.0f];
     UIColor* redColor = [UIColor colorWithRed:204/255.0f green:76/255.0f blue:45/255.0f alpha:1.0f];
-    UIColor* lightRedColor = [UIColor colorWithRed:204/255.0f green:76/255.0f blue:45/255.0f alpha:0.75f];
+    //UIColor* lightRedColor = [UIColor colorWithRed:204/255.0f green:76/255.0f blue:45/255.0f alpha:0.75f];
     UIColor* testBlueColor = [UIColor colorWithRed:47/255.0f green:120/255.0f blue:145/255.0f alpha:1.0f];
     UIColor* lighttestBlueColor = [UIColor colorWithRed:47/255.0f green:120/255.0f blue:145/255.0f alpha:0.75f];
     
@@ -345,8 +345,8 @@
     self.leftThigh.keyboardAppearance = UIKeyboardAppearanceDark;
     self.rightThigh.keyboardAppearance = UIKeyboardAppearanceDark;
     
-    UIColor *orange = [UIColor colorWithRed:254/255.0f green:129/255.0f blue:48/255.0f alpha:1.0f];
-    UIColor *lightOrange = [UIColor colorWithRed:254/255.0f green:129/255.0f blue:48/255.0f alpha:0.75f];
+    //UIColor *orange = [UIColor colorWithRed:254/255.0f green:129/255.0f blue:48/255.0f alpha:1.0f];
+    //UIColor *lightOrange = [UIColor colorWithRed:254/255.0f green:129/255.0f blue:48/255.0f alpha:0.75f];
     
     // Save Button
     [self.saveButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

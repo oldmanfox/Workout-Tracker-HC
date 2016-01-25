@@ -44,9 +44,21 @@
     self.htmlView.opaque = NO;
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:YES];
+    
+    [self.htmlView loadHTMLString:[self createHTML] baseURL:nil];
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)viewDidLayoutSubviews {
+    
+    [self.htmlView loadHTMLString:[self createHTML] baseURL:nil];
 }
 
 - (void)emailSummary {

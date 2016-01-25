@@ -140,10 +140,6 @@
                        @"Front",
                        @"Side",
                        @"Back",
-                       @"3/4 Turn",
-                       @"Front",
-                       @"Side",
-                       @"Back",
                        @"3/4 Turn"];
         
         photoMonth = @[@"1",
@@ -157,11 +153,7 @@
                        @"3",
                        @"3",
                        @"3",
-                       @"3",
-                       @"4",
-                       @"4",
-                       @"4",
-                       @"4"];
+                       @"3"];
         
         photoTitles = @[@"Start Month 1 Front",
                         @"Start Month 1 Side",
@@ -171,10 +163,6 @@
                         @"Start Month 2 Side",
                         @"Start Month 2 Back",
                         @"Start Month 2 3/4 Turn",
-                        @"Start Month 3 Front",
-                        @"Start Month 3 Side",
-                        @"Start Month 3 Back",
-                        @"Start Month 3 3/4 Turn",
                         @"Final Front",
                         @"Final Side",
                         @"Final Back",
