@@ -11,15 +11,9 @@
 #import "UIViewController+Social.h"
 #import "UITableViewController+Email.h"
 #import "AppDelegate.h"
-#import "MPAdView.h"
+//#import "MPAdView.h"
 
-@interface Bulk_Build_Up_1_TVC : UITableViewController <UIActionSheetDelegate, UIPopoverPresentationControllerDelegate, UIPopoverControllerDelegate, MPAdViewDelegate>
-
-@property (nonatomic) MPAdView *adView;
-
-@property (nonatomic, strong) UIView *headerView;
-
-@property CGSize bannerSize;
+@interface Bulk_Build_Up_1_TVC : UITableViewController <UIActionSheetDelegate, UIPopoverPresentationControllerDelegate, UIPopoverControllerDelegate>
 
 @property (strong, nonatomic) NSArray *Titles;
 @property (strong, nonatomic) NSArray *Reps;

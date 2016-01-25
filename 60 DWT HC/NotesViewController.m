@@ -629,32 +629,32 @@
 }
 
 #pragma mark - <MPAdViewDelegate>
-- (UIViewController *)viewControllerForPresentingModalView {
-    return self;
-}
-
-- (void)adViewDidLoadAd:(MPAdView *)view
-{
-    CGSize size = [view adContentViewSize];
-    CGFloat centeredX = (self.view.bounds.size.width - size.width) / 2;
-    CGFloat bottomAlignedY = self.view.bounds.size.height - size.height - self.tabBarController.tabBar.bounds.size.height;
-    view.frame = CGRectMake(centeredX, bottomAlignedY, size.width, size.height);
-}
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-                                duration:(NSTimeInterval)duration {
-    self.adView.hidden = YES;
-    [self.adView rotateToOrientation:toInterfaceOrientation];
-}
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    CGSize size = [self.adView adContentViewSize];
-    CGFloat centeredX = (self.view.bounds.size.width - size.width) / 2;
-    CGFloat bottomAlignedY = self.view.bounds.size.height - size.height - self.tabBarController.tabBar.bounds.size.height;
-    self.adView.frame = CGRectMake(centeredX, bottomAlignedY, size.width, size.height);
-    
-    self.adView.hidden = NO;
-}
+//- (UIViewController *)viewControllerForPresentingModalView {
+//    return self;
+//}
+//
+//- (void)adViewDidLoadAd:(MPAdView *)view
+//{
+//    CGSize size = [view adContentViewSize];
+//    CGFloat centeredX = (self.view.bounds.size.width - size.width) / 2;
+//    CGFloat bottomAlignedY = self.view.bounds.size.height - size.height - self.tabBarController.tabBar.bounds.size.height;
+//    view.frame = CGRectMake(centeredX, bottomAlignedY, size.width, size.height);
+//}
+//
+//- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+//                                duration:(NSTimeInterval)duration {
+//    self.adView.hidden = YES;
+//    [self.adView rotateToOrientation:toInterfaceOrientation];
+//}
+//
+//- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+//    CGSize size = [self.adView adContentViewSize];
+//    CGFloat centeredX = (self.view.bounds.size.width - size.width) / 2;
+//    CGFloat bottomAlignedY = self.view.bounds.size.height - size.height - self.tabBarController.tabBar.bounds.size.height;
+//    self.adView.frame = CGRectMake(centeredX, bottomAlignedY, size.width, size.height);
+//    
+//    self.adView.hidden = NO;
+//}
 
 - (void)updateUI {
     

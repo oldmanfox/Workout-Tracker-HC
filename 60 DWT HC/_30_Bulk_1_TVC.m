@@ -453,49 +453,49 @@
 }
 
 #pragma mark - <MPAdViewDelegate>
-- (UIViewController *)viewControllerForPresentingModalView {
-    return self;
-}
-
-- (void)adViewDidLoadAd:(MPAdView *)view
-{
-    CGSize size = [view adContentViewSize];
-    CGFloat centeredX = (self.view.bounds.size.width - size.width) / 2;
-    CGFloat bottomAlignedY = self.bannerSize.height - size.height;
-    view.frame = CGRectMake(centeredX, bottomAlignedY, size.width, size.height);
-    
-    if (self.headerView.frame.size.height == 0) {
-        
-        // No ads shown yet.  Animate showing the ad.
-        CGRect headerViewFrame = CGRectMake(0, 0, self.view.bounds.size.width, self.bannerSize.height);
-        
-        [UIView animateWithDuration:0.25 animations:^{ self.headerView.frame = headerViewFrame;
-            self.tableView.tableHeaderView = self.headerView;
-            self.adView.hidden = YES;}
-         
-                         completion:^(BOOL finished) {self.adView.hidden = NO;
-                         }];
-        
-    } else {
-        
-        // Ad is already showing.
-        self.tableView.tableHeaderView = self.headerView;
-    }
-}
-
-- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
-                                duration:(NSTimeInterval)duration {
-    
-    self.adView.hidden = YES;
-    [self.adView rotateToOrientation:toInterfaceOrientation];
-}
-
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    CGSize size = [self.adView adContentViewSize];
-    CGFloat centeredX = (self.view.bounds.size.width - size.width) / 2;
-    CGFloat bottomAlignedY = self.headerView.bounds.size.height - size.height;
-    self.adView.frame = CGRectMake(centeredX, bottomAlignedY, size.width, size.height);
-    
-    self.adView.hidden = NO;
-}
+//- (UIViewController *)viewControllerForPresentingModalView {
+//    return self;
+//}
+//
+//- (void)adViewDidLoadAd:(MPAdView *)view
+//{
+//    CGSize size = [view adContentViewSize];
+//    CGFloat centeredX = (self.view.bounds.size.width - size.width) / 2;
+//    CGFloat bottomAlignedY = self.bannerSize.height - size.height;
+//    view.frame = CGRectMake(centeredX, bottomAlignedY, size.width, size.height);
+//    
+//    if (self.headerView.frame.size.height == 0) {
+//        
+//        // No ads shown yet.  Animate showing the ad.
+//        CGRect headerViewFrame = CGRectMake(0, 0, self.view.bounds.size.width, self.bannerSize.height);
+//        
+//        [UIView animateWithDuration:0.25 animations:^{ self.headerView.frame = headerViewFrame;
+//            self.tableView.tableHeaderView = self.headerView;
+//            self.adView.hidden = YES;}
+//         
+//                         completion:^(BOOL finished) {self.adView.hidden = NO;
+//                         }];
+//        
+//    } else {
+//        
+//        // Ad is already showing.
+//        self.tableView.tableHeaderView = self.headerView;
+//    }
+//}
+//
+//- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+//                                duration:(NSTimeInterval)duration {
+//    
+//    self.adView.hidden = YES;
+//    [self.adView rotateToOrientation:toInterfaceOrientation];
+//}
+//
+//- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+//    CGSize size = [self.adView adContentViewSize];
+//    CGFloat centeredX = (self.view.bounds.size.width - size.width) / 2;
+//    CGFloat bottomAlignedY = self.headerView.bounds.size.height - size.height;
+//    self.adView.frame = CGRectMake(centeredX, bottomAlignedY, size.width, size.height);
+//    
+//    self.adView.hidden = NO;
+//}
 @end

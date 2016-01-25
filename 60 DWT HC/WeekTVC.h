@@ -14,16 +14,10 @@
 #import "CoreDataHelper.h"
 #import "AppDelegate.h"
 //#import <iAd/iAd.h>
-#import "MPAdView.h"
+//#import "MPAdView.h"
 //#import "UITableViewController+ConvertAllToCoreData.h"
 
-@interface WeekTVC : UITableViewController <UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverPresentationControllerDelegate, UIPopoverControllerDelegate, UIGestureRecognizerDelegate, MPAdViewDelegate>
-
-@property (nonatomic) MPAdView *adView;
-
-@property (nonatomic, strong) UIView *headerView;
-
-@property CGSize bannerSize;
+@interface WeekTVC : UITableViewController <UIActionSheetDelegate, UIAlertViewDelegate, UIPopoverPresentationControllerDelegate, UIPopoverControllerDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *cell1;
 @property (weak, nonatomic) IBOutlet UITableViewCell *cell2;

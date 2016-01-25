@@ -15,13 +15,9 @@
 #import "UIViewController+Social.h"
 #import "Workout.h"
 #import "UIViewController+CoreData.h"
-#import "MPAdView.h"
+//#import "MPAdView.h"
 
-@interface NotesViewController : UIViewController <MFMailComposeViewControllerDelegate, UITextViewDelegate, UIActionSheetDelegate, UIPopoverPresentationControllerDelegate, UIPopoverControllerDelegate, MPAdViewDelegate>
-
-@property (nonatomic) MPAdView *adView;
-
-@property CGSize bannerSize;
+@interface NotesViewController : UIViewController <MFMailComposeViewControllerDelegate, UITextViewDelegate, UIActionSheetDelegate, UIPopoverPresentationControllerDelegate, UIPopoverControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *currentNotes;
 @property (weak, nonatomic) IBOutlet UILabel *round;
