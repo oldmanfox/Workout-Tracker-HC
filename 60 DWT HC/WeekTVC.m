@@ -47,12 +47,12 @@
     if ([[_0DWTHCIAPHelper sharedInstance] productPurchased:@"com.grantdevelopers.60DWTHC.removeads"]) {
         
         // User purchased the Remove Ads in-app purchase so don't show any ads.
-        //self.canDisplayBannerAds = NO;
+        ////self.canDisplayBannerAds = NO;
         
     } else {
         
         // Show the Banner Ad
-        //self.canDisplayBannerAds = YES;
+        ////self.canDisplayBannerAds = YES;
         
         self.headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 0)];
         
@@ -127,12 +127,12 @@
     if ([[_0DWTHCIAPHelper sharedInstance] productPurchased:@"com.grantdevelopers.60DWTHC.removeads"]) {
         
         // User purchased the Remove Ads in-app purchase so don't show any ads.
-        //self.canDisplayBannerAds = NO;
+        ////self.canDisplayBannerAds = NO;
         
     //} else {
         
         // Show the Banner Ad
-        //self.canDisplayBannerAds = YES;
+        ////self.canDisplayBannerAds = YES;
         
         // Don't show ads.
         self.tableView.tableHeaderView = nil;

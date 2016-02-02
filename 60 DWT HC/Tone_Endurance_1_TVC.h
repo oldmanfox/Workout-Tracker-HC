@@ -11,9 +11,15 @@
 #import "UIViewController+Social.h"
 #import "UITableViewController+Email.h"
 #import "AppDelegate.h"
-//#import "MPAdView.h"
+#import "MPAdView.h"
 
-@interface Tone_Endurance_1_TVC : UITableViewController <UIActionSheetDelegate, UIPopoverPresentationControllerDelegate, UIPopoverControllerDelegate>
+@interface Tone_Endurance_1_TVC : UITableViewController <UIActionSheetDelegate, UIPopoverPresentationControllerDelegate, UIPopoverControllerDelegate, MPAdViewDelegate>
+
+@property (nonatomic) MPAdView *adView;
+
+@property (nonatomic, strong) UIView *headerView;
+
+@property CGSize bannerSize;
 
 @property (strong, nonatomic) NSArray *Titles;
 @property (strong, nonatomic) NSArray *Reps;

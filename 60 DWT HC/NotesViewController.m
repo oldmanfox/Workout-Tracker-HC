@@ -153,12 +153,12 @@
     if ([[_0DWTHCIAPHelper sharedInstance] productPurchased:@"com.grantdevelopers.60DWTHC.removeads"]) {
         
         // User purchased the Remove Ads in-app purchase so don't show any ads.
-        self.canDisplayBannerAds = NO;
+        //self.canDisplayBannerAds = NO;
         
     } else {
         
         // Show the Banner Ad
-        self.canDisplayBannerAds = YES;
+        //self.canDisplayBannerAds = YES;
         
 //        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
 //            
@@ -206,7 +206,7 @@
 //    if ([[_0DWTHCIAPHelper sharedInstance] productPurchased:@"com.grantdevelopers.60DWTHC.removeads"]) {
 //        
 //        // User purchased the Remove Ads in-app purchase so don't show any ads.
-//        //self.canDisplayBannerAds = NO;
+//        ////self.canDisplayBannerAds = NO;
 //        self.adView.delegate = nil;
 //        self.adView = nil;
 //        [self.adView removeFromSuperview];
@@ -214,7 +214,7 @@
 //    } else {
 //        
 //        // Show the Banner Ad
-//        //self.canDisplayBannerAds = YES;
+//        ////self.canDisplayBannerAds = YES;
 //        
 //        self.adView.hidden = YES;
 //    }
@@ -229,12 +229,12 @@
     if ([[_0DWTHCIAPHelper sharedInstance] productPurchased:@"com.grantdevelopers.60DWTHC.removeads"]) {
         
         // User purchased the Remove Ads in-app purchase so don't show any ads.
-        self.canDisplayBannerAds = NO;
+        //self.canDisplayBannerAds = NO;
         
     } else {
         
         // Show the Banner Ad
-        self.canDisplayBannerAds = YES;
+        //self.canDisplayBannerAds = YES;
         
 //        // Don't show ads.
 //        self.adView.delegate = nil;
