@@ -439,6 +439,37 @@
     previousButton.clipsToBounds = YES;
 }
 
+- (void)configureRoundBackgroundColor:(NSArray*)roundBackgroundColorViews :(NSString*)color {
+    
+    UIColor* normalColor;
+    UIColor* lightColor;
+    
+    if ([color isEqualToString:@"Red"]) {
+        
+        // Red background color
+        normalColor = [UIColor colorWithRed:204/255.0f green:76/255.0f blue:45/255.0f alpha:1.0f];
+        lightColor = [UIColor colorWithRed:204/255.0f green:76/255.0f blue:45/255.0f alpha:0.1f];
+        
+    } else {
+        
+        // Blue background color
+        normalColor = [UIColor colorWithRed:47/255.0f green:120/255.0f blue:145/255.0f alpha:1.0f];
+        lightColor = [UIColor colorWithRed:47/255.0f green:120/255.0f blue:145/255.0f alpha:0.1f];
+    }
+    
+    for (int i = 0; i < roundBackgroundColorViews.count; i++) {
+        
+        UIView *roundBGCV = roundBackgroundColorViews[i];
+    
+        // roundBackgroundColorView Boarder
+        roundBGCV.backgroundColor = lightColor;
+        roundBGCV.layer.borderWidth = 2.0f;
+        roundBGCV.layer.borderColor = [normalColor CGColor];
+        roundBGCV.layer.cornerRadius = 5;
+        roundBGCV.clipsToBounds = YES;
+    }
+}
+
 /*
 - (UIView*)configureSectionHeader:(NSArray*)tvHeaderStrings :(int)tvWidth :(int)tvSection {
     
