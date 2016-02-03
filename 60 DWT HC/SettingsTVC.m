@@ -40,7 +40,6 @@
     // Configure tableview.
     NSArray *tableCell = @[self.cell1,   // email
                            self.cell2,   // version
-                           self.cell3,   // author
                            self.cell4,   // website
                            self.cell6,   // workout level
                            self.cell7,   // current session
@@ -50,7 +49,6 @@
                            self.cell11]; // icloud app status
     
     NSArray *accessoryIcon = @[@YES,
-                               @NO,
                                @NO,
                                @YES,
                                @NO,
@@ -124,7 +122,7 @@
         return 2;
     
     else {
-        return 3;
+        return 2;
     }
 }
 

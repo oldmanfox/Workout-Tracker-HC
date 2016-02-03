@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="D41-yi-cDO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="D41-yi-cDO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -8862,26 +8862,26 @@
         <image name="weight_lifting_selected" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="FTB-da-F3l"/>
+        <segue reference="878-hp-EeI"/>
+        <segue reference="mEA-Ck-Il3"/>
+        <segue reference="5oV-5M-yZN"/>
+        <segue reference="AhT-Jo-VH2"/>
+        <segue reference="U7y-wp-rhP"/>
+        <segue reference="p0o-SU-5rH"/>
+        <segue reference="VhQ-il-YQv"/>
+        <segue reference="gEI-eu-goD"/>
+        <segue reference="SwJ-fx-Yr3"/>
+        <segue reference="Tk5-Ho-7uJ"/>
+        <segue reference="hnz-Hx-XVR"/>
+        <segue reference="aU7-CM-Nyr"/>
+        <segue reference="u1v-qt-yQP"/>
+        <segue reference="uwx-dr-wDc"/>
         <segue reference="t6v-Ht-Id5"/>
         <segue reference="pog-d5-kcc"/>
         <segue reference="MTr-EV-2Ah"/>
-        <segue reference="uwx-dr-wDc"/>
-        <segue reference="u1v-qt-yQP"/>
         <segue reference="nQA-7N-wSr"/>
-        <segue reference="Qzw-vC-8iW"/>
-        <segue reference="FTB-da-F3l"/>
-        <segue reference="AhT-Jo-VH2"/>
-        <segue reference="Tk5-Ho-7uJ"/>
-        <segue reference="gEI-eu-goD"/>
-        <segue reference="VhQ-il-YQv"/>
-        <segue reference="mEA-Ck-Il3"/>
-        <segue reference="5oV-5M-yZN"/>
-        <segue reference="U7y-wp-rhP"/>
-        <segue reference="hnz-Hx-XVR"/>
-        <segue reference="878-hp-EeI"/>
-        <segue reference="SwJ-fx-Yr3"/>
-        <segue reference="p0o-SU-5rH"/>
-        <segue reference="G1L-Fa-Vvt"/>
         <segue reference="ke4-nU-JQC"/>
+        <segue reference="G1L-Fa-Vvt"/>
     </inferredMetricsTieBreakers>
 </document>
