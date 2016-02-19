@@ -37,7 +37,7 @@
     
     //[UIViewController prepareInterstitialAds];
     
-    if ([[_0DWTHCIAPHelper sharedInstance] productPurchased:@"com.grantsoftware.60DWTHC.removeads"]) {
+    if ([[_0DWTHCIAPHelper sharedInstance] productPurchased:@"com.grantdevelopers.60DWTHC.removeads"]) {
         
         self.purchasedAdRemoveBeforeAppLaunch = YES;
     }

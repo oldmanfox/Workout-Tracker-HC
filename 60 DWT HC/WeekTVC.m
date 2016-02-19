@@ -968,6 +968,8 @@
             NSString *group1 = @"NO";
             NSString *group2 = @"NO";
             NSString *group3 = @"NO";
+            NSString *optional1 = @"NO";
+            NSString *optional2 = @"NO";
             
             for (int i = 0; i < resultsArray.count; i++) {
                 
@@ -989,6 +991,12 @@
                     }
                 }
                 
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 5) {
+                    
+                    optional1 = @"YES";
+                }
+                
                 // User has a choice to do 1 of 2 workouts.  Only needs to do 1.
                 else if (i == 8 || i == 9) {
                     
@@ -998,6 +1006,12 @@
                     }
                 }
                 
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 12) {
+                    
+                    optional2 = @"YES";
+                }
+
                 else {
                     
                     // User needs to do all these workouts
@@ -1008,7 +1022,7 @@
                 }
             }
             
-            if (workoutsCompleted == 7 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"] && [group3 isEqualToString:@"YES"]) {
+            if (workoutsCompleted == 5 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"] && [group3 isEqualToString:@"YES"] && [optional1 isEqualToString:@"YES"] && [optional2 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
@@ -1022,11 +1036,19 @@
             
             NSString *group1 = @"NO";
             NSString *group2 = @"NO";
+            NSString *optional1 = @"NO";
+            NSString *optional2 = @"NO";
             
             for (int i = 0; i < resultsArray.count; i++) {
                 
+                // This workout is optional.  Part of the deluxe package.
+                if (i == 1) {
+                    
+                    optional1 = @"YES";
+                }
+                
                 // User has a choice to do 1 of 2 workouts.  Only needs to do 1.
-                if (i == 2 || i == 3) {
+                else if (i == 2 || i == 3) {
                     
                     if ([resultsArray[i] isEqualToString:@"YES"]) {
                         
@@ -1043,6 +1065,12 @@
                     }
                 }
                 
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 12) {
+                    
+                    optional2 = @"YES";
+                }
+                
                 else {
                     
                     // User needs to do all these workouts
@@ -1053,7 +1081,7 @@
                 }
             }
             
-            if (workoutsCompleted == 9 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"]) {
+            if (workoutsCompleted == 7 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"] && [optional1 isEqualToString:@"YES"] && [optional2 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
@@ -1068,6 +1096,8 @@
             NSString *group1 = @"NO";
             NSString *group2 = @"NO";
             NSString *group3 = @"NO";
+            NSString *optional1 = @"NO";
+            NSString *optional2 = @"NO";
             
             for (int i = 0; i < resultsArray.count; i++) {
                 
@@ -1080,6 +1110,12 @@
                     }
                 }
                 
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 5) {
+                    
+                    optional1 = @"YES";
+                }
+                
                 // User has a choice to do 1 of 2 workouts.  Only needs to do 1.
                 else if (i == 7 || i == 8) {
                     
@@ -1087,6 +1123,12 @@
                         
                         group2 = @"YES";
                     }
+                }
+                
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 9) {
+                    
+                    optional2 = @"YES";
                 }
                 
                 // User has a choice to do 1 of 2 workouts.  Only needs to do 1.
@@ -1108,7 +1150,7 @@
                 }
             }
             
-            if (workoutsCompleted == 8 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"] && [group3 isEqualToString:@"YES"]) {
+            if (workoutsCompleted == 6 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"] && [group3 isEqualToString:@"YES"] && [optional1 isEqualToString:@"YES"] && [optional2 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
@@ -1122,11 +1164,25 @@
             
             NSString *group1 = @"NO";
             NSString *group2 = @"NO";
+            NSString *optional1 = @"NO";
+            NSString *optional2 = @"NO";
             
             for (int i = 0; i < resultsArray.count; i++) {
                 
+                // This workout is optional.  Part of the deluxe package.
+                if (i == 5) {
+                    
+                    optional1 = @"YES";
+                }
+                
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 8) {
+                    
+                    optional2 = @"YES";
+                }
+                
                 // User has a choice to do 1 of 2 workouts.  Only needs to do 1.
-                if (i == 9 || i == 10) {
+                else if (i == 9 || i == 10) {
                     
                     if ([resultsArray[i] isEqualToString:@"YES"]) {
                         
@@ -1153,7 +1209,7 @@
                 }
             }
             
-            if (workoutsCompleted == 9 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"]) {
+            if (workoutsCompleted == 7 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"] && [optional1 isEqualToString:@"YES"] && [optional2 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
@@ -1168,6 +1224,8 @@
             NSString *group1 = @"NO";
             NSString *group2 = @"NO";
             NSString *group3 = @"NO";
+            NSString *optional1 = @"NO";
+            NSString *optional2 = @"NO";
             
             for (int i = 0; i < resultsArray.count; i++) {
                 
@@ -1180,6 +1238,12 @@
                     }
                 }
                 
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 2) {
+                    
+                    optional1 = @"YES";
+                }
+
                 // User has a choice to do 1 of 2 workouts.  Only needs to do 1.
                 else if (i == 5 || i == 6) {
                     
@@ -1198,6 +1262,12 @@
                     }
                 }
                 
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 13) {
+                    
+                    optional2 = @"YES";
+                }
+
                 else {
                     
                     // User needs to do all these workouts
@@ -1208,7 +1278,7 @@
                 }
             }
             
-            if (workoutsCompleted == 8 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"] && [group3 isEqualToString:@"YES"]) {
+            if (workoutsCompleted == 6 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"] && [group3 isEqualToString:@"YES"] && [optional1 isEqualToString:@"YES"] && [optional2 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
@@ -1220,16 +1290,34 @@
         
         if (week == 7) {
             
+            NSString *optional1 = @"NO";
+            NSString *optional2 = @"NO";
+            
             for (int i = 0; i < resultsArray.count; i++) {
                 
-                // User needs to do all these workouts
-                if ([resultsArray[i] isEqualToString:@"YES"]) {
+                // This workout is optional.  Part of the deluxe package.
+                if (i == 3) {
                     
-                    workoutsCompleted++;
+                    optional1 = @"YES";
+                }
+                
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 8) {
+                    
+                    optional2 = @"YES";
+                }
+
+                else {
+                    
+                    // User needs to do all these workouts
+                    if ([resultsArray[i] isEqualToString:@"YES"]) {
+                        
+                        workoutsCompleted++;
+                    }
                 }
             }
             
-            if (workoutsCompleted == 11) {
+            if (workoutsCompleted == 9 && [optional1 isEqualToString:@"YES"] && [optional2 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
@@ -1244,6 +1332,10 @@
             NSString *group1 = @"NO";
             NSString *group2 = @"NO";
             NSString *group3 = @"NO";
+            NSString *optional1 = @"NO";
+            NSString *optional2 = @"NO";
+            NSString *optional3 = @"NO";
+            NSString *optional4 = @"NO";
             
             for (int i = 0; i < resultsArray.count; i++) {
                 
@@ -1256,6 +1348,18 @@
                     }
                 }
                 
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 4) {
+                    
+                    optional1 = @"YES";
+                }
+
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 6) {
+                    
+                    optional2 = @"YES";
+                }
+
                 // User has a choice to do 1 of 2 workouts.  Only needs to do 1.
                 else if (i == 8 || i == 9) {
                     
@@ -1265,6 +1369,12 @@
                     }
                 }
                 
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 10) {
+                    
+                    optional3 = @"YES";
+                }
+
                 // User has a choice to do 1 of 2 workouts.  Only needs to do 1.
                 else if (i == 11 || i == 12) {
                     
@@ -1274,6 +1384,12 @@
                     }
                 }
                 
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 13) {
+                    
+                    optional4 = @"YES";
+                }
+
                 else {
                     
                     // User needs to do all these workouts
@@ -1284,7 +1400,7 @@
                 }
             }
             
-            if (workoutsCompleted == 10 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"] && [group3 isEqualToString:@"YES"]) {
+            if (workoutsCompleted == 6 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"] && [group3 isEqualToString:@"YES"] && [optional1 isEqualToString:@"YES"] && [optional2 isEqualToString:@"YES"] && [optional3 isEqualToString:@"YES"] && [optional4 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
@@ -1301,11 +1417,18 @@
             
             NSString *group1 = @"NO";
             NSString *group2 = @"NO";
+            NSString *optional1 = @"NO";
             
             for (int i = 0; i < resultsArray.count; i++) {
                 
+                // This workout is optional.  Part of the deluxe package.
+                if (i == 2) {
+                    
+                    optional1 = @"YES";
+                }
+
                 // User has a choice to do 1 of 2 workouts.  Only needs to do 1.
-                if (i == 5 || i == 6) {
+                else if (i == 5 || i == 6) {
                     
                     if ([resultsArray[i] isEqualToString:@"YES"]) {
                         
@@ -1332,7 +1455,7 @@
                 }
             }
             
-            if (workoutsCompleted == 6 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"]) {
+            if (workoutsCompleted == 5 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"] && [optional1 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
@@ -1346,6 +1469,7 @@
             
             NSString *group1 = @"NO";
             NSString *group2 = @"NO";
+            NSString *optional1 = @"NO";
             
             for (int i = 0; i < resultsArray.count; i++) {
                 
@@ -1367,6 +1491,12 @@
                     }
                 }
                 
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 11) {
+                    
+                    optional1 = @"YES";
+                }
+                
                 else {
                     
                     // User needs to do all these workouts
@@ -1377,7 +1507,7 @@
                 }
             }
             
-            if (workoutsCompleted == 8 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"]) {
+            if (workoutsCompleted == 7 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"] && [optional1 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
@@ -1390,6 +1520,7 @@
         if (week == 3) {
             
             NSString *group1 = @"NO";
+            NSString *optional1 = @"NO";
             
             for (int i = 0; i < resultsArray.count; i++) {
                 
@@ -1402,6 +1533,12 @@
                     }
                 }
                 
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 8) {
+                    
+                    optional1 = @"YES";
+                }
+                
                 else {
                     
                     // User needs to do all these workouts
@@ -1412,7 +1549,7 @@
                 }
             }
             
-            if (workoutsCompleted == 9 && [group1 isEqualToString:@"YES"]) {
+            if (workoutsCompleted == 8 && [group1 isEqualToString:@"YES"] && [optional1 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
@@ -1425,11 +1562,18 @@
         if (week == 4) {
             
             NSString *group1 = @"NO";
+            NSString *optional1 = @"NO";
             
             for (int i = 0; i < resultsArray.count; i++) {
                 
+                // This workout is optional.  Part of the deluxe package.
+                if (i == 1) {
+                    
+                    optional1 = @"YES";
+                }
+                
                 // User has a choice to do 1 of 2 workouts.  Only needs to do 1.
-                if (i == 9 || i == 10) {
+                else if (i == 9 || i == 10) {
                     
                     if ([resultsArray[i] isEqualToString:@"YES"]) {
                         
@@ -1447,7 +1591,7 @@
                 }
             }
             
-            if (workoutsCompleted == 10 && [group1 isEqualToString:@"YES"]) {
+            if (workoutsCompleted == 9 && [group1 isEqualToString:@"YES"] && [optional1 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
@@ -1463,6 +1607,7 @@
         if (week == 1) {
             
             NSString *group1 = @"NO";
+            NSString *optional1 = @"NO";
             
             for (int i = 0; i < resultsArray.count; i++) {
                 
@@ -1475,6 +1620,12 @@
                     }
                 }
                 
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 7) {
+                    
+                    optional1 = @"YES";
+                }
+                
                 else {
                     
                     // User needs to do all these workouts
@@ -1485,7 +1636,7 @@
                 }
             }
             
-            if (workoutsCompleted == 7 && [group1 isEqualToString:@"YES"]) {
+            if (workoutsCompleted == 6 && [group1 isEqualToString:@"YES"] && [optional1 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
@@ -1499,6 +1650,7 @@
             
             NSString *group1 = @"NO";
             NSString *group2 = @"NO";
+            NSString *optional1 = @"NO";
             
             for (int i = 0; i < resultsArray.count; i++) {
                 
@@ -1509,6 +1661,12 @@
                         
                         group1 = @"YES";
                     }
+                }
+                
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 8) {
+                    
+                    optional1 = @"YES";
                 }
                 
                 // User has a choice to do 1 of 2 workouts.  Only needs to do 1.
@@ -1530,7 +1688,7 @@
                 }
             }
             
-            if (workoutsCompleted == 8 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"]) {
+            if (workoutsCompleted == 7 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"] && [optional1 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
@@ -1543,6 +1701,7 @@
         if (week == 3) {
             
             NSString *group1 = @"NO";
+            NSString *optional1 = @"NO";
             
             for (int i = 0; i < resultsArray.count; i++) {
                 
@@ -1555,6 +1714,12 @@
                     }
                 }
                 
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 10) {
+                    
+                    optional1 = @"YES";
+                }
+                
                 else {
                     
                     // User needs to do all these workouts
@@ -1565,7 +1730,7 @@
                 }
             }
             
-            if (workoutsCompleted == 9 && [group1 isEqualToString:@"YES"]) {
+            if (workoutsCompleted == 8 && [group1 isEqualToString:@"YES"] && [optional1 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
@@ -1579,6 +1744,7 @@
             
             NSString *group1 = @"NO";
             NSString *group2 = @"NO";
+            NSString *optional1 = @"NO";
             
             for (int i = 0; i < resultsArray.count; i++) {
                 
@@ -1589,6 +1755,12 @@
                         
                         group1 = @"YES";
                     }
+                }
+                
+                // This workout is optional.  Part of the deluxe package.
+                else if (i == 4) {
+                    
+                    optional1 = @"YES";
                 }
                 
                 // User has a choice to do 1 of 2 workouts.  Only needs to do 1.
@@ -1610,7 +1782,7 @@
                 }
             }
             
-            if (workoutsCompleted == 9 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"]) {
+            if (workoutsCompleted == 8 && [group1 isEqualToString:@"YES"] && [group2 isEqualToString:@"YES"] && [optional1 isEqualToString:@"YES"]) {
                 
                 completed = YES;
                 
