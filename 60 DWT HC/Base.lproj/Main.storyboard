@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="D41-yi-cDO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="D41-yi-cDO">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -7920,7 +7920,7 @@
                                     <constraint firstAttribute="height" constant="21" id="Fzy-0R-fzT"/>
                                     <constraint firstAttribute="width" constant="46" id="LxW-dh-7Hb"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -8032,7 +8032,7 @@
                                     <constraint firstAttribute="width" constant="46" id="57A-eb-lAs"/>
                                     <constraint firstAttribute="height" constant="21" id="gdg-k4-Ixo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -8122,7 +8122,7 @@
                                     <constraint firstAttribute="width" constant="46" id="CB5-2K-QZB"/>
                                     <constraint firstAttribute="height" constant="21" id="max-nH-HpA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -8234,7 +8234,7 @@
                                     <constraint firstAttribute="width" constant="46" id="A4b-5k-0kx"/>
                                     <constraint firstAttribute="height" constant="21" id="zzs-8V-abL"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -8324,7 +8324,7 @@
                                     <constraint firstAttribute="height" constant="21" id="pPt-1v-6HT"/>
                                     <constraint firstAttribute="width" constant="46" id="yAX-Nx-1Qm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -8436,7 +8436,7 @@
                                     <constraint firstAttribute="width" constant="46" id="he0-lr-1Kh"/>
                                     <constraint firstAttribute="height" constant="21" id="mMD-KN-4AP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -8526,7 +8526,7 @@
                                     <constraint firstAttribute="width" constant="46" id="Ljc-CC-PGg"/>
                                     <constraint firstAttribute="height" constant="21" id="OyX-To-J2N"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -8638,7 +8638,7 @@
                                     <constraint firstAttribute="height" constant="21" id="K5W-QJ-VIk"/>
                                     <constraint firstAttribute="width" constant="46" id="r7F-av-Ufj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -8728,7 +8728,7 @@
                                     <constraint firstAttribute="width" constant="46" id="2HJ-Ay-3fB"/>
                                     <constraint firstAttribute="height" constant="21" id="B3Y-4V-9ak"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -8840,7 +8840,7 @@
                                     <constraint firstAttribute="width" constant="46" id="2to-iL-w4Q"/>
                                     <constraint firstAttribute="height" constant="21" id="d3J-j9-yaT"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -8930,7 +8930,7 @@
                                     <constraint firstAttribute="height" constant="21" id="3vH-Pc-ikd"/>
                                     <constraint firstAttribute="width" constant="46" id="yNj-jd-ydo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -9042,7 +9042,7 @@
                                     <constraint firstAttribute="height" constant="21" id="9Mx-2X-eoW"/>
                                     <constraint firstAttribute="width" constant="46" id="jKD-61-gdI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -9102,26 +9102,26 @@
         <image name="weight_lifting_selected" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jjp-Q9-dxf"/>
-        <segue reference="878-hp-EeI"/>
+        <segue reference="RLd-1S-yiN"/>
+        <segue reference="ZLT-wf-m7c"/>
+        <segue reference="R2Q-jf-d41"/>
+        <segue reference="HY9-vs-FGK"/>
+        <segue reference="Gd0-3O-n9E"/>
+        <segue reference="04t-rc-2Bf"/>
+        <segue reference="sv2-Ia-pIt"/>
+        <segue reference="onA-bv-OOK"/>
+        <segue reference="OYl-eo-eOv"/>
+        <segue reference="3LN-Fu-Y0C"/>
+        <segue reference="lVs-6a-A2L"/>
+        <segue reference="Qzw-vC-8iW"/>
         <segue reference="5oV-5M-yZN"/>
-        <segue reference="hnz-Hx-XVR"/>
         <segue reference="U7y-wp-rhP"/>
+        <segue reference="878-hp-EeI"/>
+        <segue reference="SwJ-fx-Yr3"/>
+        <segue reference="mEA-Ck-Il3"/>
         <segue reference="gEI-eu-goD"/>
         <segue reference="VhQ-il-YQv"/>
-        <segue reference="mEA-Ck-Il3"/>
+        <segue reference="hnz-Hx-XVR"/>
         <segue reference="AhT-Jo-VH2"/>
-        <segue reference="Tk5-Ho-7uJ"/>
-        <segue reference="SwJ-fx-Yr3"/>
-        <segue reference="p0o-SU-5rH"/>
-        <segue reference="aU7-CM-Nyr"/>
-        <segue reference="DSb-r9-dWk"/>
-        <segue reference="vOm-GN-gIC"/>
-        <segue reference="z4O-6Z-jSu"/>
-        <segue reference="uDX-fY-gFo"/>
-        <segue reference="RLd-1S-yiN"/>
-        <segue reference="0FT-UO-y5a"/>
-        <segue reference="IKW-6T-8gx"/>
-        <segue reference="gDi-ft-94g"/>
     </inferredMetricsTieBreakers>
 </document>

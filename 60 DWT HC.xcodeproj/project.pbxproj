@@ -1068,8 +1068,8 @@
 		A51A77C51C3DBB2B00E89911 /* TVC's */ = {
 			isa = PBXGroup;
 			children = (
-				587D28131C4811D4005D2750 /* Exercise */,
 				A5A1EA961C4579180036CB7D /* Workout Lists */,
+				587D28131C4811D4005D2750 /* Exercise */,
 				A51A7D861C3ECBFB00E89911 /* MeasurementsTVC.h */,
 				A51A7D871C3ECBFB00E89911 /* MeasurementsTVC.m */,
 				A51A7D881C3ECBFB00E89911 /* PhotoTVC.h */,

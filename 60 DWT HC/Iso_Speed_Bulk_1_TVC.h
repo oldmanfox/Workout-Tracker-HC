@@ -32,6 +32,7 @@
 @property (strong, nonatomic) NSArray *currentNotesArray;
 @property (strong, nonatomic) NSArray *previousNotesArray;
 @property (strong, nonatomic) NSArray *graphButtonArray;
+@property (strong, nonatomic) NSArray *roundBackgroundColorViewsArray;
 
 @property (strong, nonatomic) NSString *actionSheetType;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
@@ -396,6 +397,22 @@
 @property (weak, nonatomic) IBOutlet UIButton *graphButton_11;
 @property (weak, nonatomic) IBOutlet UIButton *graphButton_12;
 @property (weak, nonatomic) IBOutlet UIButton *graphButton_13;
+
+
+// Background Color Views
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_1;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_2;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_3;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_4;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_5;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_6;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_7;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_8;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_9;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_10;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_11;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_12;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_13;
 
 - (IBAction)submitEntries:(id)sender;
 - (IBAction)showGraph:(UIButton *)sender;
