@@ -85,6 +85,9 @@
     //  Configure the cell...
     [self configureExerciseCell:self.CellArray :self.Reps :self.Titles :self.previousTextFieldArray :self.currentTextFieldArray :self.exerciseLabelArray :self.repLabelArray :self.previousNotesArray :self.currentNotesArray :self.graphButtonArray];
     
+    //  Configure roundBackgroundColorViews
+    [self configureRoundBackgroundColor:self.roundBackgroundColorViewsArray :@"Red"];
+    
     //  Get data from the database
     [self exerciseMatches:self.Titles :self.previousTextFieldArray :self.currentTextFieldArray :self.previousNotesArray :self.currentNotesArray];
 
@@ -932,6 +935,28 @@
                               self.graphButton_24,
                               self.graphButton_25];
 
+    self.roundBackgroundColorViewsArray = @[self.roundBackgroundColorView_1,
+                                            self.roundBackgroundColorView_2,
+                                            self.roundBackgroundColorView_3,
+                                            self.roundBackgroundColorView_4,
+                                            self.roundBackgroundColorView_5,
+                                            self.roundBackgroundColorView_6,
+                                            self.roundBackgroundColorView_7,
+                                            self.roundBackgroundColorView_8,
+                                            self.roundBackgroundColorView_9,
+                                            self.roundBackgroundColorView_10,
+                                            self.roundBackgroundColorView_11,
+                                            self.roundBackgroundColorView_12,
+                                            self.roundBackgroundColorView_13,
+                                            self.roundBackgroundColorView_14,
+                                            self.roundBackgroundColorView_15,
+                                            self.roundBackgroundColorView_16,
+                                            self.roundBackgroundColorView_17,
+                                            self.roundBackgroundColorView_18,
+                                            self.roundBackgroundColorView_19,
+                                            self.roundBackgroundColorView_20,
+                                            self.roundBackgroundColorView_21,
+                                            self.roundBackgroundColorView_22];
 }
 
 - (void)addAccessoryToolBar
@@ -998,6 +1023,21 @@
     
     [self.view endEditing:YES];
 }
+
+//- (void)tableView:(UITableView *)tableView willDisplayHeaderView:(UIView *)view forSection:(NSInteger)section
+//{
+//    // Set the text color of our header/footer text.
+//    UITableViewHeaderFooterView *header = (UITableViewHeaderFooterView *)view;
+//    [header.textLabel setTextColor:[UIColor whiteColor]];
+//    
+//    // Set the background color of our header/footer.
+//    UIColor *lightGold = [UIColor colorWithRed:251/255.0f green:209/255.0f blue:81/255.0f alpha:1.0f];
+//    header.contentView.backgroundColor = lightGold;
+//    
+//    // You can also do this to set the background color of our header/footer,
+//    //    but the gradients/other effects will be retained.
+//    // view.tintColor = [UIColor blackColor];
+//}
 
 /*
  - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

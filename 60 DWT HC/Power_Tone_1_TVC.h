@@ -28,6 +28,7 @@
 @property (strong, nonatomic) NSArray *CellArray;
 @property (strong, nonatomic) NSArray *exerciseLabelArray;
 @property (strong, nonatomic) NSArray *repLabelArray;
+@property (strong, nonatomic) NSArray *roundBackgroundColorViewsArray;
 
 @property (strong, nonatomic) NSArray *currentNotesArray;
 @property (strong, nonatomic) NSArray *previousNotesArray;
@@ -716,6 +717,30 @@
 @property (weak, nonatomic) IBOutlet UIButton *graphButton_24;
 @property (weak, nonatomic) IBOutlet UIButton *graphButton_25;
 
+
+// Background Color Views
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_1;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_2;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_3;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_4;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_5;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_6;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_7;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_8;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_9;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_10;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_11;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_12;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_13;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_14;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_15;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_16;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_17;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_18;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_19;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_20;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_21;
+@property (weak, nonatomic) IBOutlet UIView *roundBackgroundColorView_22;
 
 - (IBAction)submitEntries:(id)sender;
 - (IBAction)showGraph:(UIButton *)sender;

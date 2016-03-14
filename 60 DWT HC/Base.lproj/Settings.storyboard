@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bsV-Uo-fnf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bsV-Uo-fnf">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -96,13 +96,41 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="M9l-vj-56J" firstAttribute="leading" secondItem="R8l-GZ-0p2" secondAttribute="leadingMargin" constant="12" id="9fc-gv-tBY">
+                                                    <variation key="heightClass=compact-widthClass=regular" constant="12"/>
+                                                </constraint>
                                                 <constraint firstAttribute="bottomMargin" secondItem="M9l-vj-56J" secondAttribute="bottom" constant="2" id="Fo7-ee-diA"/>
-                                                <constraint firstItem="M9l-vj-56J" firstAttribute="leading" secondItem="R8l-GZ-0p2" secondAttribute="leadingMargin" constant="7" id="VxR-l5-VoK"/>
+                                                <constraint firstItem="M9l-vj-56J" firstAttribute="leading" secondItem="R8l-GZ-0p2" secondAttribute="leadingMargin" constant="7" id="VxR-l5-VoK">
+                                                    <variation key="widthClass=compact" constant="7"/>
+                                                    <variation key="widthClass=regular" constant="7"/>
+                                                    <variation key="heightClass=compact-widthClass=regular" constant="12"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="7"/>
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="12"/>
+                                                </constraint>
+                                                <constraint firstAttribute="bottomMargin" secondItem="M9l-vj-56J" secondAttribute="bottom" constant="2" id="YJf-GL-ZGR"/>
                                                 <constraint firstItem="M9l-vj-56J" firstAttribute="top" secondItem="R8l-GZ-0p2" secondAttribute="topMargin" constant="3" id="dU4-bM-RfU"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="2yh-qM-Hcb" secondAttribute="bottom" constant="-2" id="ee3-8M-vHs"/>
                                                 <constraint firstItem="2yh-qM-Hcb" firstAttribute="top" secondItem="R8l-GZ-0p2" secondAttribute="topMargin" constant="-2" id="ffg-63-th0"/>
+                                                <constraint firstItem="M9l-vj-56J" firstAttribute="top" secondItem="R8l-GZ-0p2" secondAttribute="topMargin" constant="3" id="mlb-Fd-Eym"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="2yh-qM-Hcb" secondAttribute="trailing" constant="9" id="ysv-tF-j0N"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="9fc-gv-tBY"/>
+                                                    <exclude reference="YJf-GL-ZGR"/>
+                                                    <exclude reference="mlb-Fd-Eym"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=compact-widthClass=regular">
+                                                <mask key="constraints">
+                                                    <include reference="9fc-gv-tBY"/>
+                                                    <exclude reference="Fo7-ee-diA"/>
+                                                    <exclude reference="VxR-l5-VoK"/>
+                                                    <include reference="YJf-GL-ZGR"/>
+                                                    <exclude reference="dU4-bM-RfU"/>
+                                                    <include reference="mlb-Fd-Eym"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="settingsCell" id="l0i-6V-5T6">
@@ -169,14 +197,22 @@
                                                 <constraint firstItem="nMK-WT-RrQ" firstAttribute="top" secondItem="lvd-La-8hM" secondAttribute="topMargin" constant="-1" id="9Td-da-xSM"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="MQ6-b4-HAW" secondAttribute="trailing" constant="7" id="GnX-Vm-w36"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="izF-hT-D5G" secondAttribute="bottom" constant="-2" id="O8x-Fb-Sgf"/>
-                                                <constraint firstItem="izF-hT-D5G" firstAttribute="leading" secondItem="jaX-Ky-U2m" secondAttribute="trailing" constant="16" id="UgH-Af-0Xz"/>
+                                                <constraint firstItem="izF-hT-D5G" firstAttribute="leading" secondItem="jaX-Ky-U2m" secondAttribute="trailing" constant="16" id="UgH-Af-0Xz">
+                                                    <variation key="heightClass=compact-widthClass=regular" constant="11"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="16"/>
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="11"/>
+                                                </constraint>
                                                 <constraint firstItem="nMK-WT-RrQ" firstAttribute="leading" secondItem="izF-hT-D5G" secondAttribute="trailing" constant="8" id="YKU-c6-OtN"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="nMK-WT-RrQ" secondAttribute="bottom" constant="-2" id="awq-Mu-eed"/>
                                                 <constraint firstItem="nMK-WT-RrQ" firstAttribute="width" secondItem="izF-hT-D5G" secondAttribute="width" id="dmB-WN-v73"/>
                                                 <constraint firstItem="jaX-Ky-U2m" firstAttribute="top" secondItem="lvd-La-8hM" secondAttribute="topMargin" constant="3" id="e7z-qX-VAH"/>
                                                 <constraint firstItem="MQ6-b4-HAW" firstAttribute="leading" secondItem="nMK-WT-RrQ" secondAttribute="trailing" constant="19" id="egm-Ed-obf"/>
                                                 <constraint firstItem="izF-hT-D5G" firstAttribute="top" secondItem="lvd-La-8hM" secondAttribute="topMargin" constant="-1" id="es5-ro-j3t"/>
-                                                <constraint firstItem="jaX-Ky-U2m" firstAttribute="leading" secondItem="lvd-La-8hM" secondAttribute="leadingMargin" constant="7" id="j4f-cC-3fz"/>
+                                                <constraint firstItem="jaX-Ky-U2m" firstAttribute="leading" secondItem="lvd-La-8hM" secondAttribute="leadingMargin" constant="7" id="j4f-cC-3fz">
+                                                    <variation key="heightClass=compact-widthClass=regular" constant="12"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="7"/>
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="12"/>
+                                                </constraint>
                                                 <constraint firstItem="MQ6-b4-HAW" firstAttribute="top" secondItem="lvd-La-8hM" secondAttribute="topMargin" constant="3" id="me4-Us-aun"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="MQ6-b4-HAW" secondAttribute="bottom" constant="2" id="moj-ie-Muf"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="jaX-Ky-U2m" secondAttribute="bottom" constant="2" id="nRf-S6-zha"/>
@@ -254,11 +290,19 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="GBx-OB-0Fx" secondAttribute="bottom" constant="-8" id="1YF-9o-r1A"/>
                                                 <constraint firstItem="GBx-OB-0Fx" firstAttribute="top" secondItem="cjJ-Hv-LU7" secondAttribute="topMargin" constant="-8" id="4wX-na-Ivo"/>
-                                                <constraint firstItem="pY0-SE-FUT" firstAttribute="leading" secondItem="cjJ-Hv-LU7" secondAttribute="leadingMargin" constant="7" id="Fx1-R9-Rcm"/>
+                                                <constraint firstItem="pY0-SE-FUT" firstAttribute="leading" secondItem="cjJ-Hv-LU7" secondAttribute="leadingMargin" constant="7" id="Fx1-R9-Rcm">
+                                                    <variation key="heightClass=compact-widthClass=regular" constant="12"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="7"/>
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="12"/>
+                                                </constraint>
                                                 <constraint firstAttribute="bottomMargin" secondItem="pY0-SE-FUT" secondAttribute="bottom" constant="2" id="HXT-Op-9gS"/>
                                                 <constraint firstItem="pY0-SE-FUT" firstAttribute="top" secondItem="cjJ-Hv-LU7" secondAttribute="topMargin" constant="3" id="eVO-t7-5Pg"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="GBx-OB-0Fx" secondAttribute="trailing" constant="7" id="ixv-RG-9MY"/>
-                                                <constraint firstItem="GBx-OB-0Fx" firstAttribute="leading" secondItem="pY0-SE-FUT" secondAttribute="trailing" constant="8" id="lGk-bF-hAy"/>
+                                                <constraint firstItem="GBx-OB-0Fx" firstAttribute="leading" secondItem="pY0-SE-FUT" secondAttribute="trailing" constant="8" id="lGk-bF-hAy">
+                                                    <variation key="heightClass=compact-widthClass=regular" constant="3"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="3"/>
+                                                </constraint>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -287,12 +331,20 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="vgP-Pe-429" secondAttribute="trailing" constant="7" id="DuY-nx-hIu"/>
-                                                <constraint firstItem="vgP-Pe-429" firstAttribute="leading" secondItem="OSq-Gg-JEO" secondAttribute="trailing" constant="8" id="QPP-wE-5JN"/>
+                                                <constraint firstItem="vgP-Pe-429" firstAttribute="leading" secondItem="OSq-Gg-JEO" secondAttribute="trailing" constant="8" id="QPP-wE-5JN">
+                                                    <variation key="heightClass=compact-widthClass=regular" constant="3"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="3"/>
+                                                </constraint>
                                                 <constraint firstAttribute="bottomMargin" secondItem="OSq-Gg-JEO" secondAttribute="bottom" constant="2" id="WI6-fp-f2l"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="vgP-Pe-429" secondAttribute="bottom" constant="-8" id="cuV-KD-Nli"/>
                                                 <constraint firstItem="vgP-Pe-429" firstAttribute="top" secondItem="X3J-A2-wxV" secondAttribute="topMargin" constant="-8" id="iVK-HQ-jmx"/>
                                                 <constraint firstItem="OSq-Gg-JEO" firstAttribute="top" secondItem="X3J-A2-wxV" secondAttribute="topMargin" constant="3" id="igb-HF-BNv"/>
-                                                <constraint firstItem="OSq-Gg-JEO" firstAttribute="leading" secondItem="X3J-A2-wxV" secondAttribute="leadingMargin" constant="7" id="mM3-Gw-eUq"/>
+                                                <constraint firstItem="OSq-Gg-JEO" firstAttribute="leading" secondItem="X3J-A2-wxV" secondAttribute="leadingMargin" constant="7" id="mM3-Gw-eUq">
+                                                    <variation key="heightClass=compact-widthClass=regular" constant="12"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="7"/>
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="12"/>
+                                                </constraint>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -314,8 +366,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="1.12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="laP-4R-XLD">
-                                                    <rect key="frame" x="556" y="11" width="29" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="1.13" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="laP-4R-XLD">
+                                                    <rect key="frame" x="555" y="11" width="30" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.80000000000000004" green="0.29803921570000003" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
