@@ -135,6 +135,29 @@ NS_ASSUME_NONNULL_BEGIN
  */
 -(void)inlineAdWillLeaveApplication:(MMInlineAd *)ad;
 
+/**
+ * Callback invoked when an abort for an in-progress request successfully stops processing.
+ *
+ * This method is always called on the main thread.
+ *
+ * @param ad The ad placement.
+ */
+-(void)inlineAdAbortDidSucceed:(MMInlineAd*)ad;
+
+/**
+ * Callback invoked when an abort for an in-progress request fails.
+ *
+ * Note that depending on the reason for abort failure, the relevant delegate callback 
+ * (inlineAdRequestDidSucceed: or inlineAd:requestDidFailWithError:) is invoked *before*
+ * this method.
+ *
+ * This method is always called on the main thread.
+ *
+ * @param ad The ad placement.
+ * @param error Error indicating the manner in which the abort failed.
+ */
+-(void)inlineAd:(MMInlineAd*)ad abortDidFailWithError:(NSError*)error;
+
 @end
 
 /**
@@ -195,8 +218,23 @@ typedef NS_ENUM(NSInteger, MMInlineAdSize) {
 -(void)request:(nullable MMRequestInfo*)requestInfo;
 
 /**
- * The view containing the ad. This view should not have its subviews modified, or be styled, in any way.
+ * Attempts to cancel a currently pending request.
  *
+ * Note that there is not a guarantee that this method will result in canceling a pending request, or that
+ * a request may be canceled for a reason other than a user-initiated abort. 
+ *
+ * Additonally, in certain timing-dependent multithread scenarios, an abort may be requested 'too late'.
+ * This would be where a request has succeeded/failed and is being processed on the appropriate thread,
+ * while a different thread requests an 'abort'. In this case the abort message is ignored and none of 
+ * the abort callbacks are invoked.
+ *
+ * See the documentation for inlineAd:abortDidFailWithError: for details on how this method affects callbacks.
+ */
+-(void)abort;
+
+/**
+ * The view containing the ad. This view should not have its subviews modified, or be styled, in any way. 
+ * 
  * The MMInlineAd view's bounds are specificed by the size passed in via the constructor.
  */
 @property (nonatomic, readonly) UIView* view;
@@ -220,7 +258,7 @@ typedef NS_ENUM(NSInteger, MMInlineAdSize) {
 
 /**
  * The background color for requested space not filled by the ads.
- *
+ * 
  * If this value is not set, it defaults to `[UIColor clearColor]`.
  */
 @property (nonatomic, readwrite) UIColor* flexibleBackgroundColor;

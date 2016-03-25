@@ -195,7 +195,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * The disclaimer text marking a visual element as an advertisement.
- *
+ * 
  * The text value must be displayed and should not be altered. Example disclosure language includes: "Sponsored by [brand]"  or "Presented by [brand]"
  *
  * Default attributes which may be may be altered by the user:
@@ -312,7 +312,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, nullable) UILabel* body;
 
 /**
- * Descriptive body text for the ad.
+ * Descriptive body text for the ad. 
  *
  * The text value must be displayed and should not be altered.
  *
@@ -331,8 +331,8 @@ NS_ASSUME_NONNULL_BEGIN
 -(nullable UILabel*)body:(NSInteger)instanceId;
 
 /**
- * The title label of the ad.
- *
+ * The title label of the ad. 
+ * 
  * The text value must be displayed and should not be altered.
  *
  * Default attributes which may be may be modified by the user:
@@ -346,7 +346,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly, nullable) UILabel* title;
 
 /**
- * The title label of the ad.
+ * The title label of the ad. 
  *
  * The text value must be displayed and should not be altered.
  *
@@ -398,7 +398,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * The rating label for the native ad.
- *
+ * 
  * The text value must be displayed and should not be altered.
  *
  * Default attributes which may be may be modified by the user:

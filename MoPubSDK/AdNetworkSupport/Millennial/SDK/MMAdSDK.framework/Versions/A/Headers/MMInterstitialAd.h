@@ -55,7 +55,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Callback fired when the interstitial is displayed.
- *
+ * 
  * This method is always called on the main thread.
  *
  * @param ad The interstitial which is displayed.
@@ -149,7 +149,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * The transition style for modal presentation of the interstitial.
  *
- * The default value is `UIModalTransitionStyleCoverVertical`. `UIModalTransitionStylePartialCurl` is not supported
+ * The default value is `UIModalTransitionStyleCoverVertical`. `UIModalTransitionStylePartialCurl` is not supported 
  * and will instead set the default value.
  */
 @property (assign, nonatomic) UIModalTransitionStyle modalTransitionStyle;
@@ -165,7 +165,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  * Displays the interstitial ad.
- *
+ * 
  * If the ad is not ready for display (has not finished loading or is expired) this will invoke the corresponding
  * delegate callback and no other actions will be taken.
  *

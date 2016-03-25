@@ -18,7 +18,7 @@ typedef NS_OPTIONS(NSUInteger, MMLogFlag) {
     MMLogFlagDebug  = (1 << 3)
 };
 
-/**
+/** 
  * Log levels for the SDK. `Error` is the least verbose level, `Debug` the most verbose.
  * Using these values rather than the `MMLogFlag` enum is recommended.
  */
