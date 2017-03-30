@@ -2025,6 +2025,12 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 682M442ZA9;
 						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Wallet = {
+								enabled = 1;
+							};
 							com.apple.iCloud = {
 								enabled = 1;
 							};
