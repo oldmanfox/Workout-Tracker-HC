@@ -10,6 +10,8 @@
 
 #import "SChartSeriesStyle.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** SChartBarColumnSeriesStyle manages the look of bar and column series on a chart.  It contains any properties which are common to both bar and column series.
  
  For properties which are specific to bar series, you should use the `SChartBarSeriesStyle`.  For properties which are specific to column series, you should use the `SChartColumnSeriesStyle`.
@@ -28,9 +30,6 @@
  By default, this property is set to `YES`. */
 @property (nonatomic)             BOOL showArea;
 
-/* DEPRECATED - In future releases, this property will be taken off the API.  It is used internally, but shouldn't be set from the outside. */
-@property (nonatomic)             BOOL showAreaWasSet;
-
 /** Set this property to `YES` to add a gradient to the fill inside the bar/column.  If the area is not filled, this property won't have any effect. 
  
  When a gradient is applied to the fill, the color starts at `areaColor`, and finishes at `areaColorGradient`.
@@ -40,38 +39,35 @@
  By default, this property is set to `YES`. */
 @property (nonatomic)             BOOL showAreaWithGradient;
 
-/* DEPRECATED - In future releases, this property will be taken off the API.  It is used internally, but shouldn't be set from the outside. */
-@property (nonatomic)             BOOL showAreaWithGradientWasSet;
-
 /** The fill color of the area inside the bar/column if `showArea` is `YES`. */
-@property (nonatomic, retain)     UIColor *areaColor;
+@property (nonatomic, strong, nullable)     UIColor *areaColor;
 
 /** The second fill color of the area inside the bar/column if `showAreaWithGradient` is `YES`. */
-@property (nonatomic, retain)     UIColor *areaColorGradient;
+@property (nonatomic, strong, nullable)     UIColor *areaColorGradient;
 
 /** The fill color of the area inside the bar/column if `showArea` is `YES` when the data point is below the baseline of the series. 
  
  The baseline of the series is set by [SChartCartesianSeries baseline].
  */
-@property (nonatomic, retain)     UIColor *areaColorBelowBaseline;
+@property (nonatomic, strong, nullable)     UIColor *areaColorBelowBaseline;
 
 /** The second fill color of the area inside the bar/column if `showAreaWithGradient` is `YES` when the data point is below the baseline. 
  
  The baseline of the series is set by [SChartCartesianSeries baseline].
  */
-@property (nonatomic, retain)     UIColor *areaColorGradientBelowBaseline;
+@property (nonatomic, strong, nullable)     UIColor *areaColorGradientBelowBaseline;
 
 /** The color of the outline of the bar/column. */
-@property (nonatomic, retain)     UIColor *lineColor;
+@property (nonatomic, strong, nullable)     UIColor *lineColor;
 
 /** The color of the outline of the bar/column when the data point is below the baseline.
  
  The baseline of the series is set by [SChartCartesianSeries baseline].
  */
-@property (nonatomic, retain)     UIColor *lineColorBelowBaseline;
+@property (nonatomic, strong, nullable)     UIColor *lineColorBelowBaseline;
 
 /** The width of the outline of the bar/column, in points. */
-@property (nonatomic, retain)     NSNumber *lineWidth;
+@property (nonatomic, strong, nullable)     NSNumber *lineWidth;
 
 /** The ratio used to calculate a corner radius which is applied to the corners on the tip of each bar or column.
  The corner radius is calculated by multiplying this corner ratio value against half the bar or column width.
@@ -81,6 +77,13 @@
  By default, this property is set to `0`. */
 @property (nonatomic, assign)     CGFloat cornerRatio;
 
+/**
+ A custom spacing for the bar/column series. This is the amount of space (in data-terms) that the bar/column should take up on its corresponding axis.
+
+ Defaults to `nil` - i.e. no custom value.
+ */
+@property(nonatomic, strong) NSNumber *barColumnSpacing;
+
 /** Updates this style object using the settings from the passed-in style. 
  
  @param style The style with which to configure this style object.
@@ -88,3 +91,5 @@
 - (void)supplementStyleFromStyle:(SChartBarColumnSeriesStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -11,13 +11,13 @@
 
 @class SChartSeries;
 @class SChartAnimation;
+@class SChartAnimationTracker;
 
 @interface SChartGLView : UIView {
 
 @private
     
     CAEAGLLayer* _eaglLayer;
-    EAGLContext* _context;
     UIColor *areaColor;
 
     BOOL needsResize;
@@ -30,33 +30,33 @@
     GLuint _framebufferMSAA;
     GLuint _colorRenderBufferMSAA;
     
-    double thisFrameTime;
-    double lastFrameTime;
-    double stepInTime;
-    BOOL resetAnimationTimer;
-    
     NSMutableDictionary *userTextures;
     
 }
 
 #pragma mark Public
 
--(id)initWithFrame:(CGRect)frame;
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+-(id)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+-(id)initWithFrame:(CGRect)frame animationTracker:(SChartAnimationTracker *)tracker NS_DESIGNATED_INITIALIZER;
 
 @property (nonatomic, readonly) CGRect glBounds;
 
 - (float) glWidth;
 - (float) glHeight;
 
-@property (nonatomic, assign) BOOL resetAnimationTimer;
 @property (nonatomic, strong) NSMutableArray *allSeries;
 @property (nonatomic, retain) NSMutableDictionary *userTextures;
 
 -(GLuint) getFramebuffer;
 -(GLuint) getColorRenderBuffer;
 
+@property (nonatomic, strong) EAGLContext *context;
 -(CAEAGLLayer *) getEAGLLayer;
--(EAGLContext *) getContext;
+
+@property (nonatomic, assign) BOOL isEnteringBackground;
 
 - (void)reset;
 
@@ -65,12 +65,10 @@
 - (void)beginRenderWithReloadedData:(BOOL)reloadedData;
 
 // @name endRender */
-// Displays objects drawn since beginRender was last called, returns true if needs to redraw next frame */
-- (BOOL)endRender;
+// Displays objects drawn since beginRender was last called
+- (void)endRender;
 
 - (void)flushPendingGLOperations;
-
--(float)timeIncrement;
 
 // Resize the render buffer and recalculate the viewport
 - (void)resize;

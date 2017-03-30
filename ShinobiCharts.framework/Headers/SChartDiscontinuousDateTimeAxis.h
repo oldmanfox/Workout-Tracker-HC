@@ -7,10 +7,12 @@
 #import <Foundation/Foundation.h>
 
 #import "SChartDateTimeAxis.h"
-#import "ShinobiMacros.h"
+#import "ShinobiHeaderMacros.h"
 
 @class SChartTimePeriod;
 @class SChartRepeatedTimePeriod;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * An SChartDiscontinuousDateTimeAxis is a subclass of SChartDateTimeAxis
@@ -99,3 +101,5 @@
 - (NSUInteger)cacheCount;
 
 @end
+
+NS_ASSUME_NONNULL_END

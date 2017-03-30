@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import "SChartSeries.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  __Note: The `SChartRadialSeries` class will be removed in a future release. It has only been left in this release in order to maintain backwards compatibility. Please use `SChartDonutSeries` instead.__
  
@@ -38,6 +40,8 @@
  By default, this property is set to @"%.2f" which shows the value to two decimal places.
  
  @warning *DEPRECATED* - This property has been moved onto `SChartDonutSeries`. */
-@property (nonatomic, retain) NSString *labelFormatString DEPRECATED_ATTRIBUTE;
+@property (nonatomic, retain) NSString *labelFormatString SCHART_DEPRECATED;
 
 @end
+
+NS_ASSUME_NONNULL_END

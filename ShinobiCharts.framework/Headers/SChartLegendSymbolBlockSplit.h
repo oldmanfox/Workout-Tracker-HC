@@ -8,10 +8,22 @@
 
 #import "SChartLegendSymbolBlock.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface SChartLegendSymbolBlockSplit : SChartLegendSymbolBlock
 
 @property (nonatomic, retain)   UIColor *lowColor;
 
--(id)initWithAreaColor:(UIColor *)aColor andLowAreaColor:(UIColor *)lColor andOutlineColor:(UIColor *)oColor;
+-(id)initWithAreaColor:(UIColor *)aColor
+       andOutlineColor:(UIColor *)oColor
+    NS_UNAVAILABLE;
+
+-(id)initWithAreaColor:(UIColor *)aColor
+       andLowAreaColor:(UIColor *)lColor
+       andOutlineColor:(UIColor *)oColor
+    NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

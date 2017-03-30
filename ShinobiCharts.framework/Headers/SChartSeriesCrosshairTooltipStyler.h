@@ -10,6 +10,8 @@
 
 #import "SChartSeriesCrosshairTooltipStylerProtocol.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  The styler is responsible for applying an `SChartCrosshairStyle` to `SChartSeriesCrosshairTooltip`.
  
@@ -21,7 +23,8 @@
  
  These can be altered by creating a class conforming to `SChartSeriesCrosshairTooltipStylerProtocol` and setting the tooltip's `styler` property to an instance of the class.
 */
-
 @interface SChartSeriesCrosshairTooltipStyler : NSObject <SChartSeriesCrosshairTooltipStylerProtocol>
 
 @end
+
+NS_ASSUME_NONNULL_END

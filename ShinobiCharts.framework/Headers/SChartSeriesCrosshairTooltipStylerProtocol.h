@@ -12,9 +12,10 @@
 
 @class SChartSeriesCrosshairTooltip, SChartMappedSeries;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** A class conforming to this protocol is responsible for styling the tooltip. 
  */
-
 @protocol SChartSeriesCrosshairTooltipStylerProtocol <NSObject>
 
 /**
@@ -29,3 +30,5 @@
 - (void)applyStyleToTooltip:(SChartSeriesCrosshairTooltip *)tooltip basedOnSeries:(SChartMappedSeries *)series forDatapoint:(id<SChartData>)datapoint;
 
 @end
+
+NS_ASSUME_NONNULL_END

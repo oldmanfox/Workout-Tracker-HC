@@ -11,10 +11,12 @@
 @class SChartCanvas;
 @class SChartAnnotationZooming;
 
-typedef enum {
+typedef NS_ENUM(NSInteger, SChartAnnotationPosition) {
     SChartAnnotationAboveData,
     SChartAnnotationBelowData,
-} SChartAnnotationPosition;
+};
+
+NS_ASSUME_NONNULL_BEGIN
 
 /** An `SChartAnnotation` is a UIView that can be displayed on a chart - maintaining aspect ratio at all times and position in accordance with the panning of the data range (see below). 
  
@@ -42,25 +44,25 @@ typedef enum {
 /** The x axis that the annotation is attached to.
  
  A `nil` value will cause the view to be displayed at the midpoint of the width of the chart plot area. */
-@property (nonatomic, assign) SChartAxis *xAxis;
+@property (nonatomic, assign, nullable) SChartAxis *xAxis;
 
 /** The y axis that the annotation is attached to.
  
  A `nil` value will cause the view to be displayed at the midpoint of the height of the chart plot area. */
-@property (nonatomic, assign) SChartAxis *yAxis;
+@property (nonatomic, assign, nullable) SChartAxis *yAxis;
 
 /** The value on the given `xAxis` that the annotation is going to be anchored to. 
  
  A `nil` value will cause the view to be displayed at the midpoint of the width of the chart plot area. */
-@property (nonatomic, retain) id xValue;
+@property (nonatomic, retain, nullable) id xValue;
 
 /** The value on the given `yAxis` that the annotation is going to be anchored to.
  
  A `nil` value will cause the view to be displayed at the midpoint of the height of the chart plot area. */
-@property (nonatomic, retain) id yValue;
+@property (nonatomic, retain, nullable) id yValue;
 
 /** If this is a text annotation, this property is an accessor for the text label. Otherwise it returns `nil`. */
-@property (nonatomic, retain) UILabel *label;
+@property (nonatomic, retain, nullable) UILabel *label;
 
 /** Sets how annotations should be drawn relative to your chart data.
  
@@ -144,12 +146,12 @@ typedef enum {
 /** The upper limit of the annotation on the x axis.
  
  A `nil` value will cause the view to be displayed with its original width. */
-@property (nonatomic, retain) id xValueMax;
+@property (nonatomic, retain, nullable) id xValueMax;
 
 /** The upper limit of the annotation on the y axis.
  
  A `nil` value will cause the view to be displayed with its original height. */
-@property (nonatomic, retain) id yValueMax;
+@property (nonatomic, retain, nullable) id yValueMax;
 
 /** Causes the annotation to be stretched to cover the whole width of the chart plot area.
  
@@ -171,3 +173,6 @@ typedef enum {
 -(void)updateViewWithCanvas:(SChartCanvas *)canvas;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** Manages the appearance of the legend on the chart.  The legend is an instance of `SChartLegend`.
  
  @available Standard
@@ -18,38 +20,38 @@
 /** @name Styling Properties */
 
 /** The font used for the series titles. */
-@property (nonatomic, retain)   UIFont *font;
+@property (nonatomic, strong, nullable)   UIFont *font;
 
 /** The color of the text used to display the series titles. */
-@property (nonatomic, retain)   UIColor *fontColor;
+@property (nonatomic, strong, nullable)   UIColor *fontColor;
 
 /** The alignment of the series titles. */
 @property (nonatomic)           NSTextAlignment textAlignment;
 
 /** The font for the legend title. */
-@property (nonatomic, retain)   UIFont *titleFont;
+@property (nonatomic, strong, nullable)   UIFont *titleFont;
 
 /** The color for the legend title text. */
-@property (nonatomic, retain)   UIColor *titleFontColor;
+@property (nonatomic, strong, nullable)   UIColor *titleFontColor;
 
 /** The amount of padding around the inside perimeter of the legend, in points. */
-@property (nonatomic, retain)   NSNumber *marginWidth;
+@property (nonatomic, strong, nullable)   NSNumber *marginWidth;
 
 /** The color of the border line of the legend. */
-@property (nonatomic, retain)   UIColor *borderColor;
+@property (nonatomic, strong, nullable)   UIColor *borderColor;
 
 /** The width of the legend border in points. */
-@property (nonatomic, retain)   NSNumber *borderWidth;
+@property (nonatomic, strong, nullable)   NSNumber *borderWidth;
 
 /** The radius of the corners of the legend view.
  
  Setting a radius of `0` will draw square corners. */
-@property (nonatomic, retain)   NSNumber *cornerRadius;
+@property (nonatomic, strong, nullable)   NSNumber *cornerRadius;
 
 /** The radius of the corners of the legend symbols.
  
  Setting a radius of `0` will draw square corners. */
-@property (nonatomic, retain)   NSNumber *symbolCornerRadius;
+@property (nonatomic, strong, nullable)   NSNumber *symbolCornerRadius;
 
 /** Defines whether symbols will be shown in the legend.
 
@@ -79,21 +81,21 @@ By default, this property is set to `YES` (symbols will be shown). Symbols are c
 @property (nonatomic)           SChartLegendOrientation orientation;
 
 /** The color of the background of the legend. */
-@property (nonatomic, retain)   UIColor *areaColor;
+@property (nonatomic, strong, nullable)   UIColor *areaColor;
 
 /** The horizontal padding between the symbol and the label representing a chart series in the legend, and also between different series within a row. 
  */
-@property (nonatomic, retain)   NSNumber    *horizontalPadding;
+@property (nonatomic, strong, nullable)   NSNumber    *horizontalPadding;
 
 /** The vertical padding between rows in the legend.
  */
-@property (nonatomic, retain)   NSNumber    *verticalPadding;
+@property (nonatomic, strong, nullable)   NSNumber    *verticalPadding;
 
 /** Updates this style object using the configuration of the passed in style.
  @param style The new style with which to update this style object. */
 -(void)supplementStyleFromStyle:(SChartLegendStyle *)style;
 
-/* DEPRECATED - This will be taken off the public API in a future commit. */
--(BOOL)textAlignmentSet;
-
 @end
+
+NS_ASSUME_NONNULL_END
+

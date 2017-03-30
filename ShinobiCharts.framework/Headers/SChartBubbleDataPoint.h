@@ -9,6 +9,8 @@
 #import "SChartMultiValueDataPoint.h"
 #import "SChartData.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface SChartBubbleDataPoint : SChartMultiValueDataPoint
 
 /** The value of the bubble for the data point. 
@@ -18,3 +20,5 @@
 @property (nonatomic, assign) double area;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -9,7 +9,9 @@
 #import "SChartPointStruct.h"
 #import "SChartTitlePosition.h"
 #import "SChartGesturePanType.h"
-#import "ShinobiMacros.h"
+#import "ShinobiHeaderMacros.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 @class SChartCanvas;
 @class SChartAxis;
@@ -21,13 +23,12 @@
 @class SChartGradientView;
 @class SChartMappedSeries;
 @class SChartGestureManager;
+@class SChartAnimationTracker;
 
 @protocol SChartDatasource;
 @protocol SChartDelegate;
 @protocol SChartData;
 @protocol SChartCrosshair;
-
-typedef NSArray SC_GENERIC(SChartAxis *) SChartAxisArray;
 
 /**
  A ShinobiChart displays data arranged in either cartesian _or_ radial series. Here is an example with a few of the common features labelled:
@@ -61,31 +62,29 @@ A ShinobiChart will only update to reflect any changes to data when the reloadDa
   
  */
 
-typedef enum {
+typedef NS_ENUM(NSInteger, SChartAxisType) {
     SChartAxisTypeNumber,
     SChartAxisTypeDateTime,
     SChartAxisTypeCategory,
     SChartAxisTypeLogarithmic,
     SChartAxisTypeDiscontinuousNumber,
     SChartAxisTypeDiscontinuousDateTime
-} SChartAxisType;
+};
 
-typedef enum {
+typedef NS_ENUM(NSInteger, SChartTitleCentresOn) {
     SChartTitleCentresOnChart,
     SChartTitleCentresOnPlottingArea,
     SChartTitleCentresOnCanvas
-} SChartTitleCentresOn;
+};
 
 typedef struct SChartSize
 {
     double width, height;
 } SChartSize;
 
-
 @interface ShinobiChart : UIView {
 @private
     NSMutableArray *xAxes, *yAxes;
-    NSMutableArray *seriesGroups;
     BOOL shouldReloadData;
     dispatch_queue_t loadingDataQueue;
     NSInteger loadingQueueSize;
@@ -97,21 +96,18 @@ typedef struct SChartSize
 #pragma mark Layout and Styling
 /** @name Layout and Styling */
 
-/** The frame that contains the whole chart object */
-- (CGRect)chartFrame;
-
 /** The frame of the plot area in the coordinate system of the chart view.
  
  This is the area in which your data is visualised in series.
  This area does not usually contain the chart title, legend, axes or axis titles, or any tickmarks or ticklabels unless they are explicitly positioned inside the plot area.
  */
-- (CGRect)getPlotAreaFrame;
+@property (nonatomic, assign, readonly) CGRect plotAreaFrame;
 
 /** Background color of the chart view */
-- (UIColor *)chartBackgroundColor;
+- (nullable UIColor *)chartBackgroundColor;
 
 /** Background colour of the plot area - ie: the area inside the axis. */
-- (UIColor *)plotBackgroundColor;
+- (nullable UIColor *)plotBackgroundColor;
 
 /** 
  The Inset of the chart's canvas frame using the top, left, bottom & right values in the UIEdgeInsets object given.
@@ -156,18 +152,6 @@ typedef struct SChartSize
  */
 - (NSString *)stringForX:(double)x andY:(double)y;
 
-/** A reference to the canvas object of the chart 
- 
- The chart canvas is responsible for drawing all of the axes and series on a chart.
- */
-- (SChartCanvas *)getCanvas;
-
-/** Refreshes whether panning is enabled on the chart canvas.  It is called whenever the enableGesturePanning property is changed on any of the axes associated with the chart. 
- @see SChartAxis
- @see SChartCanvas
- */
-- (void)axisPanningChanged;
-
 #pragma mark -
 #pragma mark Delegates, Data Sources and License Key
 /** @name Managing the delegate and data source */
@@ -177,14 +161,14 @@ typedef struct SChartSize
  
  The object must adopt the SChartDelegate protocol.  The SChartDelegate protocol provides the chart with a target to relay events to, such as when the user is zooming or other touch events. Objects that act as a delegate to the ShinobiChart can use these notifications to synchronise other charts or update objects with the current status of this chart.
  */
-@property (nonatomic, assign) id <SChartDelegate> delegate;
+@property (nonatomic, assign, nullable) id <SChartDelegate> delegate;
 
 /** 
  The object that acts as the data source of the receiving chart.
  
  The object must adopt the SChartDatasource protocol.  The data source provides the chart with the information it needs to construct the chart object. In general, styling and event response is handled by objects implementing the SChartDelegate protocol - the data source has minimal impact on the look and feel of the chart. 
  */
-@property (nonatomic, assign) id <SChartDatasource> datasource;
+@property (nonatomic, assign, nullable) id <SChartDatasource> datasource;
 
 
 /** 
@@ -192,7 +176,7 @@ typedef struct SChartSize
  
  In trial versions of a chart, a valid license key must be set before the chart will render.  When you download a trial version of ShinobiCharts, you will also receive an email containing the license key.
  */
-@property (nonatomic, retain) NSString *licenseKey;
+@property (nonatomic, retain, nullable) NSString *licenseKey;
 
 
 #pragma mark -
@@ -202,13 +186,13 @@ typedef struct SChartSize
  
  The chart contains an array of x axes, as different series on the chart could use different axes.  The primary axis is the main one used by the chart.  If you haven't explicitly specified which axis is the primary one, this will be automatically generated by the chart.
  */
-@property (nonatomic, retain) SChartAxis *xAxis;
+@property (nonatomic, retain, nullable) SChartAxis *xAxis;
 
 /** The primary y-axis for this chart. 
  
  The chart contains an array of y axes, as different series on the chart could use different axes.  The primary axis is the main one used by the chart.  If you haven't explicitly specified which axis is the primary one, this will be automatically generated by the chart.
  */
-@property (nonatomic, retain) SChartAxis *yAxis;
+@property (nonatomic, retain, nullable) SChartAxis *yAxis;
 
 /** @name Configuring the axes */
 /** Adds an X-Axis for the chart
@@ -252,63 +236,63 @@ typedef struct SChartSize
  A chart can contain multiple x and y axes, if the series on the chart use different axes.
  @return An array containing all the axes associated with this chart.  The x axes will be first in the array, followed by the y axes.
  */
-- (SChartAxisArray *)allAxes;
+- (NSArray SC_GENERIC(SChartAxis *) *)allAxes;
 
 /** Returns all Primary axes associated with this chart
  
  A chart can contain multiple x and y axes, if the series on the chart use different axes.  A chart will always have one primary x axis, and one primary y axis, unless it is radial.
  @return An array containing the primary axes associated with the chart.  The array will contain the primary x axis, followed by the primary y axis.
  */
-- (SChartAxisArray *)primaryAxes;
+- (NSArray SC_GENERIC(SChartAxis *) *)primaryAxes;
 
 /** Returns all Secondary axes associated with this chart 
  
  A chart can contain multiple x and y axes, if the series on the chart use different axes.  A chart will always have one primary x axis, and one primary y axis, unless it is radial.  All the other axes on the chart are regarded as secondary.
  @return An array containing the secondary axes associated with the chart.  The array will contain the secondary x axes, followed by the secondary y axes.
  */
-- (SChartAxisArray *)secondaryAxes;
+- (NSArray SC_GENERIC(SChartAxis *) *)secondaryAxes;
 
 /** Returns all X axes associated with this chart 
  
  A chart can contain multiple x axes, if the series on the chart use different axes.  A chart will always have one primary x axis, unless it is radial.
  @return An array containing all the x axes associated with the chart.  The primary axis will be the first one in the array.
  */
-- (SChartAxisArray *)allXAxes;
+- (NSArray SC_GENERIC(SChartAxis *) *)allXAxes;
 
 /** Returns all Y axes associated with this chart 
  
  A chart can contain multiple y axes, if the series on the chart use different axes.  A chart will always have one primary y axis, unless it is radial.
  @return An array containing all the y axes associated with the chart.  The primary axis will be the first one in the array.
  */
-- (SChartAxisArray *)allYAxes;
+- (NSArray SC_GENERIC(SChartAxis *) *)allYAxes;
 
 /** Returns all secondary X axes associated with this chart
  
  A chart can contain multiple x axes, if the series on the chart use different axes.  A chart will always have one primary x axis, unless it is radial.  All the other axes on the chart are regarded as secondary.
  @return An array containing all the secondary x axes associated with the chart.
  */
-- (SChartAxisArray *)secondaryXAxes;
+- (NSArray SC_GENERIC(SChartAxis *) *)secondaryXAxes;
 
 /** Returns all secondary Y axes associated with this chart 
  
  A chart can contain multiple y axes, if the series on the chart use different axes.  A chart will always have one primary y axis, unless it is radial.  All the other axes on the chart are regarded as secondary.
  @return An array containing all the secondary y axes associated with the chart.
  */
-- (SChartAxisArray *)secondaryYAxes;
+- (NSArray SC_GENERIC(SChartAxis *) *)secondaryYAxes;
 
 /** Returns this chart's primary X Axis 
  
  A chart can contain multiple x axes, if the series on the chart use different axes.  A chart will always have one primary x axis, unless it is radial.
  @see xAxis
  */
-- (SChartAxis *)primaryXAxis;
+- (nullable SChartAxis *)primaryXAxis;
 
 /** Returns this chart's primary Y Axis 
  
  A chart can contain multiple y axes, if the series on the chart use different axes.  A chart will always have one primary y axis, unless it is radial.
  @see yAxis
  */
-- (SChartAxis *)primaryYAxis;
+- (nullable SChartAxis *)primaryYAxis;
 
 /** Finds the axes associated with the chart which are linked to the specified chart series.
  
@@ -318,7 +302,7 @@ typedef struct SChartSize
  @param yStore A pointer to a chart axis.  In this method, we set the pointer to reference the y axis associated with the chart series.
  @exception The chart will throw a fatal exception if it cannot find an x axis and a y axis on the chart which are linked to the specified chart series.
  */
-- (void)axesForSeries:(SChartSeries *)series storeX:(SChartAxis **)xStore andStoreY:(SChartAxis **)yStore;
+- (void)axesForSeries:(SChartSeries *)series storeX:(SChartAxis * _Nullable * _Nonnull)xStore andStoreY:(SChartAxis * _Nullable * _Nonnull)yStore;
 
 #pragma mark -
 #pragma mark Series
@@ -337,6 +321,15 @@ typedef struct SChartSize
  */
 @property (atomic, retain, readonly) NSArray SC_GENERIC(SChartSeries *) *series;
 
+#pragma mark - Animation
+/** @name Animation */
+
+/** The chart's animation tracker
+ 
+ This class enables series to be shown or hidden using any `SChartAnimation`.
+ */
+@property (nonatomic, strong, readonly) SChartAnimationTracker *animationTracker;
+
 #pragma mark -
 #pragma mark Titles
 /** @name Setting the title */
@@ -344,7 +337,7 @@ typedef struct SChartSize
 /** Sets the text value of the chart title and displays in the standard position.
  
  See also titleLabel for the property representing the actual SChartTitle object.*/
-@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain, nullable) NSString *title;
 
 /** The title for the chart.
  
@@ -396,21 +389,21 @@ typedef struct SChartSize
  This area does not include any titles and legends etc. To set the background color of the whole chart area use `setBackgroundColor`. 
  
  By default, this property is set to `clearColor`. */
-@property (nonatomic, assign) UIColor *canvasAreaBackgroundColor;
+@property (nullable, nonatomic, assign) UIColor *canvasAreaBackgroundColor;
 
 /** The background color of the _plot area_ where the series are drawn.
  
  To set the background color of the whole chart area use `backgroundColor` - also see `canvasAreaBackgroundColor`. 
  
  By default, this property is set to `clearColor`. */
-@property (nonatomic, retain) UIColor *plotAreaBackgroundColor;
+@property (nullable, nonatomic, retain) UIColor *plotAreaBackgroundColor;
 
 /** The color of the border around the _plot area_ where the series are drawn.
  
  To set the border color of the whole chart area use `borderColor`. 
  
  By default, this property is set to `clearColor`. */
-@property (nonatomic, retain) UIColor *plotAreaBorderColor;
+@property (nullable, nonatomic, retain) UIColor *plotAreaBorderColor;
 
 /** The thickness of the border around the _plot area_ where the series are drawn.
  
@@ -422,12 +415,12 @@ typedef struct SChartSize
 /** The color of the border around the chart view.
  
  Default value is `clearColor`.*/
-@property (nonatomic, retain) UIColor *borderColor;
+@property (nullable, nonatomic, retain) UIColor *borderColor;
 
 /** The thickness of the border chart view.
  
  Default value is `1.0f`.*/
-@property (nonatomic, retain) NSNumber *borderThickness;
+@property (nullable, nonatomic, retain) NSNumber *borderThickness;
 
 
 #pragma mark -
@@ -436,68 +429,11 @@ typedef struct SChartSize
 /** The object displayed after a _tap-and-hold_ gesture on the chart
  
  The default crosshair implementation will draw a target cirle with axis markers and also display a tooltip. To customize, set this property to an object conforming to the SChartCrosshair protocol. */
-@property (nonatomic, retain) id<SChartCrosshair> crosshair;
+@property (nonatomic, retain, nullable) id<SChartCrosshair> crosshair;
 
 #pragma mark -
 #pragma mark Chart Gesture Options
 /** @name Interacting with the chart */
-
-/** Set the method for zooming the chart
- 
- - SChartGesturePanTypeNone: This property disables pan gestures on the chart.
- - SChartGesturePanTypePanPinch: Configures the chart to use pinch zoom gestures. 
- - SChartGesturePanTypeBoxDraw: Configures the chart to use touch gestures to generate a box on the chart. The chart will animate the zoom level to display the area marked by the box.
- 
- Defaults to `SChartGesturePanTypePanPinch` */
-@property (nonatomic) SChartGesturePanType gesturePanType DEPRECATED_MSG_ATTRIBUTE("use .gestureManager.panType instead");
-
-/** When set to `YES` all of the axis will zoom the same amount
- 
- The chart will maintain its aspect ratio regardless of the type or orientation of gesture. */
-@property (nonatomic) BOOL gesturePinchAspectLock DEPRECATED_MSG_ATTRIBUTE("use .gestureManager.pinchAspectLock instead");
-
-/** When set to `YES` the double-tap gesture is enabled, and its behaviour obeys the `gestureDoubleTapResetsZoom` property.
- 
- Otherwise, if set to `NO` the chart's double tap gesture recognizer will be disabled.
- 
- By default, this property is set to `YES`. */
-@property (nonatomic) BOOL gestureDoubleTapEnabled DEPRECATED_MSG_ATTRIBUTE("use .gestureManager.doubleTapEnabled instead");
-
-/** When set to `YES` the _double-tap_ gesture will reset the zoom level to _default_
- 
- Otherwise, if set to `NO` the chart will zoom in  a set amount.
- 
- By default, this property is set to `NO`. */
-@property (nonatomic) BOOL gestureDoubleTapResetsZoom DEPRECATED_MSG_ATTRIBUTE("use .gestureManager.doubleTapResetsZoom instead");
-
-/** When set to `YES` the zoom resulting from a box gesture will animate to the new zoom level
- 
- By default, this property is set to `YES`. */
-@property (nonatomic) BOOL animateBoxGesture DEPRECATED_MSG_ATTRIBUTE("use .gestureManager.animateBoxGesture instead");
-
-/** When set to `YES` the zoom resulting from a pinch gesture will animate to the new zoom level
- 
- By default, this property is set to `YES`. */
-@property (nonatomic) BOOL animateZoomGesture DEPRECATED_MSG_ATTRIBUTE("use .gestureManager.animateZoomGesture instead");
-
-/** When set to `YES` the radial-chart single tap gesture is enabled
- 
- Otherwise, if set to `NO` the radial chart's tap gesture recognizer will be disabled.
- 
- By default, this property is set to `YES`. */
-@property (nonatomic) BOOL radialTapEnabled DEPRECATED_MSG_ATTRIBUTE("use .gestureManager.radialTapEnabled instead");
-
-/** When set to `YES` the radial-chart rotation gesture is enabled
- 
- Otherwise, if set to `NO` the radial chart's rotation gesture recognizer will be disabled.
- 
- By default, this property is set to `YES`.
- 
- In order for radial series to respond to rotation gestures, they must also have their `gesturePanningEnabled` property set to `YES`. See `SChartDonutSeries` for documentation on this property.
-
- @see SChartDonutSeries
- */
-@property (nonatomic) BOOL radialRotationEnabled DEPRECATED_MSG_ATTRIBUTE("use .gestureManager.radialRotationEnabled instead");
 
 /** A reference to the canvas object of the chart
  
@@ -529,7 +465,7 @@ typedef struct SChartSize
  @param theme The theme to use to style the new chart.
  @return An initialized chart object or `nil` if the chart couldn't be created.
  */
-- (id)initWithFrame:(CGRect)frame withTheme:(SChartTheme *)theme;
+- (id)initWithFrame:(CGRect)frame withTheme:(nullable SChartTheme *)theme;
 
 /** Initialise the chart object with the specified frame and axes
  
@@ -552,7 +488,7 @@ typedef struct SChartSize
  @param yAxisType The type of the primary y axis on the chart.
  @return An initialized chart object or `nil` if the chart couldn't be created.
  */
-- (id)initWithFrame:(CGRect)frame withTheme:(SChartTheme *)theme withPrimaryXAxisType:(SChartAxisType)xAxisType withPrimaryYAxisType:(SChartAxisType)yAxisType;
+- (id)initWithFrame:(CGRect)frame withTheme:(nullable SChartTheme *)theme withPrimaryXAxisType:(SChartAxisType)xAxisType withPrimaryYAxisType:(SChartAxisType)yAxisType;
 
 
 #pragma mark -
@@ -578,7 +514,7 @@ typedef struct SChartSize
 
 /** This view will be displayed whilst an asynchronous data reload is in progress. By default it is a UIActivityIndicatorView, but can be assigned any UIView based class – such as an SEssentialsActivityIndicator, UIImageView etc.  To support animation of the view, it may also conform to the SChartActivityIndicator protocol and implement it's animation methods.
  */
-@property (nonatomic, retain) UIView *loadingIndicator;
+@property (nullable, nonatomic, retain) UIView *loadingIndicator;
 
 /** Notifies the chart that the specified number of data points are available to be appended to the end of the specified chart series.
  
@@ -587,14 +523,24 @@ typedef struct SChartSize
  @param numberOfDataPoints  The number of data points which are available to be appended to the end of the series.
  @param seriesIndex The index of the series which should append the new data.
  */
-- (void)appendNumberOfDataPoints:(NSInteger)numberOfDataPoints toEndOfSeriesAtIndex:(NSInteger)seriesIndex;
+- (void)appendNumberOfDataPoints:(NSInteger)numberOfDataPoints toEndOfSeriesAtIndex:(NSInteger)seriesIndex
+NS_SWIFT_NAME(append(numberOfDataPoints:toEndOfSeriesAtIndex:));
+
+/** Notifies the chart that the specified number of data points are available to be prepended to the start of the specified chart series.
+
+ @param numberOfDataPoints The number of data points which are available to be prepended to the start of the series.
+ @param seriesIndex The index of the series to which the new data should be prepended.
+ */
+- (void)prependNumberOfDataPoints:(NSInteger)numberOfDataPoints toStartOfSeriesAtIndex:(NSInteger)seriesIndex
+NS_SWIFT_NAME(prepend(numberOfDataPoints:toStartOfSeriesAtIndex:));
 
 /** Notifies the chart that the specified number of data points should be removed from the start of the specified chart series.
  
  @param numberOfPointsToRemoveFromStart The number of data points which should be removed from the start of the series.
  @param seriesIndex The index of the series which should append the new data.
  */
-- (void)removeNumberOfDataPoints:(NSInteger)numberOfDataPoints fromStartOfSeriesAtIndex:(NSInteger)seriesIndex;
+- (void)removeNumberOfDataPoints:(NSInteger)numberOfDataPoints fromStartOfSeriesAtIndex:(NSInteger)seriesIndex
+NS_SWIFT_NAME(remove(numberOfDataPoints:fromStartOfSeriesAtIndex:));
 
 /** Update the canvas to allow for axes, titles, and legend. */
 - (void)updateCanvasSize;
@@ -610,6 +556,12 @@ typedef struct SChartSize
 /** This ensures all pending OpenGL operations are flushed to the graphics card, preventing issues where an App may be put in the background and attempt to invoke OpenGL commands, causing the App to be signalled/killed.
  */
 - (void)flushPendingGLOperations;
+
+/** This allows the user to prevent our OpenGL operations from initialising OpenGL objects if the application is about to be put in the background.
+ 
+ @param isEnteringBackground `YES` if the application will go to the background. `NO` if the application will go to the foreground.
+ */
+-(void)setIsEnteringBackground:(BOOL)enteringBackground;
 
 #pragma mark -
 #pragma mark Interaction
@@ -665,6 +617,12 @@ typedef struct SChartSize
 #pragma mark Annotations
 /** @name Annotations */
 
+/** An array of all annotations on the chart.
+ 
+ @available Premium
+ */
+@property (nonatomic, retain, readonly) NSArray SC_GENERIC(SChartAnnotation *) *annotations;
+
 /** Add an annotation view to be displayed on the chart plot area 
  
  @available Premium
@@ -684,13 +642,6 @@ typedef struct SChartSize
  */
 - (void)replaceAnnotationAtIndex:(NSInteger)index withAnnotation:(SChartAnnotation *)newAnnotation;
 
-/** Get the current annotations on the chart 
- 
- @available Premium
- @return An array containing all the annotations on the chart.
- */
--(NSArray SC_GENERIC(SChartAnnotation *) *)getAnnotations;
-
 /** Remove an annotation from the chart 
  
  @available Premium
@@ -705,3 +656,6 @@ typedef struct SChartSize
 -(void)removeAllAnnotations;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

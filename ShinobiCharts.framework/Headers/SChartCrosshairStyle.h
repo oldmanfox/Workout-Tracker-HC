@@ -8,29 +8,31 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** Styling properties for the cross hair object SChartCrosshair
  
  */
 @interface SChartCrosshairStyle : NSObject <NSCopying>
 /** @name Styling Properties */
 /** The width of the lines from the target to the axes */
-@property (nonatomic, retain)       NSNumber    *lineWidth;
+@property (nonatomic, strong, nullable)       NSNumber    *lineWidth;
 /** The color of the lines from the target to the axes */
-@property (nonatomic, retain)       UIColor     *lineColor;
+@property (nonatomic, strong, nullable)       UIColor     *lineColor;
 /** The font of the text in the tooltip */
-@property (nonatomic, retain)       UIFont      *defaultFont;
+@property (nonatomic, strong, nullable)       UIFont      *defaultFont;
 /** The color of the text in the tooltip */
-@property (nonatomic, retain)       UIColor     *defaultTextColor;
+@property (nonatomic, strong, nullable)       UIColor     *defaultTextColor;
 /** The background color of the labels in the tooltip */
-@property (nonatomic, retain)       UIColor     *defaultLabelBackgroundColor;
+@property (nonatomic, strong, nullable)       UIColor     *defaultLabelBackgroundColor;
 /** The background color of the tooltip */
-@property (nonatomic, retain)       UIColor     *defaultBackgroundColor;
+@property (nonatomic, strong, nullable)       UIColor     *defaultBackgroundColor;
 /** The corner radius of the tooltip */
-@property (nonatomic, retain)       NSNumber    *defaultCornerRadius;
+@property (nonatomic, strong, nullable)       NSNumber    *defaultCornerRadius;
 /** The width of the tooltip border */
-@property (nonatomic, retain)       NSNumber    *defaultBorderWidth;
+@property (nonatomic, strong, nullable)       NSNumber    *defaultBorderWidth;
 /** The color of the tooltip border */
-@property (nonatomic, retain)       UIColor     *defaultBorderColor;
+@property (nonatomic, strong, nullable)       UIColor     *defaultBorderColor;
 /** The number of key-value pairs displayed on each row of multi-value tooltips. 
  
  @warning *Important* This property will be used internally by calling `intValue`.*/
@@ -41,3 +43,6 @@
 - (void)supplementStyleFromStyle:(SChartCrosshairStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

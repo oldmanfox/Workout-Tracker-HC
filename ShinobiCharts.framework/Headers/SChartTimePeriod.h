@@ -2,6 +2,7 @@
 
 @class SChartDateFrequency;
 
+NS_ASSUME_NONNULL_BEGIN
 
 /** An `SChartTimePeriod` represents a period of time.  It starts at a point in time, and has a length defined by an instance of `SChartDateFrequency`.
  
@@ -12,6 +13,9 @@
  */
 @interface SChartTimePeriod : NSObject
 
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)init NS_UNAVAILABLE;
+
 /** Initializes and returns a newly allocated time period object, starting at the specified start date and running for the specified amount of time.
  @param start The start date of the new time period.
  @param length The length of the time period, expressed as a `SChartDateFrequency`.
@@ -19,7 +23,8 @@
  @see SChartDateFrequency
  */
 - (id) initWithStart:(NSDate *)start
-           andLength:(SChartDateFrequency *)length;
+           andLength:(SChartDateFrequency *)length
+    NS_DESIGNATED_INITIALIZER;
 
 /** Returns the starting point of the time period, as a NSDate object.
  */
@@ -50,7 +55,8 @@
  */
 - (id) initWithStart:(NSDate *)start
            andLength:(SChartDateFrequency *)length
-        andFrequency:(SChartDateFrequency *)freq;
+        andFrequency:(SChartDateFrequency *)freq
+    NS_DESIGNATED_INITIALIZER;
 
 /** @warning UNAVAILABLE ATTRIBUTE - This is inherited from `SChartTimePeriod`, but should not be called on this class.  Use `initWithStart:andLength:andFrequency:` instead. */
 - (id) initWithStart:(NSDate *)start
@@ -61,3 +67,5 @@
 - (SChartDateFrequency *) frequency;
 
 @end
+
+NS_ASSUME_NONNULL_END

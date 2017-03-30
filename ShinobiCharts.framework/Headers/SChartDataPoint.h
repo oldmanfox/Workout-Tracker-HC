@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import "SChartData.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** This class represents the data items contained within an SChartSeries.
  
  Each `SChartDataPoint` represents a _simple_ data point in a `SChartDataSeries`. The simple data point is made up of an x and a y object (not multiple x or y objects). It doesn't need to know what these objects are, it merely looks after them. Knowing how to interpet and translate these objects onto a chart is the job of the axis on the chart, which is an instance of `SChartAxis`.
@@ -29,31 +31,21 @@
  
  @return A data point with the specified x and y values.
  */
-- (instancetype)initWithXValue:(id)xValue yValue:(id)yValue NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithXValue:(nullable id)xValue yValue:(nullable id)yValue NS_DESIGNATED_INITIALIZER;
 
 #pragma mark -
 #pragma mark Data
 /** @name Data */
 
 /** The x value for this data point. */
-@property (nonatomic, retain) id xValue;
+@property (nullable, nonatomic, retain) id xValue;
 
 /** The y value for this data point. */
-@property (nonatomic, retain) id yValue;
+@property (nullable, nonatomic, retain) id yValue;
 
 /** Returns the index of this data point in its series.*/
 @property (nonatomic, assign, readonly) NSInteger index;
 
-#pragma mark -
-#pragma mark Selection and Highlighting
-/** @name Point selection */
-
-/** Defines whether this point is selected.
- 
- When set to `YES` this data point will adopt a selected state. One effect of setting this property is that the style of the data point will change.  The series will apply the selected style to this point, as opposed to the normal style.
-
- NOTE: When altering this property's value after the chart has been rendered, you'll need to explicitly call the `redrawChart` method on the chart responsible for displaying the data point.
- */
-@property (nonatomic, assign) BOOL selected;
-
 @end
+
+NS_ASSUME_NONNULL_END

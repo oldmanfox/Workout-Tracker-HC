@@ -6,10 +6,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ShinobiHeaderMacros.h"
 
 @class ShinobiChart;
 @class SChartCrosshairStyle;
 @class SChartCrosshairTooltip;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * The chart's crosshair interface - the chart will push 'show', 'move' and
@@ -44,6 +47,11 @@
  */
 - (void)hide;
 
+/**
+ * Returns a BOOL representing whether the crosshair is hidden.
+ */
+- (BOOL)isHidden;
+
 /*
  * Deprecated API
  *
@@ -56,7 +64,10 @@
  * mySubclass.tooltip = ...
  * chart.crosshair = mySubclass;
  */
-@property(nonatomic, retain) SChartCrosshairStyle *style DEPRECATED_ATTRIBUTE;
-@property(nonatomic, retain) SChartCrosshairTooltip *tooltip DEPRECATED_ATTRIBUTE;
+@property(nonatomic, retain) SChartCrosshairStyle *style SCHART_DEPRECATED;
+@property(nonatomic, retain) SChartCrosshairTooltip *tooltip SCHART_DEPRECATED;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

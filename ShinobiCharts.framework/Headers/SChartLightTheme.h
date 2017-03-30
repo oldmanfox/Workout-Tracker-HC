@@ -7,6 +7,8 @@
 
 #import "SChartTheme.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** The SChartLightTheme uses brighter colors based on a white background.  For a more detailed explanation of how themes work, see the documentation for the SChartTheme class.
  
  @available Standard
@@ -19,3 +21,5 @@
 @interface SChartLightTheme : SChartTheme
 
 @end
+
+NS_ASSUME_NONNULL_END

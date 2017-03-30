@@ -11,6 +11,8 @@
 
 @protocol SChartData;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** Represents cartesian data points which have multiple y values.  Examples of series which could have multiple y values for each data point are:
  
  - Band series.  See `SChartBandSeries`.
@@ -36,3 +38,5 @@
 
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -7,7 +7,10 @@
 //
 
 #import "SChartSeriesStyle.h"
+
 @class SChartBaselinePointStyle;
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface SChartPointSeriesStyle : SChartSeriesStyle {
     @protected
@@ -34,3 +37,6 @@
 - (void)supplementStyleFromStyle:(SChartPointSeriesStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

@@ -38,6 +38,8 @@ typedef NS_ENUM(NSInteger, SChartLegendPosition) {
 @class ShinobiChart;
 @class SChartLegendStyle;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** Series data can be displayed in a legend on a `ShinobiChart`. The `SChartLegend` is a UIView-based object that represents the legend as a visual item on the chart. The legend may appear in a number of preset positions within the chart. 
  
  <img src="../docs/markdown_files/Images/api_legend.png" width=400/>
@@ -77,10 +79,12 @@ typedef NS_ENUM(NSInteger, SChartLegendPosition) {
 #pragma mark Initialisation
 /** @name Initialisation */
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+
 /** Initializes the legend with a reference to the chart.
  @param _chart The chart which will contain the legend.
  @return An initialized legend object, or `nil` if the legend couldn't be created. */
-- (id)initWithChart:(ShinobiChart *)_chart;
+- (instancetype)initWithChart:(ShinobiChart *)_chart;
 
 #pragma mark -
 #pragma mark Drawing
@@ -102,7 +106,7 @@ typedef NS_ENUM(NSInteger, SChartLegendPosition) {
 #pragma mark Formatting
 /** @name Formatting the legend */
 /**Sets a title for the legend. */
-@property (nonatomic, retain) NSString *title;
+@property (nullable, nonatomic, retain) NSString *title;
 
 /** Specifies the positioning of the legend on the chart.
  
@@ -140,9 +144,6 @@ typedef NS_ENUM(NSInteger, SChartLegendPosition) {
  By default, this property is set to `24`; */
 @property (nonatomic, retain) NSNumber *symbolWidth;
 
-/** DEPRECATED - Use `[SChartLegendStyle showSymbols]` instead. */
-@property (nonatomic, assign) BOOL showSymbols  DEPRECATED_ATTRIBUTE;
-
 /** The maximum number of series which are shown per row in horizontal legends. 
  
  By default, this property is set to `4`; */
@@ -162,7 +163,7 @@ typedef NS_ENUM(NSInteger, SChartLegendPosition) {
  
  Note that if `autosizeLabels` is set to YES (the default value) then this property will be ignored.
  */
-@property (nonatomic, retain) NSNumber *fixedWidthRatio;
+@property (nonatomic, strong, nullable) NSNumber *fixedWidthRatio;
 
 #pragma mark -
 #pragma mark Styling
@@ -172,14 +173,6 @@ typedef NS_ENUM(NSInteger, SChartLegendPosition) {
  @see SChartLegendStyle
  */
 @property (nonatomic, retain) SChartLegendStyle *style;
-
-/** Determines the radius of the legend corners.
- 
- By default, this property is set to `0`. Setting this to `nil` also equates to a radius of 0 - which results in square corners. 
- 
- @warning *DEPRECATED* - This property will be removed in a future release. Use the `cornerRadius` property on the `SChartLegendStyle` class.
- */
-@property (nonatomic, retain) NSNumber *cornerRadius DEPRECATED_ATTRIBUTE;
 
 #pragma mark -
 #pragma mark Legend items
@@ -199,3 +192,6 @@ typedef NS_ENUM(NSInteger, SChartLegendPosition) {
 - (void)reload;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

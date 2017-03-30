@@ -10,6 +10,8 @@
 
 #import "SChartBarColumnSeriesStyle.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** An instance of `SChartColumnSeries` will contain an instance of `SChartColumnSeriesStyle` to manage its look and feel.  `SChartColumnSeriesStyle` currently inherits all of its behaviour from its parent, `SChartBarColumnSeriesStyle`.
  
  @available Standard
@@ -19,3 +21,5 @@
 @interface SChartColumnSeriesStyle : SChartBarColumnSeriesStyle
 
 @end
+
+NS_ASSUME_NONNULL_END

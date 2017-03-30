@@ -11,6 +11,8 @@
 #import "SChartOHLCSeries.h"
 #import "SChartCandlestickSeriesStyle.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** `SChartCandlestickSeries` is a type of `SChartSeries` which displays Open-High-Low-Close data on a chart.
  
   <img src="../docs/markdown_files/Images/userguide_candlestickSeries.png" width=400/>
@@ -110,7 +112,7 @@
 
  
  */
-- (SChartCandlestickSeriesStyle*)styleForPoint:(id<SChartData>)point previousPoint:(id<SChartData>)prevPoint;
+- (SChartCandlestickSeriesStyle*)styleForPoint:(id<SChartData>)point previousPoint:(id<SChartData> _Nullable)prevPoint;
 
 /** Specifies the fill color for a candlestick on a per-point basis
  
@@ -123,7 +125,7 @@
  @param style The style object that will be used to style this candlestick point
  
  */
-- (UIColor*)fillColorForPoint:(id<SChartData>)point previousPoint:(id<SChartData>)prevPoint style:(SChartCandlestickSeriesStyle*)style;
+- (nullable UIColor*)fillColorForPoint:(id<SChartData>)point previousPoint:(id<SChartData> _Nullable)prevPoint style:(SChartCandlestickSeriesStyle*)style;
 
 /** Specifies the gradient fill color for a candlestick on a per-point basis
  
@@ -136,6 +138,8 @@
  @param style The style object that will be used to style this candlestick point
  
  */
-- (UIColor*)gradientColorForPoint:(id<SChartData>)point previousPoint:(id<SChartData>)prevPoint style:(SChartCandlestickSeriesStyle*)style;
+- (nullable UIColor*)gradientColorForPoint:(id<SChartData>)point previousPoint:(id<SChartData> _Nullable)prevPoint style:(SChartCandlestickSeriesStyle*)style;
 
 @end
+
+NS_ASSUME_NONNULL_END

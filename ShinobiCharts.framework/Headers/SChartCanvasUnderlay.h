@@ -13,6 +13,7 @@
 @class ShinobiChart;
 @class SChartLayer;
 
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  The canvas underlay is responsible for drawing things like gridlines and the
@@ -28,11 +29,18 @@
 /**
  The chart owner  - available to let us access the chart objects when we need
  */
-@property (nonatomic, assign) ShinobiChart *chart;
+@property (nullable, nonatomic, assign) ShinobiChart *chart;
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 
 /**
  Create our drawing layer
  */
--(id)initWithFrame:(CGRect)frame usingChart:(ShinobiChart *)chart;
+-(id)initWithFrame:(CGRect)frame
+        usingChart:(ShinobiChart *)chart
+    NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

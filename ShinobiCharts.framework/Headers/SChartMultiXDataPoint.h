@@ -11,6 +11,8 @@
 
 @protocol SChartData;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** Represents cartesian data points which have multiple x values.  Examples of series which could have multiple x values for each data point are:
  
  - Band series.  See `SChartBandSeries`.
@@ -33,3 +35,5 @@
 @property (nonatomic, retain) NSMutableDictionary *xValues;
 
 @end
+
+NS_ASSUME_NONNULL_END

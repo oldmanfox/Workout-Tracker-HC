@@ -14,6 +14,8 @@
 
 @class SChartSeriesCrosshairTooltip, ShinobiChart;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  SChartSeriesCrosshair draws a small circle around the current point being tracked, accompanied by a tooltip of type `SChartSeriesCrosshairTooltip`. This tooltip has a caret that points in the direction of the circled datapoint and is capable of displaying both single and multi-value datapoints.
  
@@ -30,14 +32,13 @@
  @available Standard
  @available Premium
 */
-
 @interface SChartSeriesCrosshair : UIView <SChartCrosshair>
 
 
 /**
  *  The series the crosshair is currently tracking
  */
-@property (nonatomic, retain) SChartMappedSeries *trackingSeries;
+@property (nonatomic, retain, nullable) SChartMappedSeries *trackingSeries;
 
 /**
  *  The tooltip that will be used to display data for the series the crosshair is tracking.
@@ -50,3 +51,5 @@
 @property (nonatomic, retain) SChartCrosshairStyle *style;
 
 @end
+
+NS_ASSUME_NONNULL_END

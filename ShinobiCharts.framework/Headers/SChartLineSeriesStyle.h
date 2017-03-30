@@ -13,6 +13,7 @@
 
 @class SChartPointStyle;
 
+NS_ASSUME_NONNULL_BEGIN
 
 /** SChartLineSeriesStyle manages the appearance of an instance of `SChartLineSeries` on a chart.
  
@@ -28,27 +29,21 @@
  
  This property is used as long as `showFill` isn't set to `YES`.  If the area is filled, `areaLineColorBelowBaseline` is used instead.
  */
-@property (nonatomic, retain)     UIColor   *lineColorBelowBaseline;
+@property (nonatomic, strong, nullable)     UIColor   *lineColorBelowBaseline;
 
 /** The color for the line if the area is filled 
  
  If the area isn't filled, `lineColorBelowBaseline` is used instead.
  */
-@property (nonatomic, retain)     UIColor   *areaLineColorBelowBaseline;
+@property (nonatomic, strong, nullable)     UIColor   *areaLineColorBelowBaseline;
 
 /** The color of the fill between the line and the axis, when the line goes below the series baseline. 
  @see showFill */
-@property (nonatomic, retain)     UIColor   *areaColorBelowBaseline;
+@property (nonatomic, strong, nullable)     UIColor   *areaColorBelowBaseline;
 
 /** The second color which is used to form a gradient area fill when the line goes below the series baseline 
  @see fillWithGradient */
-@property (nonatomic, retain)     UIColor   *areaColorGradientBelowBaseline;
-
-/* DEPRECATED - This will be taken off the public API in a future commit. */
-@property (nonatomic)             BOOL      showFillSet;
-
-/* DEPRECATED - This will be taken off the public API in a future commit. */
-@property (nonatomic)             BOOL      fillWithGradientSet;
+@property (nonatomic, strong, nullable)     UIColor   *areaColorGradientBelowBaseline;
 
 /** Updates this style object using the configuration of the passed in style.
  @param style The new style with which to update this style object. */
@@ -67,6 +62,6 @@
  */
 @property (nonatomic)             SChartLineCrosshairTraceStyle lineCrosshairTraceStyle;
 
-/* DEPRECATED - This will be taken off the public API in a future commit. */
-@property (nonatomic)             BOOL                          lineCrosshairTraceStyleSet;
 @end
+
+NS_ASSUME_NONNULL_END

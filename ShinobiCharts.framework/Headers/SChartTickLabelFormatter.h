@@ -10,6 +10,7 @@
 
 @class SChartAxis;
 
+NS_ASSUME_NONNULL_BEGIN
 
 /** A wrapper object that contains an appropriate `NSFormatter` for the axes for which it is formatting tick labels.
  
@@ -56,17 +57,20 @@
  
  If the formatter is not an NSNumberFormatter, nil will be returned.
  */
--(NSNumberFormatter *)numberFormatter;
+-(NSNumberFormatter * _Nullable)numberFormatter;
 
 /** Get the formatter property pre-cast as an `NSDateFormatter`. 
  
  If the formatter is not an `NSDateFormatter`, nil will be returned.
  */
--(NSDateFormatter *)dateFormatter;
+-(NSDateFormatter * _Nullable)dateFormatter;
 
 /** Get the formatted string representation for the value of a data object on an axis
  
  */
--(NSString *)stringForObjectValue:(id)obj onAxis:(SChartAxis *)axis;
+-(nullable NSString *)stringForObjectValue:(id)obj onAxis:(SChartAxis *)axis;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

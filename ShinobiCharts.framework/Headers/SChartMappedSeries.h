@@ -12,6 +12,8 @@
 
 @class SChartAxis;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** `SChartMappedSeries` represents an instance of a series that maps its data to axes on a chart.
  
  Coordinates are points defined in a plane by a pair of numerical coordinates, which are the signed distances from the point to either axis in the plane. Mapped series require a chart with at least one X and at least one Y axis.
@@ -37,17 +39,35 @@
  */
 @interface SChartMappedSeries : SChartSeries
 
+/**
+ * The groupIndex property determines which series will group with each other, for example, which columns group, instead of overlapping.
+ * By default, all columns will group with all other columns, all bars with other bars, and so on.
+ *
+ * The chart's built-in series achieve this by assigning values to this property in their initializers. Negative integers for this property
+ * are reserved for the chart's own classes, in order to allow the chart's series' groupIndexes to not clash with any user-provided series' groupIndexes.
+ *
+ * You can make your series overlap instead of being positioned alongside each other by giving each series a unique groupIndex.
+ */
+@property (nonatomic) NSInteger groupIndex;
+
 /** Returns the range of the data in the X axis.
  
  @see SChartRange
  */
--(SChartRange *)rangeOfDataInX;
+-(nullable SChartRange *)rangeOfDataInX;
 
 /** Returns the range of the data in the Y axis.
  
  @see SChartRange
  */
--(SChartRange *)rangeOfDataInY;
+-(nullable SChartRange *)rangeOfDataInY;
+
+/**
+ * The series' data range with adjustments made to ensure the baseline, stacked series and bar/column widths are included within the range.
+ */
+-(SChartRange *)paddedRangeOnAxis:(SChartAxis *)axis;
 
 @end
+
+NS_ASSUME_NONNULL_END
 

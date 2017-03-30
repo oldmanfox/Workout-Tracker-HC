@@ -27,6 +27,8 @@
 @class SChartBubbleSeriesStyle;
 @class SChartRadialLineSeriesStyle;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** 
  The SChartTheme class is responsible for storing styling information for the chart's visual components, such as its titles, axes & tickmarks, and series.
  
@@ -83,10 +85,8 @@
 /** Initializes and returns a newly allocated theme object with default settings.
  @return An initialized theme object or `nil` if the object couldn't be created.
  */
-- (id)init;
-
-/* DEPRECATED - This looks like a private method.  We will take this off the public API in a future commit. */
-- (void)setStyles;
+- (id)init
+    NS_DESIGNATED_INITIALIZER;
 
 #pragma mark -
 #pragma mark Individual style objects
@@ -630,16 +630,7 @@
  */
 - (SChartCandlestickSeriesStyle *)candlestickSeriesStyleForSeriesAtIndex:(NSInteger)seriesIndex selected:(BOOL)selected;
 
-/* DEPRECATED - We will move this off the public API in a future commit. */
--(void)configureLineSeriesStyle:(SChartLineSeriesStyle *)style;
-
-/* DEPRECATED - We will move this off the public API in a future commit. */
--(void)configureBarSeriesStyle:(SChartBarSeriesStyle *)style;
-
-/* DEPRECATED - We will move this off the public API in a future commit. */
--(void)configureColumnSeriesStyle:(SChartColumnSeriesStyle *)style;
-
-/* DEPRECATED - We will move this off the public API in a future commit. */
--(void)configureScatterSeriesStyle:(SChartScatterSeriesStyle *)style;
-
 @end
+
+NS_ASSUME_NONNULL_END
+

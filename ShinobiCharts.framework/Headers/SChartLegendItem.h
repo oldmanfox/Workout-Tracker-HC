@@ -10,6 +10,8 @@
 
 @class SChartLegendSymbol;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** Specifies the interface required by the legend to display chart series. A series should adopt this protocol if it wishes to specify how it is represented in the legend. 
  
  The `SChartSeries` base class adopts this protocol and therefore any subclasses can specify their representation in the legend by overriding the methods here.  All the series types provided by ShinobiCharts already provide their own implementation of these methods, so you should only need to implement them yourself if you are looking for custom behavior.
@@ -70,3 +72,5 @@
 - (SChartLegendSymbol *)blockSymbolForSeriesInLegend;
 
 @end
+
+NS_ASSUME_NONNULL_END

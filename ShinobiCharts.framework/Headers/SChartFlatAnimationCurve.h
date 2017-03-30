@@ -8,6 +8,8 @@
 
 #import "SChartAnimation.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** This flat curve evaluator returns 1.f ('finished') for all values of time.
  
  See the `SChartAnimationCurve` protocol for more information on curve evaluation.
@@ -18,3 +20,6 @@
 @interface SChartFlatAnimationCurve : NSObject <SChartAnimationCurve>
 
 @end
+
+NS_ASSUME_NONNULL_END
+

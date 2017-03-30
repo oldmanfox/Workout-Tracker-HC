@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "SChartBaselinePointStyle.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** `SChartPointStyle` manages the appearance of data points within chart series.  It is used by instances of `SChartBandSeries`, `SChartLineSeries` and `SChartScatterSeries`, as all of these types of series can display individual points.
  
  By default, points are displayed as two circles, one displayed within the other.  You can configure the color and radius of both circles.  You can also add a gradient to a point, so that it fades as you move out from its center.
@@ -24,16 +26,18 @@
 #pragma mark Styling Properties
 /** @name Styling Properties */
 /** The color of the inner sections of data points. */
-@property (nonatomic, retain)     UIColor   *innerColor;
+@property (nonatomic, strong, nullable)     UIColor   *innerColor;
 
 /** The color of the inner sections of data points when the chart series goes below its baseline. */
-@property (nonatomic, retain)     UIColor   *innerColorBelowBaseline;
+@property (nonatomic, strong, nullable)     UIColor   *innerColorBelowBaseline;
 
 /** The radius of the inner section of a data point. */
-@property (nonatomic, retain)     NSNumber  *innerRadius;
+@property (nonatomic, strong, nullable)     NSNumber  *innerRadius;
 
 /** Updates this style object using the configuration of the passed in style.
  @param style The new style with which to update this style object. */
 - (void)supplementStyleFromStyle:(SChartPointStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END

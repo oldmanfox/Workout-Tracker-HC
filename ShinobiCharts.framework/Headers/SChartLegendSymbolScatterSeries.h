@@ -10,6 +10,8 @@
 
 @class SChartScatterSeries, SChartScatterSeriesStyle;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** A symbol designed to represent a scatter series in the chart legend.
  
  The symbol makes use of the series styling, in order to better represent it in the legend.
@@ -24,7 +26,8 @@
 /** Initializes and returns a newly allocated symbol to represent this scatter series.
  @param series The chart series which this symbol will represent in the chart legend.
  @return An initialized symbol, or `nil` if it couldn't be created. */
-- (id)initWithSeries:(SChartScatterSeries *)series;
+- (id)initWithSeries:(SChartScatterSeries *)series
+    NS_DESIGNATED_INITIALIZER;
 
 /** @name Styling */
 
@@ -34,3 +37,6 @@
 @property (nonatomic, readonly) SChartScatterSeriesStyle *style;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

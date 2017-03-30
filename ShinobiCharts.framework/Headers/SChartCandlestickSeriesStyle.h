@@ -10,6 +10,8 @@
 
 #import "SChartOHLCSeriesStyle.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** `SChartCandlestickSeriesStyle` manages the appearance of an instance of `SChartCandlestickSeries` on the chart.
  
  Each data point in a candlestick series is visualised as a thick candle between the open and close values, with 'wicks' indicating the high and low positions.
@@ -28,19 +30,22 @@
 /** @name Styling properties */
 
 /** The color of the candlestick's outline. */
-@property (nonatomic, retain)       UIColor     *outlineColor;
+@property (nonatomic, strong, nullable)       UIColor     *outlineColor;
 
 /** The color of the candlestick's high and low sticks. */
-@property (nonatomic, retain)       UIColor     *stickColor;
+@property (nonatomic, strong, nullable)       UIColor     *stickColor;
 
 /** The width of the candlestick's high and low sticks, in points. */
-@property (nonatomic, retain)       NSNumber    *stickWidth;
+@property (nonatomic, strong, nullable)       NSNumber    *stickWidth;
 
 /** The width of the candlestick's outline, in points. */
-@property (nonatomic, retain)       NSNumber    *outlineWidth;
+@property (nonatomic, strong, nullable)       NSNumber    *outlineWidth;
 
 /** Updates this style object using the specified style.
  @param style The new style with which to update this style object. */
 - (void)supplementStyleFromStyle:(SChartCandlestickSeriesStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

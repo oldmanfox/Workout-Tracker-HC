@@ -10,6 +10,8 @@
 
 #import "SChartTickLabelOrientation.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** The style properties for tick marks 
  
  */
@@ -18,14 +20,8 @@
 /** Should tick marks be displayed on the axes. */
 @property (nonatomic) BOOL showTicks;
 
-/** DEPRECATED in 2.6.0 - this will be removed from the API soon. */
-@property (nonatomic) BOOL showTicksSet DEPRECATED_ATTRIBUTE;
-
 /** Should labels be displayed on the major tick marks. */
 @property (nonatomic) BOOL showLabels;
-
-/** DEPRECATED in 2.6.0 - this will be removed from the API soon. */
-@property (nonatomic) BOOL showLabelsSet DEPRECATED_ATTRIBUTE;
 
 /** The orientation of labels on major tick marks
  
@@ -36,9 +32,6 @@
  @warning Tick label orientation isn't currently supported by radial charts.
  */
 @property (nonatomic) TickLabelOrientation tickLabelOrientation;
-
-/** DEPRECATED in 2.6.0 - this will be removed from the API soon. */
-@property (nonatomic) BOOL tickLabelOrientationSet DEPRECATED_ATTRIBUTE;
 
 /** The UIColor for the tick mark lines */
 @property (nonatomic, retain) UIColor *lineColor;
@@ -53,7 +46,7 @@
 /** The text alignment of the labels */
 @property (nonatomic, assign) NSTextAlignment textAlignment;
 /** The shadow color for label text */
-@property (nonatomic, retain) UIColor *labelTextShadowColor;
+@property (nullable, nonatomic, retain) UIColor *labelTextShadowColor;
 /** The gap between a tick label and its corresponding tick mark 
  
  By default, this property is set to `5`. */
@@ -63,3 +56,6 @@
 - (void)supplementStyleFromStyle:(SChartTickStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

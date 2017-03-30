@@ -12,6 +12,8 @@
 
 @class SChartPointStyle;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** SChartScatterSeriesStyle manages the appearance of an instance of `SChartScatterSeries` on a chart.
  
  @available Standard
@@ -40,5 +42,7 @@
 - (SChartPointStyle *) selectedPointStyle;
 - (void) setSelectedPointStyle:(SChartPointStyle *)selectedPointStyle;
 
-
 @end
+
+NS_ASSUME_NONNULL_END
+

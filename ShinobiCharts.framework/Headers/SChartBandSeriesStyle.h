@@ -12,6 +12,8 @@
 
 @class SChartPointStyle;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** `SChartBandSeriesStyle` manages the appearance of an instance of `SChartBandSeries` on a chart.
  
  The band series is visualised as two line series, one for the High values and one for the Low, with an area fill between the lines.
@@ -32,23 +34,20 @@
 /** Defines whether the area between the high and low lines is filled. */
 @property (nonatomic)             BOOL      showFill;
 
-/* DEPRECATED - This will be removed from the API in a future commit.  This property should be private. */
-@property (nonatomic)             BOOL      showFillSet;
-
 /** The color of the high line. */
-@property (nonatomic, retain)     UIColor   *lineColorHigh;
+@property (nonatomic, strong, nullable)     UIColor   *lineColorHigh;
 
 /** The color of the low line. */
-@property (nonatomic, retain)     UIColor   *lineColorLow;
+@property (nonatomic, strong, nullable)     UIColor   *lineColorLow;
 
 /** The width of each of the lines, in points. */
-@property (nonatomic, retain)     NSNumber  *lineWidth;
+@property (nonatomic, strong, nullable)     NSNumber  *lineWidth;
 
 /** The color of the fill between the lines when the high line is above the low line. */
-@property (nonatomic, retain)     UIColor   *areaColorNormal;
+@property (nonatomic, retain, nullable)     UIColor   *areaColorNormal;
 
 /** The color of the fill between the lines when the low line is above the high line. */
-@property (nonatomic, retain)     UIColor   *areaColorInverted;
+@property (nonatomic, retain, nullable)     UIColor   *areaColorInverted;
 
 /** Manages the appearance of data points within the series.
  @see SChartPointStyle
@@ -65,3 +64,5 @@
 - (void)supplementStyleFromStyle:(SChartBandSeriesStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END

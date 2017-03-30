@@ -11,10 +11,11 @@
 
 @class SChartSeriesCrosshairTooltip, ShinobiChart, SChartMappedSeries;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  Classes implementing this protocol are responsible for positioning the tooltip on the canvas.
 */
-
 @protocol SChartSeriesCrosshairTooltipPositionerProtocol <NSObject>
 
 /**
@@ -29,3 +30,6 @@
 - (CGPoint)centerOfTooltip:(SChartSeriesCrosshairTooltip *)tooltip onChart:(ShinobiChart *)chart trackingSeries:(SChartMappedSeries *)series;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

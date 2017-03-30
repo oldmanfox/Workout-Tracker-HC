@@ -15,6 +15,8 @@
 @class SChartAxisTitleStyle;
 @class SChartAxisStyle;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** The axis style object controls the look and feel for the axis, tick marks and labels, gridlines and grid stripes.
 
  @available Standard
@@ -64,3 +66,5 @@
 - (void)supplementStyleFromStyle:(SChartAxisStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END

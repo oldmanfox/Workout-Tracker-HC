@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SChartTitleStyle.h"
 
+NS_ASSUME_NONNULL_BEGIN
 
 /** A look of a chart is managed by an instance of `SChartTheme` or one of its sub-classes.  Themes contain a set of style objects, each of which are responsible for managing the look of a particular aspect of the chart.
  
@@ -38,3 +39,5 @@
 - (void)supplementStyleFromStyle:(SChartMainTitleStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -9,18 +9,23 @@
 
 // Main Shinobi Chart Files
 #import "SChart.h"
-#import "SChart+Deprecated.h"
 #import "SChartDatasource.h"
 #import "SChartSimpleDatasource.h"
 #import "SChartDelegate.h"
 
 // Legend Symbols
 #import "SChartLegendSymbol.h"
+#import "SChartLegendSymbolBlock.h"
+#import "SChartLegendSymbolBlockSplit.h"
+#import "SChartLegendSymbolBandSeries.h"
 #import "SChartLegendSymbolBarSeries.h"
+#import "SChartLegendSymbolCandlestickSeries.h"
+#import "SChartLegendSymbolOHLCSeries.h"
 #import "SChartLegendSymbolColumnSeries.h"
 #import "SChartLegendSymbolDonutSeries.h"
 #import "SChartLegendSymbolLineSeries.h"
 #import "SChartLegendSymbolPieSeries.h"
+#import "SChartLegendSymbolPointSeries.h"
 #import "SChartLegendSymbolScatterSeries.h"
 
 // Legend
@@ -102,8 +107,11 @@
 #import "SChartLogarithmicAxis.h"
 #import "SChartDiscontinuousNumberAxis.h"
 #import "SChartDiscontinuousDateTimeAxis.h"
-#import "SChartDiscontinuousNumberAxis.h"
 #import "SChartDateFrequency.h"
+
+// Pixel To Point Mappers
+#import "SChartPixelToPointMapper.h"
+#import "SChartPixelToPointMapping.h"
 
 // Discontious Axis Classes
 #import "SChartTimePeriod.h"
@@ -117,12 +125,19 @@
 #import "SChartTickLabelRefreshRate.h"
 #import "SChartTickLabelRefreshRateDeviceBased.h"
 
-// Canvas and Crosshair
+// Canvas
+#import "SChartCanvas.h"
+#import "SChartCanvasUnderlay.h"
+#import "SChartCanvasOverlay.h"
+
+// Crosshair
 #import "SChartCrosshair.h"
 #import "SChartCrosshairProtocol.h"
 #import "SChartCrosshairStyle.h"
 #import "SChartCrosshairTooltip.h"
 #import "SChartCrosshairMultiValueTooltip.h"
+#import "SChartCrosshairLineDrawer.h"
+#import "SChartTargetLineDrawer.h"
 
 // Series Crosshair
 #import "SChartSeriesCrosshair.h"
@@ -147,9 +162,15 @@
 #import "SChartGridStripeStyle.h"
 #import "SChartMajorGridlineStyle.h"
 #import "SChartDataPointLabelStyle.h"
+#import "SChartBoxGestureStyle.h"
+
+// Progress Calculators
+#import "SChartProgressCalculator.h"
+#import "SChartTimeProgressCalculator.h"
 
 // Animations
 #import "SChartAnimation.h"
+#import "SChartAnimationTracker.h"
 #import "SChartFlatAnimationCurve.h"
 #import "SChartLinearAnimationCurve.h"
 #import "SChartEaseInAnimationCurve.h"
@@ -158,6 +179,11 @@
 #import "SChartBounceAnimationCurve.h"
 #import "SChartDelayBounceAnimationCurve.h"
 #import "SChartBounceDelayAnimationCurve.h"
+#import "SChartDelayBounceWithMinimumAnimationCurve.h"
+
+// Animation Redraw Calculators
+#import "SChartRedrawCalculator.h"
+#import "SChartRedrawCalculatorFeedbackLoop.h"
 
 // Annotations
 #import "SChartAnnotation.h"
@@ -168,7 +194,6 @@
 
 // Chart Themes
 #import "SChartTheme.h"
-#import "SChartMidnightTheme.h"
 #import "SChartLightTheme.h"
 #import "SChartDarkTheme.h"
 #import "SChartiOS7Theme.h"
@@ -180,4 +205,7 @@
 #import "ShinobiChartLog.h"
 
 // Deprecations
-#import "SChartAxis+Deprecated.h"
+#import "ShinobiChart+Deprecated.h"
+
+// Enums
+#import "SChartGradientOrientation.h"

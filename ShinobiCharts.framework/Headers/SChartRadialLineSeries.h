@@ -11,6 +11,8 @@
 @class SChartRadialLineSeriesStyle;
 @class SChartBasePointStyle;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** `SChartRadialLineSeries` is a type of `SChartMappedSeries` that uses datapoints to construct a line series on a radial chart. The line series consists of a number of points which may or may not be selected, and which are connected by a line with an optional fill between the line and the chart's center.
  
  @available Standard
@@ -96,3 +98,6 @@
 - (SChartBasePointStyle*)styleForPoint:(id<SChartData>)point;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

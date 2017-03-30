@@ -7,6 +7,8 @@
 //
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  SChart now offers you the option of loading data asynchronously.  If data is loading in the background, the chart displays an activity indicator while the data is being loaded.  The indicator can optionally adopt the SChartActivityIndicator protocol.
  
@@ -26,3 +28,6 @@
 - (void)stopAnimating;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

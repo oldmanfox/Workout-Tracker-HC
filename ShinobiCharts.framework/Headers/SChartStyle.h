@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** A look of a chart is managed by an instance of `SChartTheme` or one of its sub-classes.  Themes contain a set of style objects, each of which are responsible for managing the look of a particular aspect of the chart.
  
  The SChartStyle class is responsible for managing the overall look of the chart.  This includes things like:
@@ -29,7 +31,7 @@
  
  @see backgroundColorGradient
  */
-@property (nonatomic, retain)     UIColor  *backgroundColor;
+@property (nonatomic, strong, nullable)     UIColor  *backgroundColor;
 
 /** The secondary background color of the chart.  
  
@@ -37,48 +39,50 @@
  
  @see backgroundColor
  */
-@property (nonatomic, retain)     UIColor  *backgroundColorGradient;
+@property (nonatomic, strong, nullable)     UIColor  *backgroundColorGradient;
 
 /** The border color of the chart. 
  
  The chart border runs around the edge of the chart canvas.  This includes the plot area and the chart axes.
  */
-@property (nonatomic, retain)     UIColor  *borderColor;
+@property (nonatomic, strong, nullable)     UIColor  *borderColor;
 
 /** The width of the chart border, in points. 
  
  The chart border runs around the edge of the chart canvas.  This includes the plot area and the chart axes.
  */
-@property (nonatomic, retain)     NSNumber *borderWidth;
+@property (nonatomic, strong, nullable)     NSNumber *borderWidth;
 
 /** The background color of the chart plot area.
  
  The plot area is the region of the chart which is bounded by the chart axes.
  */
-@property (nonatomic, retain)     UIColor  *plotAreaBackgroundColor;
+@property (nonatomic, strong, nullable)     UIColor  *plotAreaBackgroundColor;
 
 /** The border color of the chart plot area.
  
  The plot area is the region of the chart which is bounded by the chart axes.
  */
-@property (nonatomic, retain)     UIColor  *plotAreaBorderColor;
+@property (nonatomic, strong, nullable)     UIColor  *plotAreaBorderColor;
 
 /** The line width for the border of the chart plot area, in points.
  
  The plot area is the region of the chart which is bounded by the axes.
  */
-@property (nonatomic, retain)     NSNumber *plotAreaBorderWidth;
+@property (nonatomic, strong, nullable)     NSNumber *plotAreaBorderWidth;
 
 /** The background color of the chart canvas area.
  
  The canvas area includes the chart plot area and the chart axes.
  */
-@property (nonatomic, retain)     UIColor  *canvasBackgroundColor;
+@property (nonatomic, strong, nullable)     UIColor  *canvasBackgroundColor;
 
 /** The color of the indicator which is displayed when data is loaded in the background. */
-@property (nonatomic, retain)     UIColor  *loadingDataIndicatorColor;
+@property (nonatomic, strong, nullable)     UIColor  *loadingDataIndicatorColor;
 
 /** Supplements this style object by taking styles this object doesn't have, from the argument, `style` */
 - (void)supplementStyleFromStyle:(SChartStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END

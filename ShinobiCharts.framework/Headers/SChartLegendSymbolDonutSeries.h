@@ -9,6 +9,8 @@
 
 @class SChartDonutSeries, SChartDonutSeriesStyle;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** A symbol designed to represent a donut series in the chart legend.
  
  The symbol makes use of the series styling, in order to better represent it in the legend.
@@ -27,10 +29,18 @@
 
 /** @name Initialization */
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+
 /** Initializes and returns a newly allocated symbol to represent the specified slice in the specified donut series.
  @param donutSeries The chart series which this symbol will be associated with.
  @param index The slice in the series which the symbol will represent.
  @return An initialized symbol, or `nil` if it couldn't be created. */
-- (id)initWithSeries:(SChartDonutSeries *)donutSeries andSliceIndex:(NSInteger)index;
+- (id)initWithSeries:(SChartDonutSeries *)donutSeries
+       andSliceIndex:(NSInteger)index
+    NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

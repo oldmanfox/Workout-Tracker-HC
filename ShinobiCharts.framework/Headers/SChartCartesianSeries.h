@@ -13,6 +13,8 @@
 @class SChartAxis;
 @protocol SChartDataAdapter;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** `SChartCartesianSeries` represents an instance of a cartesian series on a chart.
  
  Cartesian coordinates are points defined in a plane by a pair of numerical coordinates, which are the signed distances from the point to either axis in the plane.  In our charts, we are using an x and a y axis.
@@ -56,7 +58,7 @@
  Note also that if your series are stacked, their values must be sorted - with respect to the xAxis in the case of a column series or line series of horizontal orientation, and with respect to the yAxis in the case of a bar series or line series of vertical orientation.
  
  */
-@property (nonatomic, retain) NSNumber *stackIndex;
+@property (nonatomic, retain, nullable) NSNumber *stackIndex;
 
 #pragma mark - Data Adaptation
 /**
@@ -66,7 +68,7 @@
  
  The default value for this is `nil`.
  */
-@property (nonatomic, retain) id<SChartDataAdapter> dataSampler;
+@property (nonatomic, retain, nullable) id<SChartDataAdapter> dataSampler;
 
 #pragma mark - Min & Max Data Values
 /** Returns the datapoint with the largest Y value. */
@@ -81,17 +83,6 @@
 /** Returns the datapoint with the smallest X value. */
 -(SChartDataPoint *)dataPointWithMinX;
 
-#pragma mark -
-#pragma mark Animation
-/** @name Animation */
-
-/** DEPRECATED - Use `[SChartSeries animationEnabled]` instead. */
-@property (nonatomic) BOOL animated DEPRECATED_ATTRIBUTE;
-
-/** DEPRECATED - Configure either the `[SChartSeries entryAnimation]` or `[SChartSeries exitAnimation]` instead. */
-@property (nonatomic) CGFloat animationDuration   DEPRECATED_ATTRIBUTE;
-
-/** DEPRECATED - Configure either the `[SChartSeries entryAnimation]` or `[SChartSeries exitAnimation]` instead. */
-@property (nonatomic)       SChartAnimationCurve   animationCurve   DEPRECATED_ATTRIBUTE;
-
 @end
+
+NS_ASSUME_NONNULL_END

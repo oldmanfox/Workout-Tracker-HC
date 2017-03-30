@@ -15,6 +15,8 @@
 
 @class SChartMappedSeries;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  An extension of `SChartCrosshairMultiValueTooltip`, this tooltip adds a caret that points in the direction of the current tracked datapoint and sets its background color to be the same as that of the current tracked series.
  
@@ -25,7 +27,6 @@
  @available Standard
  @available Premium
 */
-
 @interface SChartSeriesCrosshairTooltip : SChartCrosshairMultiValueTooltip
 
 /**
@@ -78,3 +79,6 @@
 - (void)setPosition:(CGPoint)position trackingSeries:(SChartMappedSeries *)series forDataPoint:(id<SChartData>)dataPoint onChart:(ShinobiChart *)chart;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

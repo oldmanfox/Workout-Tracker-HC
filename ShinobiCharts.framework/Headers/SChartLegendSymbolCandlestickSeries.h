@@ -9,6 +9,8 @@
 
 @class SChartCandlestickSeries, SChartCandlestickSeriesStyle;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** A symbol designed to represent a candlestick series in the chart legend.
  
  The symbol makes use of the series styling, in order to better represent it in the legend.
@@ -19,10 +21,14 @@
 
 /** @name Initialization */
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+
 /** Initializes and returns a newly allocated symbol to represent this candlestick series.
  @param series The chart series which this symbol will represent in the chart legend.
  @return An initialized symbol, or `nil` if it couldn't be created. */
-- (id)initWithSeries:(SChartCandlestickSeries *)series;
+- (id)initWithSeries:(SChartCandlestickSeries *)series
+    NS_DESIGNATED_INITIALIZER;
 
 /** @name Styling */
 
@@ -32,3 +38,5 @@
 @property (nonatomic, readonly) SChartCandlestickSeriesStyle *style;
 
 @end
+
+NS_ASSUME_NONNULL_END

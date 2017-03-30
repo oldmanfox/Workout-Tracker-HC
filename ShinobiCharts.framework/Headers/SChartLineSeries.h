@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "SChartScatterSeries.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** 
  SChartLineSeries is a type of `SChartSeries` that uses the data points to construct a line series.
  
@@ -34,7 +36,7 @@
  
  The default value for this is `nil`.
  */
-@property (nonatomic, retain) id<SChartDataAdapter> dataSmoother;
+@property (nonatomic, retain, nullable) id<SChartDataAdapter> dataSmoother;
 
 #pragma mark -
 #pragma mark Styling
@@ -73,3 +75,6 @@
 -(void)setSelectedStyle:(SChartLineSeriesStyle *)selectedStyle;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

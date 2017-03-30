@@ -6,8 +6,11 @@
 
 #import <Foundation/Foundation.h>
 #import "ShinobiChart.h"
+#import "ShinobiHeaderMacros.h"
 
 @class SChartTheme;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /** A utility class which allows you to set themes and licenseKeys for all the ShinobiCharts in your app, rather than having to configure each independently.
  
@@ -18,10 +21,9 @@
  @available Standard
  @available Premium
  */
-
 @interface ShinobiCharts : NSObject
 
-/** Set a licenseKey for all ShinobiCharts in your app.
+/* Set a licenseKey for all ShinobiCharts in your app.
  */
 + (void)setLicenseKey:(NSString *)key;
 
@@ -29,17 +31,17 @@
  */
 + (NSString *)licenseKey;
 
-/** Set a theme for all ShinobiCharts in your app.
+/* Set a theme for all ShinobiCharts in your app.
  
  @sa SChartTheme
  */
-+ (void)setTheme:(SChartTheme *)theme;
++ (void)setTheme:(nullable SChartTheme *)theme SCHART_MSG_DEPRECATED("Initialize the chart with a theme using 'initWithChart:withTheme:'");
 
-/** The theme set for all ShinobiCharts in your app.
+/* The theme set for all ShinobiCharts in your app.
  
  @sa SChartTheme
  */
-+ (SChartTheme *)theme;
++ (nullable SChartTheme *)theme SCHART_DEPRECATED;
 
 /** Returns a string describing the version of the Charts framework being used.
  
@@ -48,3 +50,6 @@
 +(NSString *)getInfo;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

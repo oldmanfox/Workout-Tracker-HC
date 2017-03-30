@@ -10,6 +10,8 @@
 
 @class SChartNumberRange;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** 
  An SChartNumberAxis is a subclass of SChartAxis designed to work with data points that use NSNumber. When mapping coordinates it will cast each object to an NSNumber. 
  
@@ -33,12 +35,6 @@
 @interface SChartNumberAxis : SChartAxis
 
 #pragma mark - 
-#pragma mark Initialization
-/** @name Initialization */
-/** Init with a SChartNumberRange as the default range*/
-- (id)initWithRange:(SChartNumberRange *)range;
-
-#pragma mark - 
 #pragma mark Zooming
 /** The maximum zoom level relative to the maxRange
  
@@ -55,3 +51,5 @@
 @property (nonatomic) double zoomOutLimit;
 
 @end
+
+NS_ASSUME_NONNULL_END

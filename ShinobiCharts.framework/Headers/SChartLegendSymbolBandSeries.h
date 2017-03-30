@@ -9,6 +9,8 @@
 
 @class SChartBandSeries, SChartBandSeriesStyle;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** A symbol designed to represent a band series in the chart legend.
  
  The symbol makes use of the series styling, in order to better represent it in the legend.
@@ -19,10 +21,13 @@
 
 /** @name Initialization */
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+
 /** Initializes and returns a newly allocated symbol to represent this band series.
  @param series The chart series which this symbol will represent in the chart legend.
  @return An initialized symbol, or `nil` if it couldn't be created. */
-- (id)initWithSeries:(SChartBandSeries *)series;
+- (id)initWithSeries:(SChartBandSeries *)series NS_DESIGNATED_INITIALIZER;
 
 /** @name Styling */
 
@@ -31,6 +36,6 @@
  This property allows you to query the style properties which have been used to create this legend symbol. */
 @property (nonatomic, readonly) SChartBandSeriesStyle *style;
 
-
-
 @end
+
+NS_ASSUME_NONNULL_END

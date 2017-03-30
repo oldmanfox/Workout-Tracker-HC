@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import "SChartNumberAxis.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** 
  An SChartLogarithmicAxis is a subclass of SChartNumberAxis used for displaying logarithmic data.
  
@@ -29,3 +31,6 @@
 @property (nonatomic, retain)   NSNumber    *base;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

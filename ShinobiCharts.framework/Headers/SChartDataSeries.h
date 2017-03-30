@@ -6,10 +6,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ShinobiMacros.h"
+#import "ShinobiHeaderMacros.h"
 
 @class SChartRange, SChartDataPoint;
 @protocol SChartData;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /** Each `SChartSeries` requires a set of data points that it will visually represent. The `SChartDataSeries` looks after these points.  The set of data points it contains will adopt the `SChartData` protocol.
  
@@ -75,3 +77,5 @@
 -(NSArray SC_GENERIC(NSString *) *)allYValues;
 
 @end
+
+NS_ASSUME_NONNULL_END

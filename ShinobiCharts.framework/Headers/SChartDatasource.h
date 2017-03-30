@@ -6,13 +6,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ShinobiMacros.h"
+#import "ShinobiHeaderMacros.h"
 
 @class ShinobiChart;
 @class SChartSeries;
 @class SChartRadialSeries;
 @class SChartAxis;
 @protocol SChartData;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /** The `SChartDatasource` protocol is adopted by an object that wishes to provide data for a `ShinobiChart`. The data source provides the chart with the information it needs to construct the chart object. In general, styling and event response is handled by objects implementing the `SChartDelegate` protocol - the data source has minimal impact on the look and feel of the chart.
  
@@ -45,7 +47,7 @@
  
  @param chart The chart for which the datasource is providing data.
  */
-- (NSInteger)numberOfSeriesInSChart:(ShinobiChart*)chart;
+- (NSInteger)numberOfSeriesInSChart:(ShinobiChart*)chart NS_SWIFT_NAME(numberOfSeries(in:));
 
 /** Returns the `SChartSeries` object at the given index in the specified chart. 
  
@@ -129,7 +131,7 @@
  @param chart The chart containing the axis.
  @param axis The axis for which we are setting the major tick values.
  */
-- (NSArray *)sChart:(ShinobiChart*)chart majorTickValuesForAxis:(SChartAxis *)axis;
+- (NSArray * _Nullable)sChart:(ShinobiChart*)chart majorTickValuesForAxis:(SChartAxis *)axis;
 
 
 #pragma mark -
@@ -151,7 +153,8 @@
  @param dataIndex The index of the data point within the series which contains it.
  @param seriesIndex The index of the series in the chart which contains the data point.
  */
-- (UIImage *)sChartTextureForPoint:(ShinobiChart*)chart dataPointAtIndex:(NSInteger)dataIndex forSeriesAtIndex:(NSInteger)seriesIndex;
+- (UIImage * _Nullable)sChartTextureForPoint:(ShinobiChart*)chart dataPointAtIndex:(NSInteger)dataIndex forSeriesAtIndex:(NSInteger)seriesIndex
+NS_SWIFT_NAME(sChart(_:textureForDataPointAtIndex:forSeriesAtIndex:));
 
 /** @name Custom data point radii */
 
@@ -168,7 +171,8 @@
  @param dataIndex The index of the data point in the series which contains it.
  @param seriesIndex The index of the series in the chart which contains the data point.
  */
-- (CGFloat)sChartRadiusForDataPoint:(ShinobiChart*)chart dataPointAtIndex:(NSInteger)dataIndex forSeriesAtIndex:(NSInteger)seriesIndex;
+- (CGFloat)sChartRadiusForDataPoint:(ShinobiChart*)chart dataPointAtIndex:(NSInteger)dataIndex forSeriesAtIndex:(NSInteger)seriesIndex
+NS_SWIFT_NAME(sChart(_:radiusForDataPointAtIndex:forSeriesAtIndex:));
 
 /** Returns the inner radius of the given data point, in points.
  
@@ -180,7 +184,8 @@
  @param dataIndex The index of the data point in the series which contains it.
  @param seriesIndex The index of the series in the chart which contains the data point.
  */
-- (CGFloat)sChartInnerRadiusForDataPoint:(ShinobiChart*)chart dataPointAtIndex:(NSInteger)dataIndex forSeriesAtIndex:(NSInteger)seriesIndex;
+- (CGFloat)sChartInnerRadiusForDataPoint:(ShinobiChart*)chart dataPointAtIndex:(NSInteger)dataIndex forSeriesAtIndex:(NSInteger)seriesIndex
+NS_SWIFT_NAME(sChart(_:innerRadiusForDataPointAtIndex:forSeriesAtIndex:));
 
 #pragma mark -
 #pragma mark Radial Chart Labels
@@ -192,7 +197,7 @@
  
  If this method is implemented and a non-nil UILabel is returned for a 'slice' in a radial chart series, that UILabel will be added to the chart.
  */
-- (UILabel *)getLabelsForRadialChartSeries:(SChartSeries *)series forIndex:(NSInteger)sliceIndex;
+- (UILabel *)getLabelsForRadialChartSeries:(SChartSeries *)series forIndex:(NSInteger)sliceIndex SCHART_MSG_DEPRECATED("use sChart:labelForSliceAtIndex:inRadialSeries: instead");
 
 /** Returns a UILabel corresponding to a 'slice' of a radial chart series.
  
@@ -222,7 +227,7 @@
  @param chart The chart containing the axis.
  @param index The index of the chart series within the chart.
  */
-- (SChartAxis*)sChart:(ShinobiChart*)chart xAxisForSeriesAtIndex:(NSInteger)index;
+- (SChartAxis* _Nullable)sChart:(ShinobiChart*)chart xAxisForSeriesAtIndex:(NSInteger)index;
 
 /** The y-axis for this series on the chart
  
@@ -237,7 +242,9 @@
  @param chart The chart containing the axis.
  @param index The index of the chart series within the chart.
  */
-- (SChartAxis*)sChart:(ShinobiChart*)chart yAxisForSeriesAtIndex:(NSInteger)index;
+- (SChartAxis* _Nullable)sChart:(ShinobiChart*)chart yAxisForSeriesAtIndex:(NSInteger)index;
 
 
 @end
+
+NS_ASSUME_NONNULL_END

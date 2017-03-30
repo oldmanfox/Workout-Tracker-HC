@@ -9,6 +9,7 @@
 #import "MPConstants.h"
 #import "MPLogging.h"
 #import "NSURL+MPAdditions.h"
+#import "MoPub.h"
 #import <CommonCrypto/CommonDigest.h>
 
 #import <sys/types.h>
@@ -50,9 +51,17 @@ CGRect MPApplicationFrame()
 
 CGRect MPScreenBounds()
 {
+    // Prior to iOS 8, window and screen coordinates were fixed and always specified relative to the
+    // device’s screen in a portrait orientation. Starting with iOS8, the `fixedCoordinateSpace`
+    // property was introduced which specifies bounds that always reflect the screen dimensions of
+    // the device in a portrait-up orientation.
     CGRect bounds = [UIScreen mainScreen].bounds;
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(fixedCoordinateSpace)]) {
+        bounds = [UIScreen mainScreen].fixedCoordinateSpace.bounds;
+    }
 
-    if (UIInterfaceOrientationIsLandscape(MPInterfaceOrientation()) && [[UIDevice currentDevice].systemVersion compare:@"8.0"] == NSOrderedAscending) {
+    // Rotate the portrait-up bounds if the orientation of the device is in landscape.
+    if (UIInterfaceOrientationIsLandscape(MPInterfaceOrientation())) {
         CGFloat width = bounds.size.width;
         bounds.size.width = bounds.size.height;
         bounds.size.height = width;
@@ -176,13 +185,25 @@ BOOL MPViewIntersectsParentWindowWithPercent(UIView *view, CGFloat percentVisibl
 
 NSString *MPResourcePathForResource(NSString *resourceName)
 {
-#ifdef MP_FABRIC
-    // We store all assets inside a bundle for Fabric.
-    return [@"MoPub.bundle" stringByAppendingPathComponent:resourceName];
-#else
-    // When using open source, the resources just live in the main bundle.
-    return resourceName;
-#endif
+    if ([[NSBundle mainBundle] pathForResource:@"MoPub" ofType:@"bundle"] != nil) {
+        return [@"MoPub.bundle" stringByAppendingPathComponent:resourceName];
+    }
+    else if ([[UIDevice currentDevice].systemVersion compare:@"8.0" options:NSNumericSearch] != NSOrderedAscending) {
+        // When using open source or cocoapods (on ios 8 and above), we can rely on the MoPub class
+        // living in the same bundle/framework as the assets.
+        // We can use pathForResource on ios 8 and above to succesfully load resources.
+        NSBundle *resourceBundle = [NSBundle bundleForClass:[MoPub class]];
+        NSString *resourcePath = [resourceBundle pathForResource:resourceName ofType:nil];
+        return resourcePath;
+    }
+    else {
+        // We can just return the resource name because:
+        // 1. This is being used as an open source release so the resource will be
+        // in the main bundle.
+        // 2. This is cocoapods but CAN'T be using frameworks since that is only allowed
+        // on ios 8 and above.
+        return resourceName;
+    }
 }
 
 NSArray *MPConvertStringArrayToURLArray(NSArray *strArray)
@@ -200,6 +221,7 @@ NSArray *MPConvertStringArrayToURLArray(NSArray *strArray)
 
     return urls;
 }
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @implementation NSString (MPAdditions)

@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "ShinobiHeaderMacros.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 /** The `SChartAnimationCurve` protocol allows any object to act as a curve evaluator for series' animations, as defined in `SChartAnimation`.  
  
@@ -42,13 +45,17 @@
  
  @param time Time is provided as a CGFloat between 0.f and 1.f, where 0.f is the beginning of the animation and 1.f is the end of the animation. (time = elapsed time / duration)
  */
--(CGFloat)valueAtTime:(CGFloat)time;
+-(CGFloat)valueAtTime:(CGFloat)time SCHART_MSG_DEPRECATED("Use 'valueAtProgress' instead.");
 
-
-/* DEPRECATED - It doesn't feel right to put this NSObject method on the protocol.  Should we call copyWithZone: instead? 
+/** Should return an appropriate value for the animation curve at the given progress.
  
- This method has been added to make use of the convenience method defined in the NSObject class.
+ The value returned represents the progress of the series between its beginning and end positions, where 0.f is the start state and 1.f is, nominally, the end state.
+ It is valid to return a value 'v' where either v < 0.f or v > 1.f.
+ 
+ @param progress A double between 0.f and 1.f, where 0.f is the beginning of the animation and 1.f is the end of the animation.
  */
--(id)copy;
+-(double)valueAtProgress:(double)progress;
 
 @end
+
+NS_ASSUME_NONNULL_END

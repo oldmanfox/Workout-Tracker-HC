@@ -12,8 +12,8 @@
  - TickLabelOrientationDiagonal: Configures the orientation of the labels on major tick marks to be diagonal.
  - TickLabelOrientationVertical: Configures the orientation of the labels on major tick marks to be vertical.
  */
-typedef  enum {
+typedef NS_ENUM(NSInteger, TickLabelOrientation) {
     TickLabelOrientationHorizontal,
     TickLabelOrientationDiagonal,
     TickLabelOrientationVertical
-} TickLabelOrientation;
+};

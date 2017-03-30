@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** `SChartSpokeStyle` manages the appearance of spokes for `SChartDonutSeries` and `SChartPieSeries` objects.
  
  Spokes provide an alternative way to display labels on a pie or donut chart. Labels are positioned outside the series with a line drawn from them to the center of the slice.
@@ -41,7 +43,7 @@
 /** Color of the spoke lines.
     Default is black.
  */
-@property (nonatomic, retain) UIColor *color;
+@property (nonatomic, strong, nullable) UIColor *color;
 
 /** Length of the spoke, starting from the anchor point.
     Default is half the slice's radius + 40.
@@ -68,7 +70,7 @@
 /** Color of the circle.
     Default is black.
  */
-@property (nonatomic, retain) UIColor *anchorColor;
+@property (nonatomic, strong, nullable) UIColor *anchorColor;
 
 /** Updates this style object using the settings from the passed-in style.
  
@@ -77,3 +79,6 @@
 - (void)supplementStyleFromStyle:(SChartSpokeStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

@@ -6,6 +6,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ShinobiHeaderMacros.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 /** The `SChartData` protocol allows any object to act as a datapoint within a series on a `ShinobiChart`. The `[SChartDatasource sChart:dataPointAtIndex:forSeriesAtIndex:]` method returns an object that implements this protocol. It can be your own object or an instance of the `SChartDataPoint` class that we supply.
  
@@ -31,12 +34,12 @@
 /** Returns the x value of the data point. 
  
  This is used for series that require only a single x value. Series that require multiple x values should implement `sChartXValueForKey:` and check the specific series class for the required keys. */
-- (id)sChartXValue;
+- (nullable id)sChartXValue;
 
 /** Returns the y value of the data point.
  
  This is used for series that require only a single y value. Series that require multiple y values should implement `sChartYValueForKey:` and check the specific series class for the required keys. */
-- (id)sChartYValue;
+- (nullable id)sChartYValue;
 
 #pragma mark -
 #pragma mark OPTIONAL
@@ -46,24 +49,24 @@
 /** This is used for series that require data values which are independent of the axes. The expected keys can be found on the series that is trying to render the data point.
  
  An example of this is SChartBubbleDataPoint which has a third data value relating to the size of the bubbles.*/
-- (id)sChartValueForKey:(NSString*)key;
+- (nullable id)sChartValueForKey:(NSString*)key;
 
 /** @name Multi value points */
 
 /** Returns the x value corresponding to the provided key.
  
 This is only required for series with more than one x value and keys are specified on the series type.  For example, OHLC keys include "low", "high", etc.  For series with just a single x value, use `sChartXValue` instead. */
-- (id)sChartXValueForKey:(NSString*)key;
+- (nullable id)sChartXValueForKey:(NSString*)key;
 
 /** Returns the y value corresponding to the provided key. 
  
  This is only required for series with more than one y value and keys are specified on the series type.  For example, OHLC keys include "low", "high", etc. For series with just a single y value, use `sChartYValue` instead. */
-- (id)sChartYValueForKey:(NSString*)key;
+- (nullable id)sChartYValueForKey:(NSString*)key;
 
-/** @name Selection */
+/* @name Selection */
 
-/** Returns `YES` if this data point is selected. */
-- (BOOL)sChartPointIsSelected;
+/* Returns `YES` if this data point is selected. */
+- (BOOL)sChartPointIsSelected SCHART_MSG_DEPRECATED("Use `selectedDataPoints` on `SChartSeries` instead.");
 
 /** @name Index */
 
@@ -73,3 +76,5 @@ This is only required for series with more than one x value and keys are specifi
 @property (nonatomic) NSInteger sChartDataPointIndex;
 
 @end
+
+NS_ASSUME_NONNULL_END

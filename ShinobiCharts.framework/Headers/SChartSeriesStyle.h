@@ -13,6 +13,8 @@
 #define NS_REQUIRES_SUPER /*empty*/
 #endif
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** SChartSeriesStyle is the base class for all series styles in ShinobiCharts.  Series style objects manage the appearance of series on a chart.  
  
  SChartSeriesStyle allows you to modify the representation of the series in the chart legend.  In order to tweak properties on a series style object which are specific to that kind of series, you should look at the documentation for the concrete series styles which are available.  These are:
@@ -48,3 +50,6 @@
 @property (nonatomic, retain) SChartDataPointLabelStyle *dataPointLabelStyle;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

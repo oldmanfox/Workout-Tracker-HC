@@ -6,7 +6,7 @@
 //
 //
 
-typedef enum {
+typedef NS_ENUM(NSInteger, SChartAxisPosition) {
     SChartAxisPositionNormal,
     SChartAxisPositionReverse,
-} SChartAxisPosition;
+};

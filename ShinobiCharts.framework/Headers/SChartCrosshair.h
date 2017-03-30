@@ -20,6 +20,7 @@
 @class SChartCrosshairStyle;
 @class SChartCrosshairTooltip;
 @class SChartAxis;
+@protocol SChartCrosshairLineDrawer;
 @protocol SChartData;
 
 typedef NS_ENUM(NSInteger, SChartCrosshairMode) {
@@ -33,6 +34,7 @@ typedef NS_ENUM(NSInteger, SChartCrosshairOutOfRangeBehavior) {
     SChartCrosshairOutOfRangeBehaviorRemove,
 };
 
+NS_ASSUME_NONNULL_BEGIN
 
 /** The SChartCrosshair provides a small circle target with lines that extend to the axis. This is accompanied by a tooltip object - nominally a UIView.  The default implementation for the tooltip is provided by `SChartCrosshairTooltip`.  For data points with multiple values at a single point, another implementation, `SChartCrosshairMultiValueTooltip`, has also been provided.
  
@@ -55,22 +57,24 @@ typedef NS_ENUM(NSInteger, SChartCrosshairOutOfRangeBehavior) {
  */
 @interface SChartCrosshair : UIView <SChartCrosshair>
 
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+
 #pragma mark -
 #pragma mark Initialization
 /** @name Initialization */
 
 /** Initializes and returns a newly allocated crosshair object, which is associated with the specified chart. */
--(id)initWithChart:(ShinobiChart *)parentChart;
-
-/* DEPRECATED - Use initWithChart: instead. */
--(id)initWithFrame:(CGRect)frame usingChart:(ShinobiChart *)parentChart DEPRECATED_ATTRIBUTE;
+-(id)initWithChart:(ShinobiChart *)parentChart NS_DESIGNATED_INITIALIZER;
 
 /** Configures the crosshair to track a particular series on the chart.
  
  If this property isn't set, the crosshair will lock to the nearest series on the chart when it is drawn.
  @warning The class of this property has been changed from `SChartCartesianSeries` to `SChartMappedSeries`.
  */
-@property (nonatomic, retain) SChartMappedSeries *trackingSeries;
+@property (nonatomic, retain, nullable) SChartMappedSeries *trackingSeries;
 
 /** Configures the crosshair to track a particular data point on the chart.
  
@@ -79,7 +83,7 @@ typedef NS_ENUM(NSInteger, SChartCrosshairOutOfRangeBehavior) {
 @property (nonatomic, assign) SChartPoint            trackingPoint;
 
 /** The crosshair holds a reference to the chart which contains it. */
-@property (nonatomic, assign) ShinobiChart *chart;
+@property (nonatomic, weak) ShinobiChart *chart;
 
 #pragma mark -
 #pragma mark Style
@@ -105,13 +109,11 @@ typedef NS_ENUM(NSInteger, SChartCrosshairOutOfRangeBehavior) {
 #pragma mark Customization
 /** @name Customization */
 
-/** When set to `YES` the lines from the target point to the axis will be displayed. 
+/** Allows the user to customise the crosshair line by implementing the SChartCrosshairLineDrawer protocol.
  
- By default, this property is set to `YES`. */
-@property (nonatomic)         BOOL    enableCrosshairLines;
-
-/* DEPRECATED - This should be taken off the API in future releases.  It is used internally, but should not be set from outside of the class. */
-@property (nonatomic)         BOOL    enableCrosshairLinesSet;
+  By default, this will use implementation from SChartTargetLineDrawer.
+ */
+@property (nonatomic, retain) id<SChartCrosshairLineDrawer> lineDrawer;
 
 /** Returns `YES` if the crosshair should draw its tracking lines to the specified point, given the specified frame.
  
@@ -136,24 +138,6 @@ typedef NS_ENUM(NSInteger, SChartCrosshairOutOfRangeBehavior) {
  
  By default, this property is set to `YES`. */
 @property (nonatomic)         BOOL      interpolatePoints;
-
-/* DEPRECATED - This property will be taken off the API in future releases.
- 
- By default, this property is set to `UIViewAnimationOptionCurveEaseOut`. */
-@property (nonatomic)         UIViewAnimationOptions animationOptions;
-
-/* DEPRECATED - This property will be taken off the API in future releases. 
- 
- By default, this property is set to `0.2`. */
-@property (nonatomic)         CGFloat animationDuration;
-
-/* DEPRECATED - This property will be taken off the API in future releases. 
- 
- By default, this property is set to `0.2`. */
-@property (nonatomic)         CGFloat animationDelay;
-
-/* DEPRECATED - This property will be taken off the API in future releases. */
-@property (nonatomic)         BOOL animationEnabled;
 
 /** Displays the crosshair (with lines and tooltip) on the chart.
  
@@ -204,32 +188,6 @@ typedef NS_ENUM(NSInteger, SChartCrosshairOutOfRangeBehavior) {
  The default behavior in this case is to remove the crosshair. */
 -(void)crosshairTrackingFailed;
 
-/** This method informs the crosshair that there was a pinch/pan gesture on the chart. 
- 
- The default behavior in this case is to remove the crosshair. */
--(void)crosshairChartGotPinchAndPan DEPRECATED_ATTRIBUTE;
-
-/** This method is informs the crosshair that there was a tap gesture on the chart at a point. 
- 
- The default behavior in this case is to remove the crosshair.
- 
- @param tap The point on the chart which was tapped.
- */
--(void)crosshairChartGotTapAt:(CGPoint)tap DEPRECATED_ATTRIBUTE;
-
-/** This method informs the crosshair that there was a long press gesture on the chart at a point.
- 
- The default behavior of the crosshair is to do nothing.  If you wish to do something with the crosshair on receiving this event, you can subclass SChartCrosshair, and override this method.
- 
- @param longpress The point on the chart where the long press occurred.
- */
--(void)crosshairChartGotLongPressAt:(CGPoint)longpress DEPRECATED_ATTRIBUTE;
-
-/** Notifies the crosshair that its parent chart reloaded its data.
- 
- The default behavior in this case is to remove the crosshair. */
--(void)chartDidReload DEPRECATED_ATTRIBUTE;
-
 #pragma mark -
 #pragma mark Moving the crosshair
 /** @name Moving the crosshair */
@@ -258,5 +216,7 @@ typedef NS_ENUM(NSInteger, SChartCrosshairOutOfRangeBehavior) {
  */
 - (void)moveToFloatingPosition:(SChartPoint)point onXAxis:(SChartAxis *)xAxis onYAxis:(SChartAxis *)yAxis;
 
-
 @end
+
+NS_ASSUME_NONNULL_END
+

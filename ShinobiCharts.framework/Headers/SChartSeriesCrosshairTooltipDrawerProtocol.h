@@ -11,10 +11,11 @@
 
 @class SChartSeriesCrosshairTooltip, ShinobiChart, SChartMappedSeries;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  Classes implementing this protocol are responsible for drawing a path representing the tooltip's shape.
  */
-
 @protocol SChartSeriesCrosshairTooltipDrawerProtocol <NSObject>
 
 /**
@@ -32,3 +33,5 @@
 - (CGPathRef)newPathForTooltip:(SChartSeriesCrosshairTooltip *)tooltip withCurrentTrackedPoint:(CGPoint)point onChart:(ShinobiChart *)chart trackingSeries:(SChartMappedSeries *)series;
 
 @end
+
+NS_ASSUME_NONNULL_END

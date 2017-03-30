@@ -11,6 +11,8 @@
 #import "SChartCartesianSeries.h"
 #import "SChartBandSeriesStyle.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** `SChartBandSeries` is a type of `SChartSeries` that uses its data points to construct a band series.
  
   <img src="../docs/markdown_files/Images/userguide_bandSeries.png" width=400/>
@@ -67,3 +69,5 @@
 -(void)setSelectedStyle:(SChartBandSeriesStyle *)selectedStyle;
 
 @end
+
+NS_ASSUME_NONNULL_END

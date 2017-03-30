@@ -13,6 +13,8 @@
 @class ShinobiChart;
 @class SChartCanvas;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  The canvas overlay is responsible for drawing objects that appear over the
  plot area - such as crosshairs.  It's a transparent layer that is rendered
@@ -26,11 +28,19 @@
 /**
  The chart owner - available to let us access the chart objects when we need
  */
-@property (nonatomic, assign) ShinobiChart *chart;
+@property (nullable, nonatomic, assign) ShinobiChart *chart;
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
 
 /**
  Initialize a canvas-overlay
  */
--(id)initWithFrame:(CGRect)frame usingChart:(ShinobiChart *)parentChart andCanvas:(SChartCanvas *)parentCanvas;
+-(id)initWithFrame:(CGRect)frame
+        usingChart:(ShinobiChart *)parentChart
+         andCanvas:(SChartCanvas *)parentCanvas
+         NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

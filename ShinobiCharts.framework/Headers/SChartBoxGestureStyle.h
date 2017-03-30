@@ -8,6 +8,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** If you set the [ShinobiChart gesturePanType] property on a chart to `SChartGesturePanTypeBoxDraw`, the chart will draw a box on the chart during a pan.  When the pan is finished, the chart will zoom to the limits of the box.
  
  The SChartBoxGestureStyle class manages the look and feel of the box gesture.  An instance of the class is contained by the chart's theme.  To update the look of the box gesture on a chart, you could use the following code:
@@ -37,3 +39,5 @@
 @property (nonatomic, assign) float trackingLineWidth;
 
 @end
+
+NS_ASSUME_NONNULL_END

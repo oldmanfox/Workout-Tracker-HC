@@ -10,6 +10,8 @@
 
 #import "SChartSeriesCrosshairTooltipPositionerProtocol.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  Calculates an appropriate position for the tooltip.
  
@@ -24,3 +26,6 @@
 @interface SChartSeriesCrosshairTooltipPositioner : NSObject <SChartSeriesCrosshairTooltipPositionerProtocol>
 
 @end
+
+NS_ASSUME_NONNULL_END
+

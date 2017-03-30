@@ -9,6 +9,8 @@
 
 @class SChartPieSeriesStyle;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** `SChartPieSeries` displays magnitude data on the chart - the larger the value of the datapoint, the larger the slice representing that datapoint.
  
  <img src="../docs/markdown_files/Images/userguide_pieSeries.png" width=300/>
@@ -65,5 +67,7 @@
 /** Identical to `[SChartDonutSeries getDonutCenter]`. This returns the center point of the pie, within the chart frame. */
 - (CGPoint) getPieCenter;
 
-
 @end
+
+NS_ASSUME_NONNULL_END
+

@@ -9,6 +9,8 @@
 #import "SChartPointSeries.h"
 @class SChartBubblePointStyle;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**`SChartBubbleSeries` is a type of `SChartSeries` that uses its data points to construct a bubble series.
  
   <img src="../docs/markdown_files/Images/userguide_bubbleSeries.png" width=400/>
@@ -31,21 +33,21 @@
  A value of `nil` will result in the series auto-calculating an appropriate scale to use. The auto-calculated scale is based on `biggestBubbleDiameterForAutoScaling`.
  
  By default, this property is set to `nil`. */
-@property (nonatomic, retain) NSNumber *scale;
+@property (nonatomic, retain, nullable) NSNumber *scale;
 
 /** This property is used to calculate an appropriate auto-scale that results in the biggest bubble in the series being `[biggestBubbleDiameterForAutoScaling doubleValue]` points in diameter.
  
  If this property is `nil` then a default value of half of the current smallest canvas dimension will be used instead. 
  
  By default, this property is set to `nil`. */
-@property (nonatomic, retain) NSNumber *biggestBubbleDiameterForAutoScaling;
+@property (nonatomic, retain, nullable) NSNumber *biggestBubbleDiameterForAutoScaling;
 
 /** Returns the current scale being used to render the bubble series.
  
  If you have set `scale` then this will be returned, otherwise an automatically calculated scale will be returned.
  
  Note that if no `scale` has been set and no auto-caulculated value exists that `nil` will be returned.*/
-- (NSNumber*) currentScale;
+- (nullable NSNumber*) currentScale;
 
 #pragma mark -
 #pragma mark Styling
@@ -116,3 +118,5 @@
 - (SChartBubblePointStyle*)styleForPoint:(id<SChartData>)point;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -11,6 +11,8 @@
 @class SChartMappedSeries;
 @protocol SChartData;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  * A tuple of pixel-point, series and datapoint, used for passing information
  * about a closest-point and series back from a SChartPixelToPointMapper
@@ -41,3 +43,5 @@
 @property(nonatomic, strong) id<SChartData> dataPoint;
 
 @end
+
+NS_ASSUME_NONNULL_END

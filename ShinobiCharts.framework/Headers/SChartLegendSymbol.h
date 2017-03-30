@@ -7,6 +7,8 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** The legend symbols are the visual representations of a series in the chart legend.  `SChartLegendSymbol` is the base class for these symbols. 
  
  As a part of adopting the `SChartLegendItem` protocol, a series may optionally return a symbol object to represent itself.  If you are using one of the series types provided by ShinobiCharts, you shouldn't need to create legend symbols yourself.  All of the series types return an appropriate symbol which will represent them in the chart legend.  These predefined symbols are:
@@ -26,4 +28,9 @@
  */
 @interface SChartLegendSymbol : UIView
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+
 @end
+
+NS_ASSUME_NONNULL_END
+

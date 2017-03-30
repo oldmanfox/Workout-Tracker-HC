@@ -13,6 +13,10 @@
 @class SChartCanvasRenderView;
 @class ShinobiChart;
 
+@protocol SChartRedrawCalculator;
+
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  For each ShinobiChart, one single SChartCanvas will exist to contain the drawing of all of the axes and series. Titles, legends and other chart level objects appear outside of this area in the ShinobiChart view. The canvas is responsible for managing the layers that make up the axis and series.
  
@@ -33,25 +37,24 @@
 #pragma mark Initializing the canvas
 /** @name Initializing the canvas */
 
-/* DEPRECATED - This should be moved into a private header.
- 
+- (instancetype)init NS_UNAVAILABLE;
++ (instancetype)new NS_UNAVAILABLE;
+- (instancetype)initWithCoder:(NSCoder *)aDecoder NS_UNAVAILABLE;
+- (instancetype)initWithFrame:(CGRect)frame NS_UNAVAILABLE;
+
+/**
  Initializes and returns a newly allocated canvas object with the specified frame rectangle.
  @param frame The frame rectangle for the canvas, measured in points.
  @param parentChart The chart which will contain the new canvas.
  @return An initialized canvas object, or `nil` if the object couldn't be created.
  */
-- (id)initWithFrame:(CGRect)frame usingChart:(ShinobiChart *)parentChart;
+- (id)initWithFrame:(CGRect)frame
+         usingChart:(ShinobiChart *)parentChart
+NS_DESIGNATED_INITIALIZER;
 
 #pragma mark -
 #pragma mark Gestures
 /** @name Gestures */
-
-/* DEPRECATED - This should be moved into a private header.
- 
- Sets whether panning is enabled on the chart canvas.
- @param enable If set to `YES`, panning will be enabled on the canvas.
- */
--(void) enablePanning:(BOOL)enable DEPRECATED_ATTRIBUTE;
 
 #pragma mark -
 #pragma mark Managing our drawing objects
@@ -74,22 +77,17 @@
 /** This is the layer where we render things like the crosshair. */
 @property (nonatomic, retain) SChartCanvasOverlay* overlay;
 
-/* DEPRECATED - This should be moved into a private header.
- 
- If this property is set to `YES`, we will refresh the canvas in the next draw cycle.
- 
- We set this property to `YES` when we call [ShinobiChart redrawChartIncludePlotArea:] and pass `YES` in as the argument.
+/**
+ *  Determines whether a subsequent redraw call to the chart should be queued.
+ *
+ *  Often, you'll want to leave this as the default `SChartRedrawCalculatorFeedbackLoop` which will
+ *  ensure that the chart is redrawn if an animation is currently in progress.
+ *
+ *  If you wish to prevent the chart from being automatically redrawn, e.g. because you are
+ *  animating a series based on an axis' span value, you can set this property to nil.
  */
-@property (nonatomic) BOOL redrawGL;
-
-/* DEPRECATED - This should be moved into a private header.
- 
- We set this property to `YES` when we reload data in the chart. */
-@property (nonatomic, assign) BOOL reloadedData;
-
-/* DEPRECATED - This should be moved into a private header.
- 
- We set this property to `YES` if the chart responds to device rotations, and we rotate the device. */
-@property (nonatomic, assign) BOOL orientationChanged;
+@property (nonatomic, retain) id<SChartRedrawCalculator> animationRedrawCalculator;
 
 @end
+
+NS_ASSUME_NONNULL_END

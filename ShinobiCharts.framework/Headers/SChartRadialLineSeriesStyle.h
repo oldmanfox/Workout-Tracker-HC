@@ -7,7 +7,10 @@
 //
 
 #import "SChartLineSeriesBaseStyle.h"
+
 @class SChartBasePointStyle;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /** `SChartRadialLineSeriesStyle` manages the appearance of an instance of `SChartRadialLineSeries` on a chart.
  
@@ -31,5 +34,7 @@
  @see SChartBasePointStyle */
 @property(nonatomic, retain) SChartBasePointStyle *selectedPointStyle;
 
-
 @end
+
+NS_ASSUME_NONNULL_END
+

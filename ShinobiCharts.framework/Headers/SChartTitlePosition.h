@@ -6,9 +6,9 @@
 //
 //
 
-typedef enum {
+typedef NS_ENUM(NSInteger, SChartTitlePosition) {
     SChartTitlePositionCenter,
     SChartTitlePositionBottomOrLeft,
     SChartTitlePositionTopOrRight
-} SChartTitlePosition;
+};
 

@@ -15,6 +15,8 @@
 
 #import "SChartPointStruct.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** A simple extension of the UIView class to use as the standard cross hair tooltip.
  
  <img src="../docs/markdown_files/Images/api_crosshair.png" width=400/>
@@ -40,13 +42,6 @@
 
 /** A method that is called to setup default properties of the tooltip (such as `inset` and `label`.)*/
 - (void) setDefaults;
-
-/** A method called by the default crosshair
- 
- Passes in the crosshair style object to update the look and feel of the tooltip
- 
- @warning DEPRECATED - use `style` property instead*/
-- (void)setTooltipStyle:(SChartCrosshairStyle*)style DEPRECATED_MSG_ATTRIBUTE("Use `style` property instead");
 
 /**@name Displaying Data Points */
 /** Standard crosshair called-method.
@@ -85,3 +80,6 @@
 - (void) floatingAt:(CGPoint)coords;
 
 @end
+
+NS_ASSUME_NONNULL_END
+

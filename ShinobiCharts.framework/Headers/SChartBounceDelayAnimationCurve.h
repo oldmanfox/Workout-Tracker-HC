@@ -8,6 +8,8 @@
 
 #import "SChartAnimation.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** This curve evaluator describes a curve similar to that described by SChartBounceAnimation but where the 'bounce' occurs over a shorter proportion of the duration (`50%`).
  
  For the remainder of the duration, the curve is constant at `1`. This is the 'delay' where there is no change.
@@ -20,3 +22,5 @@
 @interface SChartBounceDelayAnimationCurve : NSObject <SChartAnimationCurve>
 
 @end
+
+NS_ASSUME_NONNULL_END

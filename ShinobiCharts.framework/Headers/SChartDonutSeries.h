@@ -13,10 +13,12 @@
 @protocol SChartDatasource;
 @class SChartDonutSeriesStyle, SChartSpokesView, SChartSpokeStyle;
 
-typedef enum {
+NS_ASSUME_NONNULL_BEGIN
+
+typedef NS_ENUM(NSInteger, SChartRadialSeriesDrawDirection) {
     SChartRadialSeriesDrawDirectionAntiClockwise,
     SChartRadialSeriesDrawDirectionClockwise
-} SChartRadialSeriesDrawDirection;
+};
 
 /** `SChartDonutSeries` displays magnitude data on the chart - the larger the value of the data point, the larger the slice representing that data point.
  
@@ -133,15 +135,6 @@ typedef enum {
 /** The angle to which the slice will rotate once selected, in radians. */
 @property (nonatomic, retain) NSNumber *selectedPosition;
 
-/** DEPRECATED - configure the `selectionAnimation` property instead.
- */
-@property (nonatomic) CGFloat animationDuration DEPRECATED_ATTRIBUTE;
-
-/** DEPRECATED - configure the `selectionAnimation` property instead.
- */
-@property (nonatomic) SChartAnimationCurve animationCurveType DEPRECATED_ATTRIBUTE;
-
-
 /** An animation object describing the motion of the donut series when a slice is selected.
  
  The `angleCurve` of the animation describes any rotation of the series from its current position to its selected position.
@@ -149,6 +142,13 @@ typedef enum {
  @see SChartAnimation
  */
 @property (nonatomic, retain) SChartAnimation *selectionAnimation;
+
+/**
+ *  The time taken for 'selectionAnimation' to complete, in seconds.
+ *
+ *  Default is 1.
+ */
+@property (nonatomic, assign) CGFloat selectionAnimationDuration;
 
 /** Select or deselect a slice within the series. 
  @param sliceIndex The index of the slice in the series to select or deselect.
@@ -194,21 +194,6 @@ typedef enum {
  */
 @property (nonatomic) SChartRadialSeriesDrawDirection drawDirection;
 
-/** Creates the labels for the slices in the donut series, and displays them on the chart. 
- 
- The labels are displayed on each slice in the series.
- 
- @param datasource The datasource for the chart. The series gets the labels from the datasource, then displays them in the correct position on the chart.
- @param chart The chart containing the donut series.
- */
--(void)createLabels:(id <SChartDatasource>)datasource onChart:(ShinobiChart *)chart;
-
-/** DEPRECATED - This should be a private method, so will be taken off the public API in a future commit.
- 
- Draw a slice of the series. */
-- (void)drawSlice:(NSInteger)sliceIndex ofTotal:(NSInteger)totalSlices fromAngle:(CGFloat)startAngle toAngle:(CGFloat)endAngle
-       fromCentre:(CGPoint)centre withInnerRadius:(CGFloat)innerRadius andOuterRadius:(CGFloat)outerRadius asSelected:(BOOL)sel inFrame:(CGRect)frame;
-
 #pragma mark -
 #pragma mark Rotate a slice
 /** @name Rotate a slice */
@@ -222,3 +207,5 @@ typedef enum {
 -(void)rotateSliceAtIndex:(NSInteger)index toAngle:(double)rads withAnimation:(SChartAnimation *)animation;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -29,6 +29,8 @@ typedef NS_ENUM(NSUInteger, SChartDataPointLabelPosition)
     SChartDataPointLabelPositionAboveData
 };
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** The data point label style object controls the look and feel for labels appearing next to a series data point.
  
  @available Standard
@@ -73,12 +75,12 @@ typedef NS_ENUM(NSUInteger, SChartDataPointLabelPosition)
 /** The font used for the data point label.
  
  Default value is inherited from the axis label font of current theme. */
-@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, strong, nullable) UIFont *font;
 
 /** The color of the text used to display the data point label.
  
  Default value is inherited from the title text color of current theme. */
-@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, strong, nullable) UIColor *textColor;
 
 /** Whether to display x and y values, or both, of the `SChartDataPoint`.
  
@@ -91,3 +93,5 @@ typedef NS_ENUM(NSUInteger, SChartDataPointLabelPosition)
 - (void)supplementStyleFromStyle:(SChartDataPointLabelStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END

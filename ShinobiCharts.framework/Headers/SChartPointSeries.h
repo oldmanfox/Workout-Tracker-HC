@@ -13,6 +13,8 @@
 @class SChartPointSeriesStyle;
 @class SChartBaselinePointStyle;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface SChartPointSeries : SChartCartesianSeries
 
 /**@name Styling */
@@ -60,3 +62,5 @@
 - (SChartBaselinePointStyle*)styleForPoint:(id<SChartData>)point;
 
 @end
+
+NS_ASSUME_NONNULL_END

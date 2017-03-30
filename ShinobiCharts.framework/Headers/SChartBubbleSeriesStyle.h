@@ -7,10 +7,12 @@
 //
 
 #import "SChartPointSeriesStyle.h"
+
 @class SChartBubblePointStyle;
 
-@interface SChartBubbleSeriesStyle : SChartPointSeriesStyle
+NS_ASSUME_NONNULL_BEGIN
 
+@interface SChartBubbleSeriesStyle : SChartPointSeriesStyle
 
 /** Manages the appearance of unselected points/bubbles on a bubble series.
  
@@ -44,3 +46,5 @@
 - (void)supplementStyleFromStyle:(SChartBubbleSeriesStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END

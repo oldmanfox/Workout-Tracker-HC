@@ -8,6 +8,8 @@
 
 #import "SChartScatterSeriesStyle.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** `SChartLineSeriesBaseStyle` manages the appearance of an instance of `SChartLineSeries` and subclasses, on a chart.
 
  @available Standard
@@ -33,38 +35,39 @@
  
  This property is used as long as `showFill` isn't set to `YES`.  If the area is filled, `areaLineColor` is used instead.
  */
-@property (nonatomic, retain)     UIColor   *lineColor;
+@property (nonatomic, strong, nullable)     UIColor   *lineColor;
 
 /** The color for the line if the area is filled.
  
  If the area isn't filled, `lineColor` is used instead.
  */
-@property (nonatomic, retain)     UIColor   *areaLineColor;
+@property (nonatomic, strong, nullable)     UIColor   *areaLineColor;
 
 /** The width of the line in pixels
  
  This property is used as long as `showFill` isn't set to `YES`.  If the area is filled, `areaLineWidth` is used instead.
  */
-@property (nonatomic, retain)     NSNumber  *lineWidth;
+@property (nonatomic, strong, nullable)     NSNumber  *lineWidth;
 
 /** The width of the line in pixels, if the area is filled.
  
  If the area isn't filled, `lineWidth` is used instead.
  */
-@property (nonatomic, retain)     NSNumber  *areaLineWidth;
+@property (nonatomic, strong, nullable)     NSNumber  *areaLineWidth;
 
 /** The color of the area fill between the line and the axis.
  @see showFill */
-@property (nonatomic, retain)     UIColor   *areaColor;
+@property (nonatomic, strong, nullable)     UIColor   *areaColor;
 
 /** The second color which is used to form a gradient area fill.
  @see fillWithGradient */
-@property (nonatomic, retain)     UIColor   *areaColorLowGradient;
+@property (nonatomic, strong, nullable)     UIColor   *areaColorLowGradient;
 
 /** Updates this style object using the configuration of the passed in style.
  @param style The new style with which to update this style object. */
 -(void)supplementStyleFromStyle:(SChartLineSeriesBaseStyle *)style;
 
-
-
 @end
+
+NS_ASSUME_NONNULL_END
+

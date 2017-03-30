@@ -14,23 +14,25 @@
 #import "SChartDataPoint.h"
 #import "SChartTheme.h"
 #import "SChartAxis.h"
-#import "ShinobiMacros.h"
+#import "ShinobiHeaderMacros.h"
 
 @class SChartSeriesStyle;
 @class SChartDataPoint;
 @class ShinobiChart;
 @class SChartAnimation;
 
-typedef enum {
+NS_ASSUME_NONNULL_BEGIN
+
+typedef NS_ENUM(NSInteger, SChartSelection) {
     SChartSelectionNone,
     SChartSelectionSeries,
     SChartSelectionPoint
-} SChartSelection;
+};
 
-typedef enum {
+typedef NS_ENUM(NSInteger, SChartSeriesOrientation) {
     SChartSeriesOrientationHorizontal,
     SChartSeriesOrientationVertical
-} SChartSeriesOrientation;
+};
 
 /** 
  SChartSeries manages the display of a data series on a `ShinobiChart`.  It contains a set of data points.
@@ -117,7 +119,7 @@ typedef enum {
  @param dataPoint The data point that the value corresponds to.
  @param The axis that the value corresponds to, where `nil` represents an axis independent value.
  @return A string that will be used to represent a value for a data point.*/
-- (NSString*) stringForValueWithKey:(NSString*) key withDataPoint:(id<SChartData>) dataPoint usingAxis:(SChartAxis*) axis;
+- (NSString*) stringForValueWithKey:(NSString*) key withDataPoint:(id<SChartData>) dataPoint usingAxis:(SChartAxis* _Nullable) axis;
 
 /** This method returns a string value that will represent the key of a given datapoint.
  
@@ -126,7 +128,7 @@ typedef enum {
  @param key The key that needs a string representation.
  @param dataPoint The data point that the key corresponds to.
  @return A string that will be used to represent the given key for a data point.*/
-- (NSString*) stringForKey:(NSString*) key withDataPoint:(id<SChartData>) dataPoint;
+- (NSString*) stringForKey:(NSString*) key withDataPoint:(id<SChartData> _Nullable) dataPoint;
 
 #pragma mark -
 #pragma mark Status
@@ -147,7 +149,10 @@ typedef enum {
  
  If the `hidden` property of a chart series is set to `YES`, then the series will not be drawn on the chart.
  If this property is set to `NO`, the series will be drawn as usual.
- By default, this property is set to `NO`. */
+ By default, this property is set to `NO`. 
+ 
+ NOTE: In a future version this will no longer trigger an animation on the series, instead use the chart's `animationTracker` methods: `showSeries:animation:completion:` or `hideSeries:animation:completion:`.
+ */
 @property (nonatomic)           BOOL    hidden;
 
 #pragma mark -
@@ -167,35 +172,6 @@ typedef enum {
  
  For example, an SChartCrosshairMultiValueTooltip needs to know the order in which to display its dictionary of key-value pairs.*/
 - (NSComparator) comparatorForValueKeys;
-
-
-#pragma mark -
-#pragma mark Animation
-/** @name Animation */
-
-/** Whether entry and exit animations are enabled for this series.
- 
- If this is set to `YES`, the series will animate in and out using its entryAnimation and exitAnimation animation properties.
- If this is set to `NO`, the series will appear and disappear instantly, with no animation.
- By default, this property is set to `NO` - animation disabled.
- 
- @warning Currently, animation is not supported on radial series (SChartRadialLineSeries).
- */
-@property (nonatomic)           BOOL    animationEnabled;
-
-/** The animation which describes how the series will enter the chart.
-
- The chart series will enter when the chart is first drawn, or when its `hidden` property is set to `NO` (having previously been `YES`).
- See `SChartAnimation` for more details.
- */
-@property (retain, nonatomic) SChartAnimation *entryAnimation;
-
-/** The animation which describes how the series will exit the chart.
- 
- The chart series will exit the chart when its `hidden` property is set to `YES` (having previously been `NO`).
- See `SChartAnimation` for more details.
- */
-@property (retain, nonatomic) SChartAnimation *exitAnimation;
 
 #pragma mark -
 #pragma mark Selection Options
@@ -234,6 +210,14 @@ typedef enum {
 /** Whether or not the series is selected */
 @property (nonatomic, assign) BOOL selected;
 
+/** A set of selected datapoints.
+ 
+ This is kept up to date with the datapoints that are selected on screen.
+ 
+ This can be set by the user to programmatically select datapoints.
+ */
+@property (nonatomic, strong) NSSet<id<SChartData>> *selectedDataPoints;
+
 
 #pragma mark -
 #pragma mark Crosshair
@@ -253,7 +237,7 @@ typedef enum {
  @param datapoint The datapoint for which we want to retrieve the primary color
  @return The primary color associated with the specfied datapoint
  */
-- (UIColor *)primarySeriesColorForDatapoint:(id<SChartData>)datapoint;
+- (nullable UIColor *)primarySeriesColorForDatapoint:(id<SChartData>)datapoint;
 
 #pragma mark -
 #pragma mark Styling
@@ -301,11 +285,6 @@ typedef enum {
 #pragma mark Drawing
 
 /** @name Drawing */
-
-/** DEPRECATED - Use the `hidden` property instead. 
- 
- Whether or not the series should be drawn on the chart.*/
-- (BOOL)shouldBeDrawn DEPRECATED_ATTRIBUTE;
 
 /** Returns, in data terms, the x component of the point upon which the datapoint at the given index is centered. 
  
@@ -356,3 +335,5 @@ typedef enum {
 @property (nonatomic, retain) NSNumber *numberOfDataPointsPerBin;
 
 @end
+
+NS_ASSUME_NONNULL_END

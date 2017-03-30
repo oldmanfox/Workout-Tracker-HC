@@ -11,6 +11,8 @@
 #import "SChartBarColumnSeries.h"
 #import "SChartOHLCSeriesStyle.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** `SChartOHLCSeries` is a type of `SChartSeries` which displays Open-High-Low-Close (OHLC) data on a chart.
  
  <img src="../docs/markdown_files/Images/userguide_ohlcSeries.png" width=400/>
@@ -99,7 +101,7 @@
  
  
  */
-- (SChartOHLCSeriesStyle*)styleForPoint:(id<SChartData>)point previousPoint:(id<SChartData>)prevPoint;
+- (SChartOHLCSeriesStyle*)styleForPoint:(id<SChartData>)point previousPoint:(id<SChartData> _Nullable)prevPoint;
 
 /** Specifies the fill color of the trunk for a OHLC on a per-point basis
  
@@ -112,7 +114,7 @@
  @param style The style object that will be used to style this OHLC point
  
  */
-- (UIColor*)fillColorForPoint:(id<SChartData>)point previousPoint:(id<SChartData>)prevPoint style:(SChartOHLCSeriesStyle*)style;
+- (nullable UIColor*)fillColorForPoint:(id<SChartData>)point previousPoint:(id<SChartData> _Nullable)prevPoint style:(SChartOHLCSeriesStyle*)style;
 
 /** Specifies the gradient fill color of the trunk for a OHLC on a per-point basis
  
@@ -125,6 +127,8 @@
  @param style The style object that will be used to style this OHLC point
  
  */
-- (UIColor*)gradientColorForPoint:(id<SChartData>)point previousPoint:(id<SChartData>)prevPoint style:(SChartOHLCSeriesStyle*)style;
+- (nullable UIColor*)gradientColorForPoint:(id<SChartData>)point previousPoint:(id<SChartData> _Nullable)prevPoint style:(SChartOHLCSeriesStyle*)style;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -11,6 +11,8 @@
 #import "SChartPointSeries.h"
 #import "SChartScatterSeriesStyle.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** `SChartScatterSeries` is a type of `SChartSeries` that uses its data points to construct a scatter series.
  
  <img src="../docs/markdown_files/Images/userguide_scatterSeries.png" width=400/>
@@ -116,3 +118,5 @@
  */
 - (SChartPointStyle*)styleForPoint:(id<SChartData>)point;
 @end
+
+NS_ASSUME_NONNULL_END

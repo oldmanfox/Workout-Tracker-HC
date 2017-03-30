@@ -11,6 +11,7 @@
 #import "SChartTickLabelClippingMode.h"
 #import "SChartAxisPosition.h"
 #import "SChartTickLabelOrientation.h"
+#import "SChartOrientation.h"
 
 @class SChartRange;
 @class SChartCanvasUnderlay;
@@ -28,27 +29,24 @@
 @protocol SChartData;
 @protocol SChartTickLabelRefreshRate;
 
-typedef enum {
-    SChartOrientationHorizontal,
-    SChartOrientationVertical
-} SChartOrientation;
+NS_ASSUME_NONNULL_BEGIN
 
-typedef enum {
+typedef NS_ENUM(NSInteger, SChartAxisZoomLevel) {
     SChartAxisZoomLevelOriginal,
     SChartAxisZoomLevelDouble,
     SChartAxisZoomLevelHalf
-} SChartAxisZoomLevel;
+};
 
-typedef enum {
+typedef NS_ENUM(NSInteger, SChartAxisPanTo) {
     SChartAxisPanToStart,
     SChartAxisPanToEnd,
     SChartAxisPanToCenter
-} SChartAxisPanTo;
+};
 
-typedef enum {
+typedef NS_ENUM(NSInteger, SChartDiscontinuousTickLabelClipping) {
     SChartDiscontinuousTickLabelClippingLow,
     SChartDiscontinuousTickLabelClippingHigh,
-} SChartDiscontinuousTickLabelClipping;
+};
 
 /** 
  The SChartAxis is responsible for managing the coordinate space of the chart. It is the link between the set of real data in a series and the laying down of that series on a chart in a desired manner. Each series on the chart is linked to an axis and this SChartAxis is responsible for managing all of the series linked to it. Here is a sample chart with some key axis features highlighted:
@@ -91,20 +89,18 @@ typedef enum {
 #pragma mark -
 #pragma mark Initializing and managing the axis
 /** @name Initializing the axis */
-/** Create an axis for a given chart area.*/
-- (id)init;
 
 /** Create an axis for a given chart area with a default range.
  
  See `defaultRange` for the implications of setting this type of range. */
-- (id)initWithRange:(SChartRange *)range;
+- (id)initWithRange:(nullable SChartRange *)range;
 
 #pragma mark -
 #pragma mark Chart
 /** A pointer to the parent chart
  
  The axis retains a handle on the chart using it so that it can access user-set drawing parameters. */
-@property (nonatomic, assign) ShinobiChart *chart;
+@property (nonatomic, assign, nullable) ShinobiChart *chart;
 
 #pragma mark -
 #pragma mark Position
@@ -127,7 +123,7 @@ typedef enum {
  
  @warning Axes on a radial chart do not support axis position.
  */
-@property (nonatomic, retain) NSNumber *axisPositionValue;
+@property (nonatomic, retain, nullable) NSNumber *axisPositionValue;
 
 /** This property determines whether the axis labels will move with the axis lines and tick marks when an axis position value has been set.
  
@@ -156,32 +152,23 @@ typedef enum {
  
  @warning A radial chart will not respond to this value.
  */
-@property (nonatomic, retain) NSNumber *width;
+@property (nonatomic, retain, nullable) NSNumber *width;
 
 /** The text to display in the axis title.
  
  @see SChartTitle. */
-@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain, nullable) NSString *title;
 
 /** The title for the axis.
  
  @see SChartTitle
  @see SChartAxisTitleStyle
  */
-@property (nonatomic, retain) SChartTitle *titleLabel;
+@property (nonatomic, retain, nullable) SChartTitle *titleLabel;
 
 #pragma mark -
 #pragma mark Range
 /** @name Ranges */
-
-/** The current _displayed_  range of the axis.
- 
- This property is the actual range currently displayed on the visible area of the chart- which may not be the range that was explicitly set. The axis may make small adjustments to the range to make sure that whole bars are displayed etc. This is a `readonly` property - explicit requests to change the axis range should be made through the method `setRangeWithMinimum:andMaximum:` 
- 
- @see SChartRange
- @see SChartNumberRange
- @see SChartDateRange */
-@property (nonatomic, retain, readonly) SChartRange *axisRange DEPRECATED_MSG_ATTRIBUTE("use 'range' instead");
 
 /** A readonly property indicating the total data range across all series represented by this axis.
  
@@ -202,21 +189,21 @@ typedef enum {
  @see SChartNumberRange
  @see SChartDateRange 
  */
-@property (nonatomic, retain) SChartRange *defaultRange;
+@property (nullable, nonatomic, retain) SChartRange *defaultRange;
 
 /** In data terms, the amount by which the lower limit of the axis range will be lowered past the range of the data.
  
  @warning This is only added when the range is automatically calculated. Setting the range explicitly will result in the rangePaddingLow being ignored.
  
  By default, this property is set to `0`. */
-@property (nonatomic, retain) id rangePaddingLow;
+@property (nonatomic, retain, nullable) id rangePaddingLow;
 
 /** In data terms, the amount by which the upper limit of the axis range will be raised past the range of the data.
 
  @warning This is only added when the range is automatically calculated. Setting the range explicitly will result in the rangePaddingHigh being ignored.
  
  By default, this property is set to `0`. */
-@property (nonatomic, retain) id rangePaddingHigh;
+@property (nonatomic, retain, nullable) id rangePaddingHigh;
 
 /** Whether or not the user is permitted to pan outside of the user-set default range.
  
@@ -285,44 +272,6 @@ typedef enum {
  */
 @property (nonatomic, assign) CGFloat secondaryAxisOffset;
 
-/** Attempts to set the current visible range `range` to a range with the given minimum and maximum values.
- 
- Given any restrictions on setting the range, such as `allowPanningOutOfMaxRange` etc, this method will attempt to set the current axis range.
- 
- @param minimum - the minimum value to be displayed, in data terms.
- @param maximum - the maximum value to be displayed, in data terms.
- @return Whether or not the operation was successful. 
- 
- The permissable types of minimum and maximum will vary depending on the type of axis in use. The range of an `SChartNumberAxis` should be set using two objects of type `NSNumber` for `minimum` and `maximum`, whilst that of an `SChartDateTimeAxis` can be configured using either `NSNumber` or `NSDate` minima and maxima. In the case of `SChartCategoryAxis`, the first value has a nominal integer value of '0' and the nth value, 'n-1'.
-
- A few examples:
- 
-    // Range from 20 to 140 on an SChartNumberAxis.
-    [myNumberAxis setRangeWithMinimum: @20 andMaximum: @140];
- 
-    // Range from June 2013 to January 2014 (approx.) on an SChartDateTimeAxis.
-    [myDateTimeAxis setRangeWithMinimum: [NSDate dateWithTimeIntervalSince1970: 86400.*365*43.5] andMaximum: [NSDate dateWithTimeIntervalSince1970: 86400.*365*44]];
- 
-    // Range between the third and fifth elements on an SChartCategoryAxis.
-    [myCategoryAxis setRangeWithMinimum: @2 andMaximum: @6];
- */
-- (BOOL)setRangeWithMinimum:(id)minimum andMaximum:(id)maximum DEPRECATED_MSG_ATTRIBUTE("use setRange: instead");
-
-
-/** Attempts to set the current visible range `range` to a range with the given minimum and maximum values.
- 
- Given any restrictions on setting the range, such as `allowPanningOutOfMaxRange` etc, this method will attempt to set the current axis range.
- This implementation allows you to explicitly set whether to animate the transition to the new range or not.
- 
- @param animation - Whether or not to animate the range change.
- @return Whether or not the operation was successful.
- 
- See `setRangeWithMinimum:andMaximum`.
- 
- @warning Changing range with animation isn't currently supported by radial charts.
- */
-- (BOOL)setRangeWithMinimum:(id)minimum andMaximum:(id)maximum withAnimation:(BOOL)animation DEPRECATED_MSG_ATTRIBUTE("use setRange:withAnimation: instead");
-
 /** The current _displayed_  range of the axis.
 
  This property is the actual range currently displayed on the visible area of the chart- which may not be the range that was explicitly set. The axis may make small adjustments to the range to make sure that whole bars are displayed etc.
@@ -387,7 +336,7 @@ typedef enum {
  The first major tick mark will be at the absolute minimum data value across all series for this axis - with subsequent major tick marks incrementing by the frequency. To change this initial value see `anchorPoint`. 
  
  By default an appropriate major tick mark value will be selected by the chart and will adapt as the user zooms the chart. */
-@property (nonatomic, retain) id majorTickFrequency;
+@property (nonatomic, retain, nullable) id majorTickFrequency;
 
 /** An appropriate object representing the minor tick mark frequency.
  
@@ -396,7 +345,7 @@ If this value is set, the chart will attempt to display minor tick marks at this
  The first minor tick mark will be at the absolute minimum data value across all series for this axis - with subsequent minor tick marks incrementing by the frequency. To change this initial value see `anchorPoint`. 
  
  By default an appropriate minor tick mark value will be selected by the chart and will adapt as the user zooms the chart. In order for the chart to adhere to a non-nil value you have assigned to this property you must also set a `majorTickFrequency`.  */
-@property (nonatomic, retain) id minorTickFrequency;
+@property (nonatomic, retain, nullable) id minorTickFrequency;
 
 /** Returns the current major tick frequency in use by this axis.
  @warning *Important* `majorTickFrequency` returns the frequency that you have manually set, whereas `currentMajorTickFrequency` returns the frequency currently in use - the two are not necessarily the same.*/
@@ -412,7 +361,7 @@ If this value is set, the chart will attempt to display minor tick marks at this
  Regardless of whether a tick mark frequency has been set or automatically calculated, it must start somewhere. This value acts as the origin point for tickmarks on the axis.
  
  By default, this property is set to the minimum of the `dataRange`. */
-@property (nonatomic, retain) id anchorPoint;
+@property (nonatomic, retain, nullable) id anchorPoint;
 
 /** A string to format each tick mark label - actual format is dependent on axis type.
  If an axis is auto-calculating tick marks - it will select an appropriate label format (ie: months, days, hours, etc). However, setting this value will override all tick mark labels to use this formatter.
@@ -421,7 +370,7 @@ If this value is set, the chart will attempt to display minor tick marks at this
  - A date axis will pass the tick value as an NSDate through an `NSDateFormatter` so set the string as if you were setting a date formatter's `dateFormat` property, i.e `@"dd MMM"`.
  - A category axis will pass the tick value as an NSString to NSString's `stringWithFormat:` method so set any suitable format string, i.e @"%@ District".
  */
-@property (nonatomic, retain) NSString *labelFormatString;
+@property (nonatomic, retain, nullable) NSString *labelFormatString;
 
 /** A label formatter for tick mark labels.
  
@@ -429,7 +378,7 @@ If this value is set, the chart will attempt to display minor tick marks at this
  
  @see SChartTickLabelFormatter
  */
-@property (nonatomic, retain) SChartTickLabelFormatter *labelFormatter;
+@property (nonatomic, retain, nullable) SChartTickLabelFormatter *labelFormatter;
 
 /** This property allows you to alter the tick label clipping mode for the upper end of an axis.
 
@@ -508,35 +457,6 @@ This property allows you to alter the tick label clipping mode for the lower end
 
 #pragma mark -
 #pragma mark BarColumn Series
-/** @name BarColumn Series */
-/** The smallest change in value between any adjacent bars or columns. 
- 
- Specifying this can improve the render time of the chart - it will not have to traverse all of the data to compare differences. */
-@property (nonatomic) double barColSpacing;
-
-/** The minimum value of a bar or column across all of the bar/column series for this axis.
- You can set this by using the appropriate `configureBars:withMinY:withMaxY:` or `configureBars:withMinY:withMaxY:` method for the axis orientation. */
-@property (nonatomic, readonly) NSNumber *barColMin;
-
-/** The maximum value of a bar or column across all of the bar/column series for this axis. 
-  You can set this by using the appropriate `configureBars:withMinY:withMaxY:` or `configureBars:withMinY:withMaxY:` method for the axis orientation. */
-@property (nonatomic, readonly) NSNumber *barColMax;
-
-/** Provide bounds and spacing data for column series within the chart to improve performance 
- 
- @param colSpacing the minimum distance between any two columns along the axis, in data terms.
- @param minX the smallest `xValue` of any column on the axis.
- @param maxX the largest `xValue` of any column on the axis.
- */
-- (void)configureColumns:(double) colSpacing withMinX:(NSNumber *)minX withMaxX:(NSNumber *)maxX;
-
-/** Provide bounds and spacing data for bar series within the chart to improve performance 
- 
- @param barSpacing the minimum distance between any two bars along the axis, in data terms.
- @param minY the smallest `yValue` of any bar on the axis.
- @param maxY the largest `yValue` of any bar on the axis.
- */
-- (void)configureBars:(double) barSpacing withMinY:(NSNumber *)minY withMaxY:(NSNumber *)maxY;
 
 #pragma mark -
 #pragma mark Zooming
@@ -545,60 +465,7 @@ This property allows you to alter the tick label clipping mode for the lower end
  
  @warning Zooming isn't currently supported by radial charts.
  */
-@property (nonatomic)         BOOL enableGestureZooming;
-
-/** Sets the zoom of the axis, based around a fixed point.
- 
- @param z - the zoom level. 1.0 is the starting zoom level, 0.5 is 2x magnification, etc.
- @param position - the position on the axis around which to zoom in/out.
- @param animation - whether or not the zoom operation should be animated. If not animated, the zoom will be instant.
- @param bounceLimits - whether or not the range should 'bounce' if it strays outside of the permissable range.
- 
- @return Whether or not the zoom operation was successful.
- */
-- (BOOL)setZoom:(double)z fromPosition:(double *)position withAnimation:(BOOL)animation andBounceLimits:(BOOL)bounceLimits;
-
-/** See `setZoom:fromPosition:withAnimation:andBounceLimits:`.
- 
- The range will not 'bounce' if it strays outside of the permissable range.
- */
-- (BOOL)setZoom:(double)z fromPosition:(double *)position withAnimation:(BOOL)animation;
-
-/** See `setZoom:fromPosition:withAnimation:andBounceLimits:`.
- 
-  The zoom is not animated.
-  The range will not 'bounce' if it strays outside of the permissable range.
- */
-- (BOOL)setZoom:(double)z fromPosition:(double *)position;
-
-/** See `setZoom:fromPosition:withAnimation:andBounceLimits:`.
- 
-  The zoom is from the midpoint of the range.
-  The range will not 'bounce' if it strays outside of the permissable range.
- */
-- (BOOL)setZoom:(double)s withAnimation:(BOOL)animate;
-
-/** See `setZoom:fromPosition:withAnimation:andBounceLimits:`.
- 
-  The zoom is from the midpoint of the range.
-  The zoom is not animated.
-  The range will not 'bounce' if it strays outside of the permissable range.
- */
-- (BOOL)setZoom:(double)s;
-
-/** Zoom to a set range, centred on a point.
- 
- This method is for zooming in to a point using a range in data terms rather than a zoom level.
- 
- @param point - the point on the axis around which to zoom in/out.
- @param range - the magnitude of the range to zoom in to - this will be centred around the point specified.
- @param animate - whether or not the zoom operation should be animated. If not animated, the zoom will be instant.
- @param bounce - whether or not the range should 'bounce' if it strays outside of the permissable range.
- */
-- (void)zoomToPoint:(double)point withRange:(double)range withAnimation:(BOOL)animate usingBounceLimits:(BOOL)bounce;
-
-/** See `zoomToPoint:withRange:withAnimation:usingBounceLimits:`. */
-- (void)zoomToPoint:(double)point withRange:(double)range;
+@property (nonatomic) BOOL enableGestureZooming;
 
 /** Sets the axis back to its original zoom 
  
@@ -658,36 +525,6 @@ This property allows you to alter the tick label clipping mode for the lower end
  */
 @property (nonatomic) BOOL enableGesturePanning;
 
-/** Pan the axis range by an explicit amount 
- 
- @param value - the value, in data terms, by which the axis range should pan by.
- @param animation - whether or not the pan operation should be animated. If not animated, the pan will be instant.
- @param panWithBouncing - whether or not the range should 'bounce' if it strays outside of the permissable range.
- @param redraw - redraw the chart after the pan operation.
- 
- @return Whether or not the pan operation was successful.
- 
- */
-- (BOOL)panByValue:(double)value withAnimation:(BOOL)animation withBounceLimits:(BOOL)panWithBouncing andRedraw:(BOOL)redraw;
-
-/** See `panByValue:withAnimation:andBounceLimits:andRedraw:`.
- 
- */
-- (BOOL)panByValue:(double)value withAnimation:(BOOL)animation withBounceLimits:(BOOL)panWithBouncing;
-
-/** See `panByValue:withAnimation:andBounceLimits:andRedraw:`.
- 
-  The range will not 'bounce' if it strays outside of the permissable range.
- */
-- (BOOL)panByValue:(double)value withAnimation:(BOOL)animation;
-
-/** See `panByValue:withAnimation:andBounceLimits:andRedraw:`.
- 
- The pan is not animated.
- The range will not 'bounce' if it strays outside of the permissable range.
- */
-- (BOOL)panByValue:(double)value;
-
 /** Enables momentum panning
  
  When momentum panning is enabled, fast pan gestures will cause the chart to continue
@@ -737,7 +574,7 @@ This property allows you to alter the tick label clipping mode for the lower end
  
  @warning Currently, this method will not return a pixel value for radial charts.
  */
--(CGFloat)pixelValueForDataValue:(id)data;
+-(double)pixelValueForDataValue:(id)data;
 
 /** Returns the data value of the given pixel value along this axis, in the coordinate system of the plot area.
  
@@ -746,7 +583,7 @@ This property allows you to alter the tick label clipping mode for the lower end
  
  @warning Currently, this method will not return a data value for radial charts.
  */
--(id)dataValueForPixelValue:(CGFloat)px;
+-(id)dataValueForPixelValue:(double)px;
 
 /** Returns the difference in data terms between where data in a series is drawn to it's value on this axis.
  
@@ -766,7 +603,7 @@ This property allows you to alter the tick label clipping mode for the lower end
 /** Returns a string representation of the given object.
  
  This will use the 'labelFormatter' where possible.  This is used for creating ticklabel and crosshair text. */
-- (NSString *)stringForId:(id)obj;
+- (nullable NSString *)stringForId:(id)obj;
 
 #pragma mark -
 #pragma mark  Drawing
@@ -781,3 +618,5 @@ This property allows you to alter the tick label clipping mode for the lower end
  */
 - (CGFloat)spaceRequiredToDrawWithTitle:(BOOL)shouldIncludeTitle;
 @end
+
+NS_ASSUME_NONNULL_END

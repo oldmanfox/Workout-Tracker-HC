@@ -10,6 +10,8 @@
 
 @class SChartAxis;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** An object that represents each tick mark on the chart. The label for the tick mark is also managed by this class.
  
  @available Standard
@@ -33,9 +35,7 @@
 @interface SChartTickMark: NSObject
 
 /** @name Initializing a new tickmark */
-- (id)init;
-/** Create a tick mark with a particular label. */
-- (id)initWithLabel:(CGRect)labelFrame andText:(NSString *)text;
+- (id)init NS_DESIGNATED_INITIALIZER;
 
 /** @name Current status */
 /** Is this tick mark visible on the chart? 
@@ -55,7 +55,7 @@
 /** The label object to visually represent the value of this tick mark
  
  If this is `nil` then no label will be displayed. */
-@property (nonatomic, retain)   UILabel *tickLabel;
+@property (nonatomic, retain, nullable)   UILabel *tickLabel;
 
 /** Called when the axis wishes to remove this tick mark label.
  
@@ -73,9 +73,6 @@
 /** The origin of the tickmark in Y, in pixels. */
 @property (nonatomic)           CGFloat   tickMarkY;
 
-// DEPRECATED - this will be removed from the API soon.
-@property (nonatomic)           BOOL    overAlternateStripe;
-
 /** A double representing the value of the tickmark.
  
  It is from this value that the text of the tickmark is determined.
@@ -90,36 +87,22 @@
  This is the view in which the 'tick' is drawn - the line between the axis and any associated ticklabel.
  Note that this view does not contain the label, gridLine, or gridStripe UIViews.
  */
-@property (nonatomic, retain)   UIView  *tickMarkView;
+@property (nonatomic, retain, nullable)   UIView  *tickMarkView;
 
 /** The UIView that is the gridLine for the tickmark.
  
  This view sits underneath the plot area.
   This will be nil is gridLines are not enabled.
  */
-@property (nonatomic, retain)   UIView  *gridLineView;
+@property (nonatomic, retain, nullable)   UIView  *gridLineView;
 
 /** The UIView that is the gridStripe for the tickmark.
  
  This view sits underneath the plot area.
  This will be nil is gridStripes are not enabled.
  */
-@property (nonatomic, retain)   UIView  *gridStripeView;
-
-
-/** Disables a tickmark, removing it completely from the owning axis. */
-- (void)disableTick:(SChartAxis *) axis;
-
-// DEPRECATED - this will be removed from the API soon.
-- (CGFloat)tickLengthModifier;
-
-// DEPRECATED - this will be removed from the API soon.
-- (void)removeTickMarkView;
-
-// DEPRECATED - this will be removed from the API soon.
-- (void)removeGridLineView;
-
-// DEPRECATED - this will be removed from the API soon.
-- (void)removeGridStripeView;
+@property (nonatomic, retain, nullable)   UIView  *gridStripeView;
 
 @end
+
+NS_ASSUME_NONNULL_END

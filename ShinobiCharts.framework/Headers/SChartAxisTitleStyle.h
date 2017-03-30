@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "SChartTitleStyle.h"
 
-typedef enum {
+typedef NS_ENUM(NSInteger, SChartAxisTitleOrientation) {
     SChartAxisTitleOrientationHorizontal,
     SChartAxisTitleOrientationVertical
-} SChartAxisTitleOrientation;
+};
+
+NS_ASSUME_NONNULL_BEGIN
 
 /** The axis title style object controls the look and feel for the axis title.
  
@@ -34,3 +36,5 @@ typedef enum {
 -(void)supplementStyleFromStyle:(SChartAxisTitleStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END

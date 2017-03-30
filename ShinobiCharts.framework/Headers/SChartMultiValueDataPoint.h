@@ -8,6 +8,8 @@
 
 #import "SChartDataPoint.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** Represents a data point that has values that are not related to any axes. An example of a series that uses such values is the `SChartBubbleSeries`.
  
  @available Standard
@@ -23,3 +25,5 @@
 @property (nonatomic, retain) NSMutableDictionary *values;
 
 @end
+
+NS_ASSUME_NONNULL_END

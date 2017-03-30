@@ -6,13 +6,15 @@
 
 #import <Foundation/Foundation.h>
 #import "SChartNumberAxis.h"
-#import "ShinobiMacros.h"
+#import "ShinobiHeaderMacros.h"
 
 @class SChartNumberAxis;
 
 typedef struct SChartNumberSkip {
     double start, end;
 } SChartNumberSkip;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  * An SChartDiscontinuousNumberAxis is a subclass of SChartNumberAxis,
@@ -58,3 +60,5 @@ typedef struct SChartNumberSkip {
 - (NSArray SC_GENERIC(NSValue *) *)skips;
 
 @end
+
+NS_ASSUME_NONNULL_END

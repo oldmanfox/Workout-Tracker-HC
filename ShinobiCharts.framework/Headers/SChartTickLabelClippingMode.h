@@ -6,8 +6,8 @@
 //
 //
 
-typedef enum {
+typedef NS_ENUM(NSInteger, SChartTickLabelClippingMode) {
     SChartTickLabelClippingModeTicksAndLabelsPersist,
     SChartTickLabelClippingModeTicksPersist,
     SChartTickLabelClippingModeNeitherPersist
-} SChartTickLabelClippingMode;
+};

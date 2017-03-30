@@ -11,6 +11,8 @@
 
 @class SChartDateRange;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** 
  An SChartDateTimeAxis is a subclass of `SChartAxis` designed to work with data points that use `NSDate`. 
  
@@ -28,13 +30,6 @@
  @warning This axis is not currently supported on radial charts.
  */
 @interface SChartDateTimeAxis : SChartAxis
-
-#pragma mark - 
-#pragma mark Initialization
-/** @name Initialization */
-/** Init with a NSDate specific range */
-- (id)initWithRange:(SChartDateRange *)range;
-
 
 #pragma mark -
 #pragma mark Subclassing
@@ -56,3 +51,5 @@
 - (NSString *) formatStringForFrequency:(NSDateComponents *)frequency;
 
 @end
+
+NS_ASSUME_NONNULL_END

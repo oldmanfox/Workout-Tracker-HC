@@ -6,8 +6,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SChartDatasource.h"
 
 @protocol SChartDatasource;
+@class SChartSeries;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /** This class can be used to easily setup your chart with series and simple data.
  
@@ -31,3 +35,5 @@
 - (void)addSeries:(SChartSeries *)series dataArray:(NSArray *)data;
 
 @end
+
+NS_ASSUME_NONNULL_END

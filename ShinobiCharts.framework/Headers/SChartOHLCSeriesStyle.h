@@ -7,6 +7,8 @@
 
 #import "SChartBarColumnSeriesStyle.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 /** `SChartOHLCSeriesStyle` manages the appearance of an instance of `SChartOHLCSeries` on the chart.
  
  Each data point in an OHLC series is visualised as a line between the high and low values, with short perpendicular bars indicating the open and close positions.
@@ -21,25 +23,29 @@
 /** @name Styling properties */
 
 /** The color of the body of the OHLC point if the point is rising. */
-@property (nonatomic, retain)       UIColor     *risingColor;
+@property (nonatomic, strong, nullable)       UIColor     *risingColor;
 
 /** The gradient color of the body of the OHLC point if the point is rising. */
-@property (nonatomic, retain)       UIColor     *risingColorGradient;
+@property (nonatomic, strong, nullable)       UIColor     *risingColorGradient;
 
 /** The color of the body of the OHLC point if the point is falling. */
-@property (nonatomic, retain)       UIColor     *fallingColor;
+@property (nonatomic, strong, nullable)       UIColor     *fallingColor;
 
 /** The gradient color of the body of the OHLC point if the point is falling. */
-@property (nonatomic, retain)       UIColor     *fallingColorGradient;
+@property (nonatomic, strong, nullable)       UIColor     *fallingColorGradient;
 
 /** The width of the trunk of the OHLC point, in points. */
-@property (nonatomic, retain)     NSNumber  *trunkWidth;
+@property (nonatomic, strong, nullable)     NSNumber  *trunkWidth;
 
 /** The width of the arms of the OHLC point, in points. */
-@property (nonatomic, retain)     NSNumber  *armWidth;
+@property (nonatomic, strong, nullable)     NSNumber  *armWidth;
 
 /** Updates this style object using the specified style.
  @param style The new style with which to update this style object. */
 -(void)supplementStyleFromStyle:(SChartOHLCSeriesStyle *)style;
 
 @end
+
+NS_ASSUME_NONNULL_END
+
+

@@ -9,30 +9,21 @@
 #import <Foundation/Foundation.h>
 #import "SChartAnimationCurve.h"
 
-typedef enum {
-    SChartAnimationCurveLinear,
-    SChartAnimationCurveEaseIn,
-    SChartAnimationCurveEaseOut,
-    SChartAnimationCurveEaseInOut,
-    SChartAnimationCurveBounce,
-} SChartAnimationCurve;
+@protocol SChartProgressCalculator;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
- An `SChartAnimation` object determines how an `SChartSeries` is animated.
+ An `SChartAnimation` object determines how some elements of the chart are animated.
  
- Depending on the action which an animation is linked to, it may be triggered by different actions:
+ For example, to show a series, you should use the chart's 'animation tracker' object to schedule an animation:
  
- - Entry Animations are triggered upon the initial addition of the series to the chart and when a series is unhidden using its hidden property.
- - Exit Animations are triggered when a series is hidden using its hidden property.
+    [_chart.animationTracker showSeries:_series
+    animation:[SChartAnimation growAnimation]
+    progressCalculator:[[SChartTimeProgressCalculator alloc] initWithDuration:5]
+    completion:nil];
  
- The code snippet below demonstrates how to set a series to fade in when entering and fade out when exiting.  We set the duration of both animations to be 3 seconds:
- 
-    SChartAnimation *animation = [ SChartAnimation fadeAnimation ];
-    animation.duration = @3;
-    series.entryAnimation = [ animation copy ];
-    series.exitAnimation = [ animation copy ];
- 
- We updated the animation code in version 2.2 of charts.  As a result of these updates, the SChartAnimationCurve enum defined in earlier versions of charts has been deprecated.  Instead of using this, you should configure the properties of the animation to meet your needs.  The properties you can set on an animation are:
+ The properties you can set on an animation are:
  
  - The duration of the animation.  See `duration` for more information.
  - The origin point on the chart from where the series animates to its final position.  See `absoluteOriginX`, `absoluteOriginY`, `normalisedOriginX` and `normalisedOriginY` for more information.
@@ -126,7 +117,7 @@ typedef enum {
  Setting this curve will set each of the other curves for the animation to this same curve.
  By default, this property is set to `SChartFlatAnimationCurve`.
  */
-@property (retain, nonatomic)   id <SChartAnimationCurve>    curve;
+@property (retain, nonatomic)   NSObject <SChartAnimationCurve> *curve;
 
 
 /** The animation curve describing the transition of the series parallel to the x axis.
@@ -134,7 +125,7 @@ typedef enum {
  This curve describes how the x values of the series scale from some origin along the x axis at the start of the animation to their destination at the end of the animation.
  An xScale value of 0 maps a point at the animation origin whereas a value of 1 maps the point at it's true value perpendicular to the x axis.
  */
-@property (retain, nonatomic)   id <SChartAnimationCurve>    xScaleCurve;
+@property (retain, nonatomic)   NSObject <SChartAnimationCurve> *xScaleCurve;
 
 
 /** The animation curve describing the transition of the series parallel to the y axis.
@@ -142,7 +133,7 @@ typedef enum {
  This curve describes how the y values of the series scale from some origin along the y axis at the start of the animation to their destination at the end of the animation.
  An yScale value of 0 maps a point at the animation origin whereas a value of 1 maps the point at it's true value perpendicular to the yAxis.
  */
-@property (retain, nonatomic)   id <SChartAnimationCurve>    yScaleCurve;
+@property (retain, nonatomic)   NSObject <SChartAnimationCurve> *yScaleCurve;
 
 
 /** This curve only applies to pie/donut chart series.  The animation curve describes the transition of the series around its origin.
@@ -150,7 +141,7 @@ typedef enum {
  This curve describes how the points of the series rotate around the centre of the series from some initial angle at the start of the animation to a destination angle at the end of the animation.
  An angle scale value of 0 maps to the original angle whereas a value of 1 maps to the destination angle.
  */
-@property (retain, nonatomic)   id <SChartAnimationCurve>    angleCurve;
+@property (retain, nonatomic)   NSObject <SChartAnimationCurve> *angleCurve;
 
 
 /** The animation curve describing how the radius/radii of the series change during the animation.
@@ -159,7 +150,7 @@ typedef enum {
  It is mostly used for pie/donut series, often in conjunction with an origin at the centre of the pie/donut series.
  Setting this curve will override any previously set values for `xScaleCurve` and `yScaleCurve`.
  */
-@property (retain, nonatomic)   id <SChartAnimationCurve>    radiusCurve;
+@property (retain, nonatomic)   NSObject <SChartAnimationCurve> *radiusCurve;
 
 
 /** The animation curve describing how the transparency of the series changes during the animation.
@@ -168,20 +159,7 @@ typedef enum {
  We multiply the value returned by this curve with the colors set to the series, therefore a curve value of 0 results in a completely transparent color and a value of 1 results in the final alpha value of the series color.
  This curve applies to both cartesian and pie/donut series.
  */
-@property (retain, nonatomic)   id <SChartAnimationCurve>    alphaCurve;
-
-#pragma mark -
-#pragma mark Configuring Duration
-/** @name Configuration Animation Duration */
-
-/** The duration of the animation.
- 
- The time taken, in seconds, for the animation to progress from start to finish.
- The duration of the animations returned by the factory methods provided is 2.4 seconds.
- The duration of an animation created via alloc/init is 1/64 seconds (instant).
- Use this property to configure how long an animation should take to complete.
- */
-@property (retain, nonatomic)   NSNumber    *duration;
+@property (retain, nonatomic)   NSObject <SChartAnimationCurve> *alphaCurve;
 
 #pragma mark -
 #pragma mark Configuring Origins
@@ -192,7 +170,7 @@ typedef enum {
  Points will scale from this value along the x axis in either direction.
  If this property is not set, the animation will use a normalized origin on x - see `normalisedOriginX`.
  */
-@property (retain, nonatomic)   id  absoluteOriginX;
+@property (retain, nonatomic)   id _Nullable absoluteOriginX;
 
 
 /** If this property is set, this will be the origin value in y in data terms - a curve returning 0 maps to this value, whereas a curve returning 1 maps to the final true value.
@@ -200,7 +178,7 @@ typedef enum {
  Points will scale from this value along the y axis in either direction.
  If this property is not set, the animation will use a normalized origin on y - see `normalisedOriginY`.
  */
-@property (retain, nonatomic)   id  absoluteOriginY;
+@property (retain, nonatomic)   id _Nullable absoluteOriginY;
 
 
 /** This property enables you to set a normalized point of origin along the x axis for the animation.
@@ -212,7 +190,6 @@ typedef enum {
  */
 @property (nonatomic)   CGFloat    normalisedOriginX;
 
-
 /** This property enables you to set a normalized point of origin along the y axis for the animation.
  
  This value is normalized using the range of the series which the animation is applied to.
@@ -222,5 +199,6 @@ typedef enum {
  */
 @property (nonatomic)   CGFloat    normalisedOriginY;
 
-
 @end
+
+NS_ASSUME_NONNULL_END
